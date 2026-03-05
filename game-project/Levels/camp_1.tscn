@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5cn2mu4srl7d"]
+
+[ext_resource type="Texture2D" uid="uid://cpmsabw7q3px7" path="res://Resources/textBox.png" id="1_s1ba8"]
+
+[node name="Camp1" type="Node2D"]
+
+[node name="TextBox" type="Sprite2D" parent="."]
+position = Vector2(566, 448)
+texture = ExtResource("1_s1ba8")
+
+[node name="TextBox2" type="Sprite2D" parent="."]
+position = Vector2(1014, 372)
+texture = ExtResource("1_s1ba8")
