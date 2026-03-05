@@ -4,7 +4,6 @@ const CAMP_1 = preload("res://Levels/camp_1.tscn")
 const MAIN_CITY = preload("res://Levels/main_city.tscn")
 @onready var world: Node2D = $"../../World"
 
-var save = "camp_1" #savefile.current_level
 
 var current_level
 
