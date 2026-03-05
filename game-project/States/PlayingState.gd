@@ -1,13 +1,12 @@
 extends GameState
 class_name PlayingState
 
-var save = "camp_1" #savefile.current_level
 
 func Enter():
-	manager.level_manager.load_level(save)
+	manager.load_level(manager.get_current_level())
 
 func Exit():
-	manager.level_manager.free_level()
+	manager.free_level()
 	
 func Update(delta):
 	if Input.is_action_just_pressed("pause"):
