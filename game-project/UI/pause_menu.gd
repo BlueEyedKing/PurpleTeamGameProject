@@ -12,8 +12,8 @@ func _ready() -> void:
 	continue_button.pressed.connect(_on_continue_pressed)
 	quit_button.pressed.connect(_on_save_and_quit_pressed)
 	
-func _on_continue_pressed():
+func _on_continue_pressed() -> void:
 	continue_requested.emit()
 	
-func _on_save_and_quit_pressed():
+func _on_save_and_quit_pressed() -> void:
 	save_and_quit_requested.emit()

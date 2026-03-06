@@ -7,7 +7,7 @@ const MAIN_CITY = preload("res://Levels/main_city.tscn")
 
 var current_level
 
-func load_level(level: String):
+func load_level(level: String) -> void:
 	if current_level:
 		current_level.queue_free()
 	match level:
@@ -19,13 +19,13 @@ func load_level(level: String):
 	
 	load_player()
 
-func free_level():
+func free_level() -> void:
 	if current_level:
 		world.remove_child(current_level)
 		current_level.queue_free()
 		current_level = null
 
-func load_player():
+func load_player() -> void:
 	var player = preload("res://Player/Player.tscn").instantiate()
 	current_level.add_child(player)
 	

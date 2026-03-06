@@ -3,7 +3,7 @@ class_name MainMenuState
 
 var menu
 
-func Enter():
+func Enter() -> void:
 	menu = preload("res://UI/main_menu.tscn").instantiate()
 	menu.start_requested.connect(func():
 		manager.clear_stack()
