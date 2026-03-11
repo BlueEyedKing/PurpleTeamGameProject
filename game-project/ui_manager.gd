@@ -1,7 +1,7 @@
 extends Node
 
-@onready var state_manager: Node = $"../../StateManager"
-@onready var ui: Control = $"../../UI"
+@onready var state_manager: Node = $"../StateManager"
+@onready var ui: CanvasLayer = $"../../UI"
 
 var pause_menu
 

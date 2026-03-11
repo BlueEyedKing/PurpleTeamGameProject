@@ -1,13 +1,12 @@
 extends Node
 
 var state_stack : Array = []
+@onready var ui: CanvasLayer = $"../../UI"
+@onready var saver_loader: SaverLoader = $"../SaverLoader"
+@onready var level_manager: Node = $"../LevelManager"
 
-@onready var ui: Control = $"../UI"
-@onready var level_manager: Node = $"../Utilities/LevelManager"
-@onready var saver_loader: SaverLoader = %SaverLoader
 
-
-signal return_to_main_menu_requested
+#signal return_to_main_menu_requested
 signal state_changed(new_state)
 
 func push_state(state) -> void:
@@ -31,7 +30,10 @@ func clear_stack() -> void:
 		pop_state()
 		
 func save_and_quit() -> void:
-	return_to_main_menu_requested.emit()
+	saver_loader.save_game()
+	clear_stack()
+	push_state(MainMenuState.new(self))
+	#return_to_main_menu_requested.emit()
 	
 func show_ui(scene) -> void:
 	ui.add_child(scene)

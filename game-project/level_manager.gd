@@ -17,7 +17,7 @@ func load_level(level: String) -> void:
 			current_level = MAIN_CITY.instantiate()
 	world.add_child(current_level)
 	
-	load_player()
+	load_player() # TODO move logic?
 
 func free_level() -> void:
 	if current_level:
