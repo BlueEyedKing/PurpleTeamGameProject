@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5cn2mu4srl7d"]
 
 [ext_resource type="Texture2D" uid="uid://cpmsabw7q3px7" path="res://Resources/textBox.png" id="1_s1ba8"]
-[ext_resource type="PackedScene" uid="uid://c46j0y5d7wn0w" path="res://MiscObjects/gateOutOfCity.tscn" id="2_ip8uc"]
+[ext_resource type="PackedScene" uid="uid://c46j0y5d7wn0w" path="res://MiscObjects/travel_gate.tscn" id="2_ip8uc"]
 
 [node name="Camp1" type="Node2D"]
 

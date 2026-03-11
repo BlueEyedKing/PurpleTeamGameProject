@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://c46j0y5d7wn0w"]
 
-[ext_resource type="Texture2D" uid="uid://bb4gdjx53d8or" path="res://Resources/Sprites/shitGate.png" id="1_ex6se"]
-[ext_resource type="Script" uid="uid://rjdws3s48yfk" path="res://MiscObjects/gateOutOfCity.gd" id="1_x7k1u"]
-[ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="2_x7k1u"]
-[ext_resource type="Texture2D" uid="uid://c4uk27n6rutal" path="res://Resources/Sprites/shitGateOpen.png" id="3_0d0ww"]
+[ext_resource type="Script" uid="uid://rjdws3s48yfk" path="res://MiscObjects/travel_gate.gd" id="1_elwj1"]
+[ext_resource type="Texture2D" uid="uid://bb4gdjx53d8or" path="res://Resources/Sprites/shitGate.png" id="2_pw514"]
+[ext_resource type="Texture2D" uid="uid://c4uk27n6rutal" path="res://Resources/Sprites/shitGateOpen.png" id="3_qimre"]
+[ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="4_lf84r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0e6fv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ex6se")
+"texture": ExtResource("2_pw514")
 }],
 "loop": false,
 "name": &"Closed",
@@ -17,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_0d0ww")
+"texture": ExtResource("3_qimre")
 }],
 "loop": false,
 "name": &"Open",
@@ -28,7 +28,7 @@ animations = [{
 size = Vector2(274, 56)
 
 [node name="gate" type="Node2D"]
-script = ExtResource("1_x7k1u")
+script = ExtResource("1_elwj1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3.0517578e-05, 7.6293945e-06)
@@ -36,7 +36,7 @@ scale = Vector2(0.47916666, 0.47916666)
 sprite_frames = SubResource("SpriteFrames_0e6fv")
 animation = &"Closed"
 
-[node name="InteractionArea" parent="." instance=ExtResource("2_x7k1u")]
+[node name="InteractionArea" parent="." instance=ExtResource("4_lf84r")]
 action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
