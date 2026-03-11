@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+@export var SPEED: float = 300.0
 
-func get_input():
+func get_input() -> void:
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * SPEED
 

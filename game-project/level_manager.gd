@@ -4,11 +4,10 @@ const CAMP_1 = preload("res://Levels/camp_1.tscn")
 const MAIN_CITY = preload("res://Levels/main_city.tscn")
 @onready var world: Node2D = $"../../World"
 
-var save = "camp_1" #savefile.current_level
 
 var current_level
 
-func load_level(level: String):
+func load_level(level: String) -> void:
 	if current_level:
 		current_level.queue_free()
 	match level:
@@ -18,15 +17,15 @@ func load_level(level: String):
 			current_level = MAIN_CITY.instantiate()
 	world.add_child(current_level)
 	
-	load_player()
+	load_player() # TODO move logic?
 
-func free_level():
+func free_level() -> void:
 	if current_level:
 		world.remove_child(current_level)
 		current_level.queue_free()
 		current_level = null
 
-func load_player():
+func load_player() -> void:
 	var player = preload("res://Player/Player.tscn").instantiate()
 	current_level.add_child(player)
 	
