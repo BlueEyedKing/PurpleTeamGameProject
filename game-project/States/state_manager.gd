@@ -9,6 +9,9 @@ var state_stack : Array = []
 #signal return_to_main_menu_requested
 signal state_changed(new_state)
 
+func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
+	
 func push_state(state) -> void:
 	state_stack.push_back(state)
 	state.Enter()
@@ -21,7 +24,6 @@ func pop_state() -> void:
 		state_changed.emit(state_stack[-1])
 		
 func _process(delta) -> void:
-	process_mode = PROCESS_MODE_ALWAYS
 	if state_stack.size() > 0:
 		state_stack[-1].Update(delta)
 		
@@ -33,16 +35,15 @@ func save_and_quit() -> void:
 	saver_loader.save_game()
 	clear_stack()
 	push_state(MainMenuState.new(self))
-	#return_to_main_menu_requested.emit()
 	
 func show_ui(scene) -> void:
 	ui.add_child(scene)
 	
 func load_level(save) -> void:
-	level_manager.load_level(save)
+	level_manager.load_level(save[0], save[1])
 	
 func free_level() -> void:
 	level_manager.free_level()
 
-func get_current_level() -> String: # at least currently returns a hardcoded string for testing purposes
+func get_current_level(): # at least currently returns a hardcoded array for testing purposes
 	return saver_loader.load_game()
