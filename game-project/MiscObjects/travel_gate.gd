@@ -16,5 +16,5 @@ func _ready() -> void:
 func _open_gate():
 	animated_sprite_2d.animation = "Open"
 	# TODO forced animation of player walking out of city while screen fading out for example
-	EventBus.travel.emit(destination_level, destination_gate)
+	EventBus.level_load_requested.emit(destination_level, destination_gate)
 	

@@ -2,7 +2,6 @@ extends Node
 
 signal start_requested()
 
-signal travel(destination: String, spawnpoint: String)
 signal level_load_requested(level: String, gate: String)
 
 #ui

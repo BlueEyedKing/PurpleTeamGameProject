@@ -8,7 +8,6 @@ var spawn_door
 var current_level
 
 func _ready() -> void:
-	EventBus.travel.connect(load_level)
 	EventBus.level_load_requested.connect(load_level)
 
 func load_level(level: String, gate: String) -> void:

@@ -35,11 +35,6 @@ func save_and_quit() -> void:
 	clear_stack()
 	push_state(MainMenuState.new(self))
 	
-func show_ui(scene) -> void:
-	ui.add_child(scene)
-	
-#func load_level(save) -> void:
-	#level_manager.load_level(save[0], save[1])
 	
 func free_level() -> void:
 	level_manager.free_level()

@@ -29,3 +29,4 @@ func show_main_menu() -> void:
 func free_main_menu() -> void:
 	if (main_menu):
 		main_menu.queue_free()
+		main_menu = null
