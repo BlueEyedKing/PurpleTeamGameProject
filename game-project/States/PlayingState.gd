@@ -3,7 +3,7 @@ class_name PlayingState
 
 
 func Enter() -> void:
-	manager.load_level(manager.get_current_level())
+	EventBus.level_load_requested.emit("main_city", "camp_1")
 
 func Exit() -> void:
 	manager.free_level()

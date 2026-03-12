@@ -1,20 +1,15 @@
 extends GameState
 class_name MainMenuState
 
-var menu
 
 func Enter() -> void:
-	menu = preload("res://UI/main_menu.tscn").instantiate()
-	menu.start_requested.connect(func():
-		manager.clear_stack()
-		manager.push_state(PlayingState.new(manager))
-		)
-	manager.show_ui(menu)
+	EventBus.show_main_menu_requested.emit()
+	EventBus.start_requested.connect(_on_start_requested)
 	
 func Exit():
-	if (menu):
-		menu.queue_free()
-
-#func Update(delta):
-	#if Input.is_action_just_pressed("pause"):
-		#manager.pop_state()
+	EventBus.free_main_menu_requested.emit()
+	EventBus.start_requested.disconnect(_on_start_requested)
+	
+func _on_start_requested():
+	manager.clear_stack()
+	manager.push_state(PlayingState.new(manager))

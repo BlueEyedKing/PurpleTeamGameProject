@@ -21,9 +21,9 @@ func update_animation(direction) -> void:
 		
 	if direction.x > 0:
 		animated_sprite_2d.play("right")
-	if direction.x < 0:
+	elif direction.x < 0:
 		animated_sprite_2d.play("left")
-	if direction.y > 0:
+	elif direction.y > 0:
 		animated_sprite_2d.play("down")
-	if direction.y < 0:
+	elif direction.y < 0:
 		animated_sprite_2d.play("up")

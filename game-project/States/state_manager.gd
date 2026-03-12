@@ -6,8 +6,7 @@ var state_stack : Array = []
 @onready var level_manager: Node = $"../LevelManager"
 
 
-#signal return_to_main_menu_requested
-signal state_changed(new_state)
+signal state_changed(new_state) #debugging purposes
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
@@ -39,11 +38,11 @@ func save_and_quit() -> void:
 func show_ui(scene) -> void:
 	ui.add_child(scene)
 	
-func load_level(save) -> void:
-	level_manager.load_level(save[0], save[1])
+#func load_level(save) -> void:
+	#level_manager.load_level(save[0], save[1])
 	
 func free_level() -> void:
 	level_manager.free_level()
 
-func get_current_level(): # at least currently returns a hardcoded array for testing purposes
-	return saver_loader.load_game()
+#func get_current_level(): # at least currently returns a hardcoded array for testing purposes
+	#return saver_loader.load_game()
