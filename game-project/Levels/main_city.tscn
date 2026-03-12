@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7j1lrf61kik0"]
+[gd_scene load_steps=3 format=3 uid="uid://c7j1lrf61kik0"]
 
 [ext_resource type="Texture2D" uid="uid://cpmsabw7q3px7" path="res://Resources/textBox.png" id="1_ajoiv"]
+[ext_resource type="PackedScene" uid="uid://c46j0y5d7wn0w" path="res://MiscObjects/travel_gate.tscn" id="2_ixmwh"]
 
 [node name="MainCity" type="Node2D"]
 
 [node name="TextBox" type="Sprite2D" parent="."]
 position = Vector2(229, 283)
 texture = ExtResource("1_ajoiv")
+
+[node name="gate_camp_1" parent="." instance=ExtResource("2_ixmwh")]
+position = Vector2(662, 102)
+destination_level = "camp_1"
+destination_gate = "main_city"

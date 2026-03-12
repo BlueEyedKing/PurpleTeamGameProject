@@ -7,4 +7,4 @@ func save_game():
 	pass
 
 func load_game():
-	return "camp_1"
+	return ["main_city", "camp_1"]
