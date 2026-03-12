@@ -1,13 +1,17 @@
 extends GameState
 class_name PlayingState
 
+## PlayingState — Entry point into gameplay.
+## Immediately delegates to MorningState to begin the day cycle.
+## This keeps PlayingState as the "game is active" marker while
+## the day-phase states handle level loading themselves.
 
 func Enter() -> void:
-	EventBus.level_load_requested.emit("main_city", "camp_1")
+	# Push MorningState on top; PlayingState stays as base of the play stack
+	manager.push_state(MorningState.new(manager))
 
 func Exit() -> void:
-	manager.free_level()
-	
-func Update(delta) -> void:
-	if Input.is_action_just_pressed("pause"):
-		manager.push_state(PauseState.new(manager))
+	pass
+
+func Update(_delta: float) -> void:
+	pass

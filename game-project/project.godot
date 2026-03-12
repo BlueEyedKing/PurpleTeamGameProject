@@ -19,8 +19,7 @@ config/icon="res://Resources/icon.svg"
 
 DialogManager="*res://Systems/Interaction/DialogManager.gd"
 InteractionManager="*res://Systems/Interaction/InteractionManager.tscn"
-TransitionScreen="*res://MiscObjects/transition_screen.tscn"
-EventBus="*res://Scripts/EventBus.gd"
+TimeManager="*res://Systems/Time/time_manager.gd"
 
 [display]
 
