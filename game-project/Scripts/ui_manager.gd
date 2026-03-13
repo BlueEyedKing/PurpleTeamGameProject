@@ -5,6 +5,7 @@ extends Node
 
 var pause_menu
 var main_menu
+var time_hud
 
 func _ready() -> void:
 	EventBus.pause_menu_show_requested.connect(show_pause_menu)
@@ -30,3 +31,13 @@ func free_main_menu() -> void:
 	if (main_menu):
 		main_menu.queue_free()
 		main_menu = null
+
+func show_time_hud() -> void:
+	if not time_hud:
+		time_hud = preload("res://UI/time_hud.tscn").instantiate()
+		ui.get_node("HUD").add_child(time_hud)
+
+func hide_time_hud() -> void:
+	if time_hud:
+		time_hud.queue_free()
+		time_hud = null

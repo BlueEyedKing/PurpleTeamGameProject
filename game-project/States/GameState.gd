@@ -13,4 +13,5 @@ func Exit():
 	pass
 	
 func Update(_delta: float):
-	pass
+	if Input.is_action_just_pressed("pause"):
+		manager.push_state(PauseState.new(manager))

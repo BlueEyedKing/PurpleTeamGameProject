@@ -1,7 +1,7 @@
 extends Control
 
-@onready var continue_button: Button = $VBoxContainer/NinePatchRect/ContinueButton
-@onready var quit_button: Button = $VBoxContainer/NinePatchRect3/QuitButton
+@onready var continue_button: Button = $CenterContainer/MainPanel/VBoxContainer/ContinueButton
+@onready var quit_button: Button = $CenterContainer/MainPanel/VBoxContainer/QuitButton
 
 signal save_and_quit_requested
 signal continue_requested

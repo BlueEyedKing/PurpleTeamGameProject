@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Minigames/QTE/qte.gd" id="1_qte"]
+[ext_resource type="Shader" path="res://Minigames/QTE/qte.gdshader" id="2_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qte"]
+resource_local_to_scene = true
+shader = ExtResource("2_shader")
+shader_parameter/first_color = Color(0.2, 0.9, 0.5, 1)
+shader_parameter/second_color = Color(1, 0.85, 0.2, 1)
+shader_parameter/third_color = Color(1, 0.2, 0.2, 1)
+shader_parameter/outline_color = Color(0.15, 0.12, 0.08, 1)
+shader_parameter/unfilled_color = Color(0.3, 0.25, 0.2, 1)
+shader_parameter/value = 1.0
+shader_parameter/smooth_ = 0.005
+shader_parameter/width_in = 0.75
+shader_parameter/width_out = 0.95
+shader_parameter/border_width = 0.04
+
+[node name="Qte" type="Control"]
+custom_minimum_size = Vector2(150, 180)
+layout_mode = 2
+script = ExtResource("1_qte")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qte")
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="KeyLabel" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.08, 0.05, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 48
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 152.0
+offset_right = 150.0
+offset_bottom = 180.0
+theme_override_colors/font_outline_color = Color(0.1, 0.08, 0.05, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "HIT!"
+horizontal_alignment = 1

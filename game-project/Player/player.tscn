@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dfcr40rqjexs" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://e0dirujtes8a" path="res://Resources/Main_Player_Front.png" id="2_4ntmi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
-radius = 14.80076
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
+radius = 5.75
+height = 11.5
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -15,9 +16,9 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -9)
+position = Vector2(0, 38)
 scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_4ntmi")
+shape = SubResource("CapsuleShape2D_4ntmi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0

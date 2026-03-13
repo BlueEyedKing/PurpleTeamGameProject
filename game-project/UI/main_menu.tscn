@@ -1,104 +1,99 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1i4iumw2idik"]
 
-[ext_resource type="Texture2D" uid="uid://cpmsabw7q3px7" path="res://Resources/textBox.png" id="1_p8ccj"]
 [ext_resource type="Script" uid="uid://bqs4i16kpcw8" path="res://UI/main_menu.gd" id="1_tk8dj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk8dj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.12, 0.1, 0.08, 0.92)
+border_color = Color(0.7, 0.5, 0.2, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 32.0
+content_margin_top = 24.0
+content_margin_right = 32.0
+content_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sep"]
+bg_color = Color(0.7, 0.5, 0.2, 0.4)
+content_margin_top = 1.0
+content_margin_bottom = 1.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-script = ExtResource("1_tk8dj")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -208.5
-offset_top = -185.0
-offset_right = 208.5
-offset_bottom = 185.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+script = ExtResource("1_tk8dj")
 
-[node name="NinePatchRect4" type="NinePatchRect" parent="VBoxContainer"]
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPanel" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(360, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/MainPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.75, 0.45, 1)
+theme_override_font_sizes/font_size = 42
+text = "FOSSIL HUNTER"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/MainPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_sep")
+
+[node name="Spacer" type="Control" parent="CenterContainer/MainPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 4)
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/MainPanel/VBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("1_p8ccj")
-region_rect = Rect2(0, 0, 48, 48)
-patch_margin_left = 32
-patch_margin_top = 16
-patch_margin_right = 32
-patch_margin_bottom = 16
-
-[node name="ContinueButton" type="Button" parent="VBoxContainer/NinePatchRect4"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 5.0
-offset_right = 311.0
-offset_bottom = 28.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_tk8dj")
+custom_minimum_size = Vector2(0, 48)
 text = "Continue"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="CenterContainer/MainPanel/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_p8ccj")
-region_rect = Rect2(0, 0, 48, 48)
-patch_margin_left = 32
-patch_margin_top = 16
-patch_margin_right = 32
-patch_margin_bottom = 16
-
-[node name="StartButton" type="Button" parent="VBoxContainer/NinePatchRect"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 5.0
-offset_right = 311.0
-offset_bottom = 28.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_tk8dj")
+custom_minimum_size = Vector2(0, 48)
 text = "Start Game"
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="CenterContainer/MainPanel/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_p8ccj")
-region_rect = Rect2(0, 0, 48, 48)
-patch_margin_left = 32
-patch_margin_top = 16
-patch_margin_right = 32
-patch_margin_bottom = 16
-
-[node name="OptionsButton" type="Button" parent="VBoxContainer/NinePatchRect2"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 5.0
-offset_right = 311.0
-offset_bottom = 28.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_tk8dj")
+custom_minimum_size = Vector2(0, 48)
 text = "Options"
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CenterContainer/MainPanel/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_p8ccj")
-region_rect = Rect2(0, 0, 48, 48)
-patch_margin_left = 32
-patch_margin_top = 16
-patch_margin_right = 32
-patch_margin_bottom = 16
-
-[node name="QuitButton" type="Button" parent="VBoxContainer/NinePatchRect3"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 5.0
-offset_right = 311.0
-offset_bottom = 28.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_tk8dj")
+custom_minimum_size = Vector2(0, 48)
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/NinePatchRect4/ContinueButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/NinePatchRect/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/VBoxContainer/ContinueButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
