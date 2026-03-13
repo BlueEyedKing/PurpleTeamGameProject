@@ -1,0 +1,75 @@
+{
+	"day_1_intro": {
+	"id": "day_1_intro",
+	"entry_point": true,
+	"conditions": {
+		"day": 1,
+		"flags_absent": ["met_inez"]
+	},
+	"on_finish": {
+		"set_flags": ["met_inez"]
+	},
+	"speaker": "Boss",
+	"text": "...You, there! Careful where you step, this is an archeological site.",
+	"type": "spoken",
+	"portrait": "BossNeutral",
+	"next_id": "day_1_intro_2"
+	},
+	"day_1_intro_2": {
+	"speaker": "Inez",
+	"text": "Oh, hi! It's not often that people wander out to the digsite.
+	My name is Inez, and you are..?",
+	"portrait": "CoworkerNeutral",
+	"action": "name_input",
+	"next_id": "day_1_intro_3"
+	},
+	"day_1_intro_3": {
+	"speaker": "Inez",
+	"text": "[NAME]..?",
+	"portrait": "CoworkerNeutral",
+	"next_id": "day_1_intro_4"
+	},
+	"day_1_intro_4": {
+	"speaker": "Boss",
+	"text": "[NAME]! You must be the new recruit coming in from the city. Welcome to Amaranth Heights, and welcome to the Amaranth Archeology team. We’re happy to have you.",
+	"portrait": "BossNeutral",
+	"next_id": "day_1_intro_5"
+	},
+	"day_1_intro_5": {
+	"speaker": "Inez",
+	"text": "Oh, welcome! I didn’t realize you were going to be working with us.",
+	"portrait": "CoworkerNeutral",
+	"next_id": "day_1_intro_6"
+  	},
+	"day_1_intro_6": {
+	"speaker": "Inez",
+	"text": "It’s lovely to meet you!",
+	"portrait": "CoworkerNeutral",
+	"next_id": "day_1_intro_7"
+	},
+	"day_1_intro_7": {
+	"speaker": "Boss",
+	"text": "Now that you’re here, we can get started. Inez, why don’t you head into camp and get everything set up?",
+	"portrait": "BossNeutral",
+	"next_id": "day_1_intro_8"
+	},
+	"day_1_intro_8": {
+	"speaker": "Inez",
+	"text": "Aye aye, captain.",
+	"portrait": "CoworkerNeutral",
+	"action": "inez_leaves",
+	"next_id": null
+	},
+	
+	"day_1_generic": {
+	"id": "day_1_generic",
+	"entry_point": true,
+	"conditions": {
+		"flags_required": ["met_inez"]
+	},
+	"speaker": "Boss",
+	"text": "Let's get to work",
+	"portrait": "BossNeutral",
+	"next_id": null
+	}
+}

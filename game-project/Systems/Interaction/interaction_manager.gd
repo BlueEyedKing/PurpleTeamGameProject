@@ -1,13 +1,23 @@
 extends Node2D
 
 
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player: Node2D = null
 @onready var label = $Label
 
 const base_text = "[E] to "
 
 var active_areas = []
-var can_interact = true
+var can_interact: bool:
+	get: return locks.is_empty()
+	
+var locks: Array = []
+
+func lock(owner: Object) -> void:
+	if not locks.has(owner):
+		locks.append(owner)
+
+func unlock(owner: Object) -> void:
+	locks.erase(owner)
 
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
@@ -18,6 +28,10 @@ func unregister_area(area: InteractionArea):
 		active_areas.remove_at(index)
 		
 func _process(delta):
+	if not is_instance_valid(player):
+		player = get_tree().get_first_node_in_group("player")
+		return
+		
 	if active_areas.size() > 0 && can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name

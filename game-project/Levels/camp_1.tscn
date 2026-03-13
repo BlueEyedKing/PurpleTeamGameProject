@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5cn2mu4srl7d"]
+[gd_scene load_steps=6 format=3 uid="uid://b5cn2mu4srl7d"]
 
+[ext_resource type="Script" uid="uid://2154uxq0q6kr" path="res://Scripts/camp_1.gd" id="1_fxuia"]
 [ext_resource type="Texture2D" uid="uid://cpmsabw7q3px7" path="res://Resources/textBox.png" id="1_s1ba8"]
 [ext_resource type="PackedScene" uid="uid://c46j0y5d7wn0w" path="res://MiscObjects/travel_gate.tscn" id="2_ip8uc"]
+[ext_resource type="PackedScene" uid="uid://bnj5edvnqjj34" path="res://NPCs/boss.tscn" id="3_ai07e"]
+[ext_resource type="PackedScene" uid="uid://b0mydy4ttdrps" path="res://NPCs/inez.tscn" id="4_i83yi"]
 
 [node name="Camp1" type="Node2D"]
+script = ExtResource("1_fxuia")
 
 [node name="TextBox" type="Sprite2D" parent="."]
 position = Vector2(566, 448)
@@ -13,7 +17,19 @@ texture = ExtResource("1_s1ba8")
 position = Vector2(1014, 372)
 texture = ExtResource("1_s1ba8")
 
+[node name="TextBox3" type="Sprite2D" parent="."]
+position = Vector2(1435, 505)
+texture = ExtResource("1_s1ba8")
+
+[node name="Digsite" type="Marker2D" parent="TextBox3"]
+
 [node name="gate_main_city" parent="." instance=ExtResource("2_ip8uc")]
 position = Vector2(1020, 258)
 destination_level = "main_city"
 destination_gate = "camp_1"
+
+[node name="Boss" parent="." instance=ExtResource("3_ai07e")]
+position = Vector2(562, 415)
+
+[node name="Inez" parent="." instance=ExtResource("4_i83yi")]
+position = Vector2(518, 483)
