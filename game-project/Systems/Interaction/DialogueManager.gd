@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var control: Control = $Control
 
-@onready var text_box_scene = preload("uid://v83jqtgcrcul")
 @onready var choices_box: VBoxContainer = $Control/ChoicesBox
 @onready var speaker_label: Label = $Control/PanelContainer/ColorRect/VBoxContainer/SpeakerLabel
 @onready var text_label: Label = $Control/PanelContainer/ColorRect/VBoxContainer/TextLabel
@@ -33,12 +32,17 @@ func _ready() -> void:
 	hide()
 
 func start_for_npc(npc_id: String) -> void:
-	var data = load_dialogue(npc_id)
-	var start_id = _resolve_entry(data)
+	var full_dialogue_data = load_dialogue(npc_id)
+	var day_key = "day_%d" % GameData.get_value("current_day", 1)
+	var day_data = full_dialogue_data.get(day_key, {})
+	if day_data.is_empty():
+		push_error("No dialogue for day: " + day_key)
+		return
+	var start_id = _resolve_entry(day_data)
 	if start_id == "":
 		push_error("No valid entry found for: " + npc_id)
 		return
-	_start(data, start_id)
+	_start(day_data, start_id)
 	
 func load_dialogue(id: String) -> Dictionary:
 	var path = "res://Resources/Dialogue/" + id + ".json"
