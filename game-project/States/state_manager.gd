@@ -32,6 +32,7 @@ func clear_stack() -> void:
 		
 func save_and_quit() -> void:
 	saver_loader.save_game()
+	free_level()
 	clear_stack()
 	push_state(MainMenuState.new(self))
 	

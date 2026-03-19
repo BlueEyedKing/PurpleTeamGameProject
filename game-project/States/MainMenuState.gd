@@ -13,3 +13,6 @@ func Exit():
 func _on_start_requested():
 	manager.clear_stack()
 	manager.push_state(PlayingState.new(manager))
+
+func Update(_delta: float) -> void:
+	pass
