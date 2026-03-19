@@ -21,19 +21,12 @@ signal finished_displaying()
 func display_text(text_to_display: String, sfx):
 	text = text_to_display
 	label.text = text_to_display
-	
-	await resized
-	custom_minimum_size.x = min(size.x, MAX_WIDTH)
-	
-	if size.x > MAX_WIDTH:
-		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		await resized # waits for x resize
-		await resized # waits for y resize
-		custom_minimum_size.y = size.y
-	
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD
+	custom_minimum_size.x = MAX_WIDTH
+	await get_tree().process_frame
+	custom_minimum_size.y = size.y
 	global_position.x -= size.x / 2
 	global_position.y -= size.y + 24
-	
 	label.text = ""
 	
 	if sfx:
@@ -57,6 +50,12 @@ func _display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
+
+func skip() -> void:
+	timer.stop()
+	label.text = text
+	letter_index = text.length()
+	finished_displaying.emit()
 
 
 func _on_letter_display_timer_timeout() -> void:
