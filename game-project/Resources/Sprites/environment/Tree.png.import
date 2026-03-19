@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daygqavbiumgl"
-path="res://.godot/imported/Main_Player_Walking_Right-export.png-d3e803ad8e554d96e395f594e131f781.ctex"
+uid="uid://b3j8kevtmcooc"
+path="res://.godot/imported/Tree.png-037d3c05221d4dccc51ac80817e01560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Main_Player_Walking_Right-export.png"
-dest_files=["res://.godot/imported/Main_Player_Walking_Right-export.png-d3e803ad8e554d96e395f594e131f781.ctex"]
+source_file="res://Resources/Sprites/environment/Tree.png"
+dest_files=["res://.godot/imported/Tree.png-037d3c05221d4dccc51ac80817e01560.ctex"]
 
 [params]
 

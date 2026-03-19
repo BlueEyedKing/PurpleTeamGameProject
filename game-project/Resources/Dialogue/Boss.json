@@ -1,75 +1,247 @@
 {
-	"day_1_intro": {
-	"id": "day_1_intro",
-	"entry_point": true,
-	"conditions": {
-		"day": 1,
-		"flags_absent": ["met_inez"]
+	"day_1": {
+		"day_1_intro": {
+		"id": "day_1_intro",
+		"entry_point": true,
+		"conditions": {
+			"flags_absent": ["met_boss"]
+		},
+		"on_finish": {
+			"set_flags": ["met_boss"]
+		},
+		"speaker": "Boss",
+		"text": "...You, there! Careful where you step, this is an archeological site.",
+		"type": "spoken",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_intro_2"
+		},
+		"day_1_intro_2": {
+		"speaker": "Inez",
+		"text": "Oh, hi! It's not often that people wander out to the digsite.",
+		"portrait": "CoworkerNeutral",
+		"next_id": "day_1_intro_2-extra"
+		},
+		"day_1_intro_2-extra": {
+		"speaker": "Inez",
+		"text": "My name is Inez, and you are..?",
+		"portrait": "CoworkerNeutral",
+		"action": "name_input",
+		"next_id": "day_1_intro_3"
+		},
+		"day_1_intro_3": {
+		"speaker": "Inez",
+		"text": "[NAME]..?",
+		"portrait": "CoworkerNeutral",
+		"next_id": "day_1_intro_4"
+		},
+		"day_1_intro_4": {
+		"speaker": "Boss",
+		"text": "[NAME]! You must be the new recruit coming in from the city. Welcome to Amaranth Heights, and welcome to the Amaranth Archeology team. We’re happy to have you.",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_intro_5"
+		},
+		"day_1_intro_5": {
+		"speaker": "Inez",
+		"text": "Oh, welcome! I didn’t realize you were going to be working with us.",
+		"portrait": "CoworkerNeutral",
+		"next_id": "day_1_intro_6"
+	  	},
+		"day_1_intro_6": {
+		"speaker": "Inez",
+		"text": "It’s lovely to meet you!",
+		"portrait": "CoworkerNeutral",
+		"next_id": "day_1_intro_7"
+		},
+		"day_1_intro_7": {
+		"speaker": "Boss",
+		"text": "Now that you’re here, we can get started. Inez, why don’t you head into camp and get everything set up?",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_intro_8"
+		},
+		"day_1_intro_8": {
+		"speaker": "Inez",
+		"text": "Aye aye, captain.",
+		"portrait": "CoworkerNeutral",
+		"action": "inez_leaves",
+		"next_id": "day_1_intro_9"
+		},
+		"day_1_intro_9": {
+		"speaker": "Boss",
+		"text": "Ha Ha Ha. While Inez is doing that, I’ll show you the ropes.",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_intro_10"
+		},
+		"day_1_intro_10": {
+		"speaker": "Boss",
+		"text": "Its nothing too complicated, I’m sure you’ll get it in no time.",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_intro_11"
+		},
+		"day_1_intro_11": {
+		"speaker": "You",
+		"text": "I look forward to working with you.",
+		"portrait": "PlayerNeutral",
+		"next_id": null
+		},
+		
+		"day_1_tutorial": {
+		"id": "day_1_tutorial",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss"],
+			"flags_absent": ["tutorial_complete"]
+		},
+		"on_finish": {
+			"set_flags": ["tutorial_complete"]
+		},
+		"speaker": "Boss",
+		"text": "Your workdays will include digging up fossils, cleaning and preparing them, and taking fossils to the museum.",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_tutorial_2"
+		},
+		"day_1_tutorial_2": {
+		"speaker": "Boss",
+		"text": "You’ll start with digging up fossils. All of our dig sites are on these open patches of land, see?",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_tutorial_3"
+		},
+		"day_1_tutorial_3": {
+		"speaker": "Boss",
+		"text": "Look for the dark patches of dirt on the ground, that usually means there’s something just under the surface.",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_tutorial_4"
+		},
+		"day_1_tutorial_4": {
+		"speaker": "Boss",
+		"text": "Then go dig in the patch until you find something.. Or until you can’t see anything there anymore.",
+		"portrait": "BossNeutral",
+		"next_id": null
+		},
+		
+		
+		"day_1_generic_work": {
+		"id": "day_1_generic_work",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete"],
+			"flags_absent": ["cleaning_complete", "digging_complete"]
+		},
+		"speaker": "Boss",
+		"text": "Head into the tent to get started on the fossil preparation, or to the pit for digging.",
+		"portrait": "BossNeutral",
+		"next_id": null
+		},
+		
+		"day_1_generic_digging": {
+		"id": "day_1_generic_digging",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete", "cleaning_complete"],
+			"flags_absent": ["digging_complete"]
+		},
+		"speaker": "Boss",
+		"text": "Head into the pit for digging.",
+		"portrait": "BossNeutral",
+		"next_id": null
+		},
+		
+		"day_1_generic_cleaning": {
+		"id": "day_1_generic_cleaning",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete", "digging_complete"],
+			"flags_absent": ["cleaning_complete"]
+		},
+		"speaker": "Boss",
+		"text": "Head into the tent to get started on the fossil preparation.",
+		"portrait": "BossNeutral",
+		"next_id": null
+		},
+		
+		
+		"day_1_work_finish": {
+		"id": "day_1_work_finish",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete", "digging_complete", "cleaning_complete"],
+			"flags_absent": ["work_done"]
+		},
+		"on_finish": {
+			"set_flags": ["work_done"]
+		},
+		"speaker": "Boss",
+		"text": "Great work today! These all look… huh?",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_work_finish_2"
+		},
+		"day_1_work_finish_2": {
+		"speaker": "You",
+		"text": "Ah.. one of the fossils I found.",
+		"type": "thought",
+		"portrait": "PlayerNeutral",
+		"next_id": "day_1_work_finish_3"
+		},
+		"day_1_work_finish_3": {
+		"speaker": "Boss",
+		"text": "I’m not sure what this one is, but it doesn’t look like it's supposed to be here.",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_work_finish_4"
+		},
+		"day_1_work_finish_4": {
+		"speaker": "Boss",
+		"text": "...",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_work_finish_5"
+		},
+		"day_1_work_finish_5": {
+		"speaker": "Boss",
+		"text": "Ha Ha Ha! Are you playing a prank on me?",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_work_finish_6"
+		},
+		"day_1_work_finish_6": {
+		"speaker": "Boss",
+		"text": "You’ve certainly got a sense of humor.",
+		"portrait": "BossNeutral",
+		"next_id": "day_1_work_finish_7"
+		},
+		"day_1_work_finish_7": {
+		"speaker": "Boss",
+		"text": "Here, take all those other fossils to the museum. You can keep your little toy.",
+		"portrait": "BossNeutral",
+		"next_id": null
+		},
+		
+		"day_1_generic": {
+		"id": "day_1_generic",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["work_done"]
+		},
+		"speaker": "Boss",
+		"text": "Get going then..",
+		"portrait": "BossNeutral",
+		"next_id": null
+		}
 	},
-	"on_finish": {
-		"set_flags": ["met_inez"]
-	},
-	"speaker": "Boss",
-	"text": "...You, there! Careful where you step, this is an archeological site.",
-	"type": "spoken",
-	"portrait": "BossNeutral",
-	"next_id": "day_1_intro_2"
-	},
-	"day_1_intro_2": {
-	"speaker": "Inez",
-	"text": "Oh, hi! It's not often that people wander out to the digsite.
-	My name is Inez, and you are..?",
-	"portrait": "CoworkerNeutral",
-	"action": "name_input",
-	"next_id": "day_1_intro_3"
-	},
-	"day_1_intro_3": {
-	"speaker": "Inez",
-	"text": "[NAME]..?",
-	"portrait": "CoworkerNeutral",
-	"next_id": "day_1_intro_4"
-	},
-	"day_1_intro_4": {
-	"speaker": "Boss",
-	"text": "[NAME]! You must be the new recruit coming in from the city. Welcome to Amaranth Heights, and welcome to the Amaranth Archeology team. We’re happy to have you.",
-	"portrait": "BossNeutral",
-	"next_id": "day_1_intro_5"
-	},
-	"day_1_intro_5": {
-	"speaker": "Inez",
-	"text": "Oh, welcome! I didn’t realize you were going to be working with us.",
-	"portrait": "CoworkerNeutral",
-	"next_id": "day_1_intro_6"
-  	},
-	"day_1_intro_6": {
-	"speaker": "Inez",
-	"text": "It’s lovely to meet you!",
-	"portrait": "CoworkerNeutral",
-	"next_id": "day_1_intro_7"
-	},
-	"day_1_intro_7": {
-	"speaker": "Boss",
-	"text": "Now that you’re here, we can get started. Inez, why don’t you head into camp and get everything set up?",
-	"portrait": "BossNeutral",
-	"next_id": "day_1_intro_8"
-	},
-	"day_1_intro_8": {
-	"speaker": "Inez",
-	"text": "Aye aye, captain.",
-	"portrait": "CoworkerNeutral",
-	"action": "inez_leaves",
-	"next_id": null
-	},
-	
-	"day_1_generic": {
-	"id": "day_1_generic",
-	"entry_point": true,
-	"conditions": {
-		"flags_required": ["met_inez"]
-	},
-	"speaker": "Boss",
-	"text": "Let's get to work",
-	"portrait": "BossNeutral",
-	"next_id": null
+	"day_2": {
+		
+		"day_2_generic": {
+		"id": "day_2_generic",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete"]
+		},
+		"speaker": "Boss",
+		"text": "Let's get to work",
+		"portrait": "BossNeutral",
+		"next_id": null
+		},
+		"day_2_generic_2": {
+		"speaker": "Boss",
+		"text": "...",
+		"portrait": "BossNeutral",
+		"next_id": null
+		},
 	}
 }

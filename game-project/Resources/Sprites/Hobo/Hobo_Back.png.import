@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk24y1upn75hs"
-path="res://.godot/imported/Main_Player_Left-export.png-b493a74b54c292e70028443e73eeb701.ctex"
+uid="uid://ddfok2wqb4smf"
+path="res://.godot/imported/Hobo_Back.png-e2e05cacd78abc8c3406caeabe3b8e90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Main_Player_Left-export.png"
-dest_files=["res://.godot/imported/Main_Player_Left-export.png-b493a74b54c292e70028443e73eeb701.ctex"]
+source_file="res://Resources/Sprites/Hobo/Hobo_Back.png"
+dest_files=["res://.godot/imported/Hobo_Back.png-e2e05cacd78abc8c3406caeabe3b8e90.ctex"]
 
 [params]
 

@@ -1,0 +1,42 @@
+{
+	"day_1": {
+		"day_1_generic_stranger": {
+		"id": "day_1_generic_stranger",
+		"entry_point": true,
+		"conditions": {
+			"flags_absent": ["met_boss", "work_done"]
+		},
+		"speaker": "Inez",
+		"text": "...",
+		"portrait": "CoworkerNeutral",
+		"next_id": null
+		},
+		
+		
+		"day_1_generic_camp": {
+		"id": "day_1_generic_camp",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss"],
+			"flags_absent": ["work_done"]
+		},
+		"speaker": "Inez",
+		"text": "Go chat with the Boss [NAME]",
+		"portrait": "CoworkerNeutral",
+		"next_id": null
+		},
+		
+		
+		"day_1_generic_work_done": {
+		"id": "day_1_generic_work_done",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss","work_done"],
+		},
+		"speaker": "Inez",
+		"text": "What are you still doing here?",
+		"portrait": "CoworkerNeutral",
+		"next_id": null
+		}
+	}
+}
