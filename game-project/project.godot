@@ -24,6 +24,8 @@ TimeManager="*res://Systems/Time/time_manager.gd"
 AudioManager="*res://Scripts/audio_manager.gd"
 GameData="*res://Scripts/GameData.gd"
 DialogueUi="*res://UI/dialogue_ui.tscn"
+InfoBubble="*res://Scripts/infoBubble.gd"
+AudioLib="*res://Resources/Audio/AudioLib.gd"
 
 [display]
 

@@ -3,7 +3,7 @@ class_name Player
 
 @export var SPEED: float = 300.0
 
-@onready var animated_sprite_2d: AnimatedSprite2D = get_node_or_null("AnimatedSprite2D")
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var _input_locked := false
 

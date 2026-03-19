@@ -116,10 +116,10 @@ position = Vector2(627, 1527)
 position = Vector2(1423, 1230)
 
 [node name="Boss" parent="." instance=ExtResource("8_w68rg")]
-position = Vector2(769, 1238)
+position = Vector2(624, 1262)
 
 [node name="Inez" parent="." instance=ExtResource("9_mfwsu")]
-position = Vector2(480, 1237.0001)
+position = Vector2(515, 1148)
 scale = Vector2(1.62, 1.62)
 
 [node name="CleaningStation" parent="." instance=ExtResource("11_e22rv")]

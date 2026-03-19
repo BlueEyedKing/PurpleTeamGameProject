@@ -7,6 +7,11 @@ extends CanvasLayer
 @onready var text_label: Label = $Control/PanelContainer/ColorRect/VBoxContainer/TextLabel
 @onready var portrait: TextureRect = $Control/PanelContainer/ColorRect/Portrait
 const NAME_INPUT_UI = preload("res://UI/name_input_ui.tscn")
+const NORMAL_FONT = preload("res://Resources/superstar_memesbruh03.ttf")
+const THOUGHT_FONT = preload("res://Resources/Fonts/smalle.ttf")
+
+
+
 var name_input_instance
 
 var dialogue_data: Dictionary = {}
@@ -32,12 +37,17 @@ func _ready() -> void:
 	hide()
 
 func start_for_npc(npc_id: String) -> void:
-	var data = load_dialogue(npc_id)
-	var start_id = _resolve_entry(data)
+	var full_dialogue_data = load_dialogue(npc_id)
+	var day_key = "day_%d" % GameData.get_value("current_day", 1)
+	var day_data = full_dialogue_data.get(day_key, {})
+	if day_data.is_empty():
+		push_error("No dialogue for day: " + day_key)
+		return
+	var start_id = _resolve_entry(day_data)
 	if start_id == "":
 		push_error("No valid entry found for: " + npc_id)
 		return
-	_start(data, start_id)
+	_start(day_data, start_id)
 	
 func load_dialogue(id: String) -> Dictionary:
 	var path = "res://Resources/Dialogue/" + id + ".json"
@@ -92,6 +102,14 @@ func _show_dialogue(id: String) -> void:
 		
 	current_dialogue_id = id
 	var entry = dialogue_data[id]
+	var style = entry.get("type", "spoken")
+	if style == "thought":
+		text_label.add_theme_color_override("font_color", Color(0.7,0.7,1.0))
+		text_label.add_theme_font_override("font", THOUGHT_FONT)
+	else:
+		text_label.add_theme_color_override("font_color", Color(0,0,0,1))
+		text_label.add_theme_font_override("font", NORMAL_FONT)
+
 	
 	var portrait_id = entry.get("portrait", "")
 	if portrait_id:
@@ -199,7 +217,7 @@ func end_dialogue() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
-	if not event.is_action_pressed("advance_dialog"):
+	if not event.is_action_pressed("ui_accept"):
 		return
 	if is_typing:
 		_skip_typing()

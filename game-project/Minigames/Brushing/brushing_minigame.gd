@@ -40,7 +40,7 @@ func start(fossil_texture: Texture2D) -> void:
 	_update_progress_display()
 	show()
 	# Hide the system cursor while brushing
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _setup_mask() -> void:
 	mask_image = Image.create(MASK_SIZE, MASK_SIZE, false, Image.FORMAT_L8)

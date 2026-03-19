@@ -43,7 +43,8 @@ func _on_interact() -> void:
 		marker.visible = false
 
 	EventBus.minigame_finished.emit()
+	GameData.set_flag("cleaning_complete")
 	InteractionManager.unlock(self)
-
+	queue_free()
 func _get_ui_layer() -> CanvasLayer:
 	return get_tree().root.get_node("Main/UI")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnj5edvnqjj34"]
 
-[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_go448"]
+[ext_resource type="Script" uid="uid://drvtlawblnwam" path="res://Scripts/NPC.gd" id="1_go448"]
 [ext_resource type="Texture2D" uid="uid://0gtu2u7qj80x" path="res://Resources/Sprites/Boss/Boss_Front-export.png" id="2_go448"]
 [ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="3_e64rb"]
 

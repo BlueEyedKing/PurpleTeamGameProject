@@ -10,7 +10,8 @@ signal state_changed(new_state) #debugging purposes
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
-	
+	EventBus.settings_requested.connect(func():
+		push_state(SettingsState.new(self)))
 func push_state(state) -> void:
 	state_stack.push_back(state)
 	state.Enter()
