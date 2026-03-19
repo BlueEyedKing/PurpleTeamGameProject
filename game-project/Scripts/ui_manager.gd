@@ -6,10 +6,13 @@ extends Node
 var pause_menu
 var main_menu
 var time_hud
+var settings
 
 func _ready() -> void:
 	EventBus.pause_menu_show_requested.connect(show_pause_menu)
 	EventBus.pause_menu_hide_requested.connect(hide_pause_menu)
+	EventBus.settings_show_requested.connect(show_settings)
+	EventBus.settings_hide_requested.connect(hide_settings)
 	EventBus.show_main_menu_requested.connect(show_main_menu)
 	EventBus.free_main_menu_requested.connect(free_main_menu)
 func show_pause_menu() -> void:
@@ -22,6 +25,18 @@ func hide_pause_menu() -> void:
 	if pause_menu:
 		pause_menu.queue_free()
 		pause_menu = null
+
+func show_settings() -> void:
+	settings = preload("res://UI/settings.tscn").instantiate()
+	ui.add_child(settings)
+	settings.close_requested.connect(func():
+		state_manager.pop_state())
+
+func hide_settings() -> void:
+	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
+	if settings:
+		settings.queue_free()
+		settings = null
 
 func show_main_menu() -> void:
 	main_menu = preload("res://UI/main_menu.tscn").instantiate()

@@ -8,7 +8,12 @@ func _ready() -> void:
 	quit_button.pressed.connect(_on_quit_pressed)
 
 func _on_start_pressed() -> void:
+	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
 	EventBus.start_requested.emit()
+	
+func _on_settings_button_pressed() -> void:
+	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
+	EventBus.settings_show_requested.emit()
 
 func _on_quit_pressed() -> void:
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
