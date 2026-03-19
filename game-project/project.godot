@@ -13,15 +13,17 @@ config_version=5
 config/name="GameProject"
 run/main_scene="uid://82iulmcrd2d6"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://Resources/icon.svg"
+config/icon="res://Resources/Sprites/icon.svg"
 
 [autoload]
 
 EventBus="*res://Scripts/EventBus.gd"
 GameTheme="*res://Resources/game_theme.gd"
-DialogManager="*res://Systems/Interaction/DialogManager.gd"
 InteractionManager="*res://Systems/Interaction/InteractionManager.tscn"
 TimeManager="*res://Systems/Time/time_manager.gd"
+AudioManager="*res://Scripts/audio_manager.gd"
+GameData="*res://Scripts/GameData.gd"
+DialogueUi="*res://UI/dialogue_ui.tscn"
 
 [display]
 

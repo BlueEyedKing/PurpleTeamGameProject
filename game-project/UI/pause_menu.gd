@@ -2,6 +2,7 @@ extends Control
 
 @onready var continue_button: Button = $CenterContainer/MainPanel/VBoxContainer/ContinueButton
 @onready var quit_button: Button = $CenterContainer/MainPanel/VBoxContainer/QuitButton
+const button_sfx = preload("uid://de4ikle11vwli") #GAME_PROJECT_2_MENU_CLICK
 
 signal save_and_quit_requested
 signal continue_requested
@@ -13,7 +14,9 @@ func _ready() -> void:
 	quit_button.pressed.connect(_on_save_and_quit_pressed)
 	
 func _on_continue_pressed() -> void:
+	AudioManager.play_sfx(button_sfx)
 	continue_requested.emit()
 	
 func _on_save_and_quit_pressed() -> void:
+	AudioManager.play_sfx(button_sfx)
 	save_and_quit_requested.emit()

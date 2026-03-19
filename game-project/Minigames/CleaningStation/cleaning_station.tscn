@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c54jk6i5psfr1"]
+
+[ext_resource type="Script" uid="uid://hayojdamdvqc" path="res://Minigames/CleaningStation/cleaning_station.gd" id="1_cs"]
+[ext_resource type="Texture2D" uid="uid://q2imhdfp3cw1" path="res://Resources/Sprites/icon.svg" id="2_jk38x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 40.0
+
+[node name="CleaningStation" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_cs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -2)
+scale = Vector2(0.3046875, 0.28125)
+texture = ExtResource("2_jk38x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,43 @@
+{
+  "intro": {
+	"speaker": "Boss",
+	"speaker_display": "???",
+	"text": "...You, there! Careful where you step, this is an archeological site.",
+	"type": "spoken",
+	"portrait": "BossMad",
+	"choices": [
+	  { "text": "I'm here to work.", "next_id": "Coworker_response" },
+	  { "text": "Just passing through.", "next_id": "passing_response" },
+	  { "text": "[if has_permit] I have a work permit.", "next_id": "permit_response", "condition": "has_permit" }
+	]
+  },
+
+  "Coworker_response": {
+	"speaker": "Coworker",
+	"text": "cool ...",
+	"portrait": "Coworker",
+	"next_id": "goodbye"
+  },
+
+  "passing_response": {
+	"speaker": "Coworker",
+	"text": "Go on then...",
+	"portrait": "Coworker",
+	"next_id": null
+  },
+
+  "permit_response": {
+	"speaker": "Coworker",
+	"text": "Ok lil bro",
+	"portrait": "CoworkerMad",
+	"next_id": null,
+	"on_finish": "let player work?"
+  },
+
+  "goodbye": {
+	"speaker": "Coworker",
+	"text": "Bye",
+	"portrait": "Coworker",
+	"next_id": null
+  }
+}

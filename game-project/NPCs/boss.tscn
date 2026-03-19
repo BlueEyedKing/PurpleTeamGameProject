@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnj5edvnqjj34"]
+
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_go448"]
+[ext_resource type="Texture2D" uid="uid://0gtu2u7qj80x" path="res://Resources/Sprites/Boss/Boss_Front-export.png" id="2_go448"]
+[ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="3_e64rb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajhvy"]
+radius = 94.26028
+
+[node name="Boss" type="Node2D"]
+script = ExtResource("1_go448")
+npc_id = "Boss"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.145, 2.145)
+texture = ExtResource("2_go448")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_e64rb")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 32)
+shape = SubResource("CircleShape2D_ajhvy")

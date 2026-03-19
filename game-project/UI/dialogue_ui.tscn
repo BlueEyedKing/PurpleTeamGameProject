@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnuan8vhyy81g"]
+
+[ext_resource type="Script" uid="uid://qo7mlwjqllb4" path="res://Systems/Interaction/DialogueManager.gd" id="1_6e3n1"]
+[ext_resource type="FontFile" uid="uid://cpxri4imtt1vp" path="res://Resources/superstar_memesbruh03.ttf" id="2_rm4vl"]
+[ext_resource type="Texture2D" uid="uid://q2imhdfp3cw1" path="res://Resources/Sprites/icon.svg" id="3_6e3n1"]
+
+[node name="DialogueUI" type="CanvasLayer"]
+script = ExtResource("1_6e3n1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_top = 790.0
+offset_right = 1920.0
+offset_bottom = 1076.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/PanelContainer"]
+layout_mode = 2
+color = Color(0.8607787, 0.9045541, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 24.0
+offset_right = 1897.0
+offset_bottom = 264.0
+
+[node name="SpeakerLabel" type="Label" parent="Control/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5672439, 0.7287492, 0.44681525, 1)
+theme_override_fonts/font = ExtResource("2_rm4vl")
+theme_override_font_sizes/font_size = 28
+text = "Test Speaker"
+
+[node name="TextLabel" type="Label" parent="Control/PanelContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(1600, 240)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rm4vl")
+theme_override_font_sizes/font_size = 38
+text = "Test Text"
+autowrap_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="Control/PanelContainer/ColorRect"]
+layout_mode = 1
+offset_right = 284.0
+offset_bottom = 284.0
+texture = ExtResource("3_6e3n1")
+
+[node name="ChoicesBox" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 356.0
+offset_right = 1098.0
+offset_bottom = 609.0

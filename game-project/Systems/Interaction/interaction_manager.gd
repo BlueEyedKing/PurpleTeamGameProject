@@ -7,7 +7,17 @@ extends Node2D
 const base_text = "[E] to "
 
 var active_areas = []
-var can_interact = true
+var can_interact: bool:
+	get: return locks.is_empty()
+	
+var locks: Array = []
+
+func lock(owner: Object) -> void:
+	if not locks.has(owner):
+		locks.append(owner)
+
+func unlock(owner: Object) -> void:
+	locks.erase(owner)
 
 func _get_player():
 	return get_tree().get_first_node_in_group("player")
@@ -40,12 +50,9 @@ func _sort_by_distance_to_player(area1, area2):
 	return area1_to_player < area2_to_player
 
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("interact") && can_interact:
 		if active_areas.size() > 0:
-			can_interact = false
 			prompt_panel.hide()
 
 			await active_areas[0].interact.call()
-
-			can_interact = true

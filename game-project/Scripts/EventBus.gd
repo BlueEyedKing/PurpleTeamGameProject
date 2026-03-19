@@ -16,3 +16,7 @@ signal minigame_finished()
 
 # Sleep / day cycle
 signal sleep_requested()
+
+#actions
+signal name_input_done(text: String)
+signal inez_leaves(target: Vector2)
