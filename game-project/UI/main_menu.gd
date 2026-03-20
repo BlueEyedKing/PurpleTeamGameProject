@@ -13,7 +13,7 @@ func _on_start_pressed() -> void:
 	
 func _on_settings_button_pressed() -> void:
 	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
-	EventBus.settings_show_requested.emit()
+	EventBus.settings_requested.emit()
 
 func _on_quit_pressed() -> void:
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
