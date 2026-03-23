@@ -1,11 +1,11 @@
 extends CanvasLayer
 
 @onready var control: Control = $Control
-
 @onready var choices_box: VBoxContainer = $Control/ChoicesBox
-@onready var speaker_label: Label = $Control/PanelContainer/ColorRect/VBoxContainer/SpeakerLabel
-@onready var text_label: Label = $Control/PanelContainer/ColorRect/VBoxContainer/TextLabel
-@onready var portrait: TextureRect = $Control/PanelContainer/ColorRect/Portrait
+@onready var speaker_label: Label = $Control/NinePatchRect/MarginContainer/VBoxContainer/SpeakerLabel
+@onready var text_label: Label = $Control/NinePatchRect/MarginContainer/VBoxContainer/TextLabel
+@onready var portrait: TextureRect = $Control/NinePatchRect/Portrait
+
 const NAME_INPUT_UI = preload("res://UI/name_input_ui.tscn")
 const NORMAL_FONT = preload("res://Resources/superstar_memesbruh03.ttf")
 const THOUGHT_FONT = preload("res://Resources/Fonts/smalle.ttf")
