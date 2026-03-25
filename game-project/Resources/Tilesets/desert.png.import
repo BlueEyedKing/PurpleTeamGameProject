@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnvpxew2dr6nc"
-path="res://.godot/imported/Shadow.png-bc01dd1a1fbcd88105dc2b3eab70ff8b.ctex"
+uid="uid://c4asl770rcr37"
+path="res://.godot/imported/desert.png-75eaf6af635e5633f11024263b0dcc8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilesets/Shadow.png"
-dest_files=["res://.godot/imported/Shadow.png-bc01dd1a1fbcd88105dc2b3eab70ff8b.ctex"]
+source_file="res://Resources/Tilesets/desert.png"
+dest_files=["res://.godot/imported/desert.png-75eaf6af635e5633f11024263b0dcc8f.ctex"]
 
 [params]
 

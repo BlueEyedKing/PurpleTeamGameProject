@@ -78,7 +78,7 @@
 		"next_id": "day_1_intro_11"
 		},
 		"day_1_intro_11": {
-		"speaker": "You",
+		"speaker": "Player",
 		"text": "I look forward to working with you.",
 		"portrait": "PlayerNeutral",
 		"next_id": null
@@ -175,7 +175,7 @@
 		"next_id": "day_1_work_finish_2"
 		},
 		"day_1_work_finish_2": {
-		"speaker": "You",
+		"speaker": "Player",
 		"text": "Ah.. one of the fossils I found.",
 		"type": "thought",
 		"portrait": "PlayerNeutral",

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwp3cwts7a1sd"
-path="res://.godot/imported/Fossil1.png-02a21f28f2d6f8b271949305db4bd44f.ctex"
+uid="uid://q2xpls1fi8e7"
+path="res://.godot/imported/Fossil7.png-73c15e43e021b8b70e01fe483a99b49f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Fossils/Fossil1.png"
-dest_files=["res://.godot/imported/Fossil1.png-02a21f28f2d6f8b271949305db4bd44f.ctex"]
+source_file="res://Resources/Sprites/Fossils/Fossil7.png"
+dest_files=["res://.godot/imported/Fossil7.png-73c15e43e021b8b70e01fe483a99b49f.ctex"]
 
 [params]
 

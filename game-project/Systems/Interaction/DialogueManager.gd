@@ -114,7 +114,10 @@ func _show_dialogue(id: String) -> void:
 	var portrait_id = entry.get("portrait", "")
 	if portrait_id:
 		portrait.texture = load("res://Resources/Sprites/Portraits/" + portrait_id + ".png")
-	speaker_label.text = entry.get("speaker", "")
+	var speaker = entry.get("speaker", "")
+	if speaker == "Player":
+		speaker = GameData.get_value("player_name", "...")
+	speaker_label.text = speaker
 	current_text = entry.get("text", "...")
 	current_text = _substitute_text(entry.get("text", ""))
 	

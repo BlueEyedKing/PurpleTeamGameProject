@@ -7,13 +7,13 @@ class_name CleaningStation
 const BRUSHING = preload("res://Minigames/Brushing/brushing_minigame.tscn")
 
 const FOSSIL_TEXTURES = [
-	preload("res://Sprites/Fossils/Fossil1.png"),
-	preload("res://Sprites/Fossils/Fossil2.png"),
-	preload("res://Sprites/Fossils/Fossil3.png"),
-	preload("res://Sprites/Fossils/Fossil4.png"),
-	preload("res://Sprites/Fossils/Fossil5.png"),
-	preload("res://Sprites/Fossils/Fossil6.png"),
-	preload("res://Sprites/Fossils/Fossil7.png"),
+	preload("res://Resources/Sprites/Fossils/Fossil1.png"),
+	preload("res://Resources/Sprites/Fossils/Fossil2.png"),
+	preload("res://Resources/Sprites/Fossils/Fossil3.png"),
+	preload("res://Resources/Sprites/Fossils/Fossil4.png"),
+	preload("res://Resources/Sprites/Fossils/Fossil5.png"),
+	preload("res://Resources/Sprites/Fossils/Fossil6.png"),
+	preload("res://Resources/Sprites/Fossils/Fossil7.png"),
 ]
 
 var _used := false

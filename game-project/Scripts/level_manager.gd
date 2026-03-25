@@ -28,6 +28,8 @@ func load_level(level: String, gate: String = "") -> void:
 	world.add_child(current_level)
 	if AudioLib.MUSIC.has(level):
 		AudioManager.play_music(AudioLib.MUSIC[level])
+	if AudioLib.AMBIANCE.has(level):
+		AudioManager.play_ambiance(AudioLib.AMBIANCE[level])
 	load_player(gate)
 
 

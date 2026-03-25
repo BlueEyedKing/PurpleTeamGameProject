@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://b5cn2mu4srl7d"]
 
 [ext_resource type="Script" uid="uid://cgkkgaiys01io" path="res://Levels/camp_1.gd" id="1_camp"]
-[ext_resource type="Texture2D" uid="uid://b210ny8ytgh5x" path="res://Sprites/Tilesets/Tileset.png" id="2_fxuia"]
+[ext_resource type="Texture2D" uid="uid://b210ny8ytgh5x" path="res://Resources/Tilesets/Tileset.png" id="2_fxuia"]
 [ext_resource type="PackedScene" uid="uid://c46j0y5d7wn0w" path="res://MiscObjects/travel_gate.tscn" id="3_gate"]
 [ext_resource type="PackedScene" uid="uid://bvt8j6rnh0amc" path="res://Minigames/DigSpot/dig_spot.tscn" id="7_dn5pt"]
 [ext_resource type="PackedScene" uid="uid://bnj5edvnqjj34" path="res://NPCs/boss.tscn" id="8_w68rg"]
