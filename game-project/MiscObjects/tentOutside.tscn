@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8wg5a1yna44t"]
+
+[ext_resource type="Texture2D" uid="uid://3nhr4521gbtn" path="res://Resources/Sprites/Buildings/Tent.png" id="1_ivvow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjnbl"]
+size = Vector2(62, 26)
+
+[node name="tent" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ivvow")
+offset = Vector2(0, -27.005)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_rjnbl")

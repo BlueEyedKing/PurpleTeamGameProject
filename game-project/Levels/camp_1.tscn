@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b210ny8ytgh5x" path="res://Resources/Tilesets/Tileset.png" id="2_fxuia"]
 [ext_resource type="PackedScene" uid="uid://c46j0y5d7wn0w" path="res://MiscObjects/travel_gate.tscn" id="3_gate"]
 [ext_resource type="PackedScene" uid="uid://bvt8j6rnh0amc" path="res://Minigames/DigSpot/dig_spot.tscn" id="7_dn5pt"]
-[ext_resource type="Texture2D" uid="uid://3nhr4521gbtn" path="res://Resources/Sprites/Buildings/Tent.png" id="8_u2b32"]
+[ext_resource type="PackedScene" uid="uid://b8wg5a1yna44t" path="res://MiscObjects/tentOutside.tscn" id="8_fxper"]
 [ext_resource type="PackedScene" uid="uid://bnj5edvnqjj34" path="res://NPCs/boss.tscn" id="8_w68rg"]
 [ext_resource type="PackedScene" uid="uid://b0mydy4ttdrps" path="res://NPCs/inez.tscn" id="9_mfwsu"]
 [ext_resource type="PackedScene" uid="uid://c4rf5e2em40cx" path="res://Resources/objects/tree.tscn" id="9_rhb38"]
@@ -144,12 +144,9 @@ destination_gate = "camp_1"
 [node name="SpawnPoint" parent="ObjectsParent/gate_main_city" index="2"]
 position = Vector2(0, -11)
 
-[node name="Tent" type="Node2D" parent="ObjectsParent"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ObjectsParent/Tent"]
-position = Vector2(515, 311.99997)
-scale = Vector2(4.8703704, 4.8703704)
-texture = ExtResource("8_u2b32")
+[node name="tent" parent="ObjectsParent" instance=ExtResource("8_fxper")]
+position = Vector2(518, 373)
+scale = Vector2(5, 5)
 
 [node name="Tree5" parent="ObjectsParent" instance=ExtResource("9_rhb38")]
 position = Vector2(1743, 528)
@@ -200,7 +197,7 @@ position = Vector2(966, 235)
 position = Vector2(951, 83)
 
 [node name="Tree25" parent="ObjectsParent" instance=ExtResource("9_rhb38")]
-position = Vector2(473, -28)
+position = Vector2(454, 80)
 
 [node name="Tree9" parent="ObjectsParent" instance=ExtResource("9_rhb38")]
 position = Vector2(266, 525)
@@ -305,10 +302,10 @@ position = Vector2(1004, 1401)
 position = Vector2(366, 888)
 
 [node name="TreeSmallFlip15" parent="ObjectsParent" instance=ExtResource("13_0d2j8")]
-position = Vector2(769, 18)
+position = Vector2(760, 59)
 
 [node name="TreeSmallFlip16" parent="ObjectsParent" instance=ExtResource("13_0d2j8")]
-position = Vector2(295, -10)
+position = Vector2(297, 18)
 
 [node name="TreeSmallFlip7" parent="ObjectsParent" instance=ExtResource("13_0d2j8")]
 position = Vector2(2276, 579)
@@ -408,7 +405,7 @@ position = Vector2(1206, 767)
 position = Vector2(431, 740)
 
 [node name="TreeFlip26" parent="ObjectsParent" instance=ExtResource("15_rhb38")]
-position = Vector2(594, -40)
+position = Vector2(610, 82)
 
 [node name="TreeFlip15" parent="ObjectsParent" instance=ExtResource("15_rhb38")]
 position = Vector2(166, 900)
