@@ -1,11 +1,17 @@
 extends Node
 
 ## LevelManager — loads and unloads level scenes.
-## Scenes: "house", "camp_1", "main_city"
+## Scenes: "house", "camp_1", "main_city", "museum", "bar", "shop"
 
 const HOUSE     = preload("res://Levels/house.tscn")
 const CAMP_1    = preload("res://Levels/camp_1.tscn")
 const MAIN_CITY = preload("res://Levels/main_city.tscn")
+const MUSEUM    = preload("res://Levels/museum.tscn")
+const BAR       = preload("res://Levels/bar.tscn")
+const SHOP      = preload("res://Levels/shop.tscn")
+
+## Levels that use first-person click UI — no player CharacterBody2D is loaded.
+const INTERIOR_LEVELS: Array[String] = ["house", "museum", "bar", "shop"]
 
 @onready var world: Node2D = $"../../World"
 
@@ -22,6 +28,12 @@ func load_level(level: String, gate: String = "") -> void:
 			current_level = CAMP_1.instantiate()
 		"main_city":
 			current_level = MAIN_CITY.instantiate()
+		"museum":
+			current_level = MUSEUM.instantiate()
+		"bar":
+			current_level = BAR.instantiate()
+		"shop":
+			current_level = SHOP.instantiate()
 		_:
 			push_error("LevelManager: Unknown level '%s'" % level)
 			return
@@ -30,7 +42,8 @@ func load_level(level: String, gate: String = "") -> void:
 		AudioManager.play_music(AudioLib.MUSIC[level])
 	if AudioLib.AMBIANCE.has(level):
 		AudioManager.play_ambiance(AudioLib.AMBIANCE[level])
-	load_player(gate)
+	if level not in INTERIOR_LEVELS:
+		load_player(gate)
 
 
 func free_level() -> void:

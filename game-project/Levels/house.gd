@@ -1,18 +1,22 @@
 extends Node2D
 
-## House level script — wires the door and bed interactions.
+## House interior — first-person point-and-click view.
+## No player movement; player clicks buttons to interact.
 
-@onready var door_area: InteractionArea = $DoorArea
-@onready var bed_area: InteractionArea = $BedArea
+@onready var door_button: Button = $CanvasLayer/DoorButton
+@onready var bed_button: Button  = $CanvasLayer/BedButton
 
 func _ready() -> void:
-	door_area.action_name = "Leave House"
-	door_area.interact = Callable(self, "_on_door_interact")
-	bed_area.action_name = "Sleep"
-	bed_area.interact = Callable(self, "_on_bed_interact")
+	door_button.pressed.connect(_on_door_pressed)
+	bed_button.pressed.connect(_on_bed_pressed)
 
-func _on_door_interact() -> void:
-	EventBus.level_load_requested.emit("camp_1", "")
+func _on_door_pressed() -> void:
+	# In the morning the player leaves for the dig site.
+	# At night the player returns to the city.
+	if TimeManager.current_phase == TimeManager.Phase.MORNING:
+		EventBus.level_load_requested.emit("camp_1", "")
+	else:
+		EventBus.level_load_requested.emit("main_city", "HouseDoor")
 
-func _on_bed_interact() -> void:
+func _on_bed_pressed() -> void:
 	EventBus.sleep_requested.emit()
