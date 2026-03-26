@@ -7,9 +7,12 @@ extends Node2D
 
 func _ready() -> void:
 	exit_button.pressed.connect(_on_exit_pressed)
-	camila_button.pressed.connect(func():
-		camila_button.release_focus()
-		DialogueUi.start_for_npc("Camila"))
+	camila_button.pressed.connect(_on_talk_pressed.bind(camila_button, "Camila"))
+	DialogueUi.dialog_finished.connect(func(): camila_button.visible = true)
+
+func _on_talk_pressed(button: Button, npc_id: String) -> void:
+	button.visible = false
+	DialogueUi.start_for_npc(npc_id)
 
 func _on_exit_pressed() -> void:
-	EventBus.level_load_requested.emit("main_city", "museum")
+	EventBus.level_load_requested.emit("main_city", "MuseumDoor")
