@@ -57,11 +57,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
-radius = 5.75
-height = 11.5
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtle1"]
+size = Vector2(7, 9)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_4ntmi")
 
@@ -69,11 +69,12 @@ script = ExtResource("1_4ntmi")
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
 animation = &"right"
+offset = Vector2(0, -11.06)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 38)
+position = Vector2(1, -18)
 scale = Vector2(4, 4)
-shape = SubResource("CapsuleShape2D_4ntmi")
+shape = SubResource("RectangleShape2D_vtle1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0

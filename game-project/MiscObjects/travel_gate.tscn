@@ -25,23 +25,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d0ww"]
-size = Vector2(274, 56)
+size = Vector2(274, 75)
 
 [node name="gate" type="Node2D"]
 script = ExtResource("1_elwj1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3.0517578e-05, 7.6293945e-06)
 scale = Vector2(0.47916666, 0.47916666)
 sprite_frames = SubResource("SpriteFrames_0e6fv")
 animation = &"Closed"
+offset = Vector2(0, -193)
 
 [node name="InteractionArea" parent="." instance=ExtResource("4_lf84r")]
 action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 62)
+position = Vector2(0, -37.5)
 shape = SubResource("RectangleShape2D_0d0ww")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(0, 92)
+position = Vector2(0, -38)
