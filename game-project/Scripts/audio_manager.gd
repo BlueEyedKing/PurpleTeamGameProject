@@ -8,11 +8,12 @@ var ambiance_player: AudioStreamPlayer
 const SFX_POOL_SIZE = 8
 var sfx_pool: Array[AudioStreamPlayer] = []
 
-const MUSIC_FADE_DURATION: float = 1.0
-const MUSIC_MIN_DB: float = -40.0
-const MUSIC_MAX_DB: float = 0.0
+const FADE_DURATION: float = 1.0
+const MIN_DB: float = -40.0
+const MAX_DB: float = 0.0
 
 var music_tween: Tween
+var ambiance_tween: Tween
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -49,29 +50,43 @@ func play_music(stream: AudioStream, fade_in: bool = true) -> void:
 	music_player.stream.loop = true
 	music_player.play()
 	if fade_in:
-		music_player.volume_db = MUSIC_MIN_DB
+		music_player.volume_db = MIN_DB
 		music_tween = create_tween()
-		music_tween.tween_property(music_player, "volume_db", MUSIC_MAX_DB, MUSIC_FADE_DURATION)
+		music_tween.tween_property(music_player, "volume_db", MAX_DB, FADE_DURATION)
 
-func stop_music(fade_duration: float = MUSIC_FADE_DURATION) -> void:
+func stop_music(FADE_DURATION: float = FADE_DURATION) -> void:
 	if not music_player.playing:
 		return
 	if music_tween:
 		music_tween.kill()
 	music_tween = create_tween()
-	music_tween.tween_property(music_player, "volume_db", MUSIC_MIN_DB, fade_duration)
+	music_tween.tween_property(music_player, "volume_db", MIN_DB, FADE_DURATION)
 	await music_tween.finished
 	music_player.stop()
-	music_player.volume_db = MUSIC_MAX_DB
+	music_player.volume_db = MAX_DB
 	
 func play_ambiance(stream: AudioStream) -> void:
+	if ambiance_player.stream == stream:
+		return
+	if ambiance_player.playing:
+		await stop_ambiance()
 	ambiance_player.stream = stream
-	if stream is AudioStreamMP3:
-		stream.loop = true
+	ambiance_player.stream.loop = true
+	ambiance_player.volume_db = MIN_DB
 	ambiance_player.play()
+	ambiance_tween = create_tween()
+	ambiance_tween.tween_property(ambiance_player, "volume_db", MAX_DB, FADE_DURATION)
 
 func stop_ambiance() -> void:
+	if not ambiance_player.playing:
+		return
+	if ambiance_tween:
+		ambiance_tween.kill()
+	ambiance_tween = create_tween()
+	ambiance_tween.tween_property(ambiance_player, "volume_db", MIN_DB, FADE_DURATION)
+	await ambiance_tween.finished
 	ambiance_player.stop()
+	ambiance_player.volume_db = MAX_DB
 
 func play_sfx(stream: AudioStream) -> void:
 	var player = _get_free_sfx_player()

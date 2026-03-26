@@ -10,6 +10,8 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
 
+[node name="World" type="Node2D" parent="."]
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Control" parent="UI"]
@@ -20,8 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="World" type="Node2D" parent="."]
 
 [node name="Managers" type="Node" parent="."]
 
