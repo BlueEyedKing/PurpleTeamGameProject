@@ -1,31 +1,40 @@
 extends InteractionArea
-class_name DigSpot
+class_name QteSpot
 
-## Self-contained dig spot. Instance dig_spot.tscn and drag it into any level.
-## Launches the QTE minigame when interacted with. One-time use.
+## Self-contained QTE spot. Instance qte_spot.tscn and drag it into any level.
+## Launches the Q/F alternating QTE minigame when interacted with. One-time use.
 
-const SWING_DIG          = preload("res://Minigames/SwingDig/swing_dig_minigame.tscn")
+const QTE_SEQUENCE       = preload("res://Minigames/QTE/qte_sequence.tscn")
 const INSTRUCTION_SCREEN = preload("res://Minigames/Shared/instruction_screen.tscn")
 const COUNTDOWN_SCREEN   = preload("res://Minigames/Shared/countdown_screen.tscn")
 const RESULT_SCREEN      = preload("res://Minigames/Shared/result_screen.tscn")
 
-const DIG_CONFIG = {
+const QTE_KEYS = [
+	{"keyString": "Q", "keyCode": KEY_Q},
+	{"keyString": "F", "keyCode": KEY_F},
+	{"keyString": "Q", "keyCode": KEY_Q},
+	{"keyString": "F", "keyCode": KEY_F},
+	{"keyString": "Q", "keyCode": KEY_Q},
+	{"keyString": "F", "keyCode": KEY_F},
+]
+
+const QTE_CONFIG = {
 	"title": "Excavation",
 	"instructions": [
-		{"key": "E", "description": "Strike when the needle is in the yellow zone"},
-		{"key": "E", "description": "Green = Good,  Yellow = Perfect,  Red = Miss"},
+		{"key": "Q", "description": "Press before the timer runs out"},
+		{"key": "F", "description": "Alternate with Q — 6 keys total"},
 	],
 	"dismiss_hint": "Press [E] to Begin"
 }
 
-var _dug := false
+var _used := false
 
 func _ready() -> void:
 	action_name = "Dig"
 	interact = _on_interact
 
 func _on_interact() -> void:
-	if _dug:
+	if _used:
 		return
 
 	InteractionManager.lock(self)
@@ -34,7 +43,7 @@ func _on_interact() -> void:
 	# Instruction screen
 	var instr = INSTRUCTION_SCREEN.instantiate()
 	_get_ui_layer().add_child(instr)
-	instr.setup(DIG_CONFIG)
+	instr.setup(QTE_CONFIG)
 	await instr.dismissed
 	instr.queue_free()
 
@@ -44,11 +53,12 @@ func _on_interact() -> void:
 	await cd.start_countdown(3)
 	cd.queue_free()
 
-	# Swing minigame
-	var swing = SWING_DIG.instantiate()
-	_get_ui_layer().add_child(swing)
-	var results: Array = await swing.swing_finished
-	swing.queue_free()
+	# QTE minigame
+	var qte = QTE_SEQUENCE.instantiate()
+	_get_ui_layer().add_child(qte)
+	qte.start_sequence(QTE_KEYS)
+	var results: Array = await qte.sequence_finished
+	qte.queue_free()
 
 	# Result screen
 	var result = RESULT_SCREEN.instantiate()
@@ -57,7 +67,7 @@ func _on_interact() -> void:
 	await result.dismissed
 	result.queue_free()
 
-	_dug = true
+	_used = true
 
 	var marker = get_node_or_null("Marker")
 	if marker:

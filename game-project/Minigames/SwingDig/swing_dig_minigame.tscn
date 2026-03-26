@@ -1,0 +1,224 @@
+[gd_scene load_steps=4 format=3 uid="uid://swingdigmini1"]
+
+[ext_resource type="Script" path="res://Minigames/SwingDig/swing_dig_minigame.gd" id="1_swingdig"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.07, 0.07, 0.11, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.45, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_left = 14
+corner_radius_bottom_right = 14
+corner_detail = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_margin"]
+content_margin_left = 32.0
+content_margin_right = 32.0
+content_margin_top = 28.0
+content_margin_bottom = 28.0
+
+[node name="SwingDigMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("1_swingdig")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.55)
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(620, 0)
+theme_override_constants/separation = 10
+mouse_filter = 2
+
+[node name="SwingLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+text = "SWING  1 / 5"
+
+[node name="Spacer1" type="Control" parent="CenterContainer/PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 8)
+mouse_filter = 2
+
+[node name="NeedleArrowWrapper" type="Control" parent="CenterContainer/PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(600, 26)
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="NeedleArrow" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox/NeedleArrowWrapper"]
+layout_mode = 1
+anchor_top = 0.0
+anchor_bottom = 1.0
+offset_left = 291.0
+offset_right = 311.0
+horizontal_alignment = 1
+vertical_alignment = 2
+theme_override_font_sizes/font_size = 20
+text = "▼"
+
+[node name="SwingBar" type="Control" parent="CenterContainer/PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(600, 60)
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="BadLeft" type="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_right = 180.0
+color = Color(0.75, 0.18, 0.18, 1)
+mouse_filter = 2
+
+[node name="GoodLeft" type="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_right = 240.0
+color = Color(0.18, 0.7, 0.25, 1)
+mouse_filter = 2
+
+[node name="Perfect" type="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_right = 360.0
+color = Color(0.92, 0.75, 0.1, 1)
+mouse_filter = 2
+
+[node name="GoodRight" type="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_right = 420.0
+color = Color(0.18, 0.7, 0.25, 1)
+mouse_filter = 2
+
+[node name="BadRight" type="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 420.0
+offset_right = 600.0
+color = Color(0.75, 0.18, 0.18, 1)
+mouse_filter = 2
+
+[node name="BadLeftLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_right = 180.0
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(1, 1, 1, 0.7)
+text = "BAD"
+mouse_filter = 2
+
+[node name="GoodLeftLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_right = 240.0
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(1, 1, 1, 0.7)
+text = "GOOD"
+mouse_filter = 2
+
+[node name="PerfectLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_right = 360.0
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 0.85)
+text = "PERFECT"
+mouse_filter = 2
+
+[node name="GoodRightLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_right = 420.0
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(1, 1, 1, 0.7)
+text = "GOOD"
+mouse_filter = 2
+
+[node name="BadRightLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 420.0
+offset_right = 600.0
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(1, 1, 1, 0.7)
+text = "BAD"
+mouse_filter = 2
+
+[node name="Needle" type="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer/VBox/SwingBar"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 298.0
+offset_right = 302.0
+color = Color(1, 1, 1, 1)
+mouse_filter = 2
+z_index = 2
+
+[node name="Spacer2" type="Control" parent="CenterContainer/PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 10)
+mouse_filter = 2
+
+[node name="FeedbackLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 32
+text = ""
+
+[node name="KeyHint" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+text = "Press [E] to Strike"
