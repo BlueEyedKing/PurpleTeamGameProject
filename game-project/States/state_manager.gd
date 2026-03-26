@@ -37,6 +37,23 @@ func save_and_quit() -> void:
 	clear_stack()
 	push_state(MainMenuState.new(self))
 	
+func save_game() -> void:
+	saver_loader.save_game()
+	
+func load_game() -> void:
+	saver_loader.load_game()
+	
+func save_exists() -> bool:
+	return saver_loader.save_exists()
+
+func delete_save() -> void:
+	saver_loader.delete_save()
+	
+func save_settings() -> void:
+	saver_loader.save_settings()
+	
+func get_stack_size() -> int:
+	return state_stack.size()
 	
 func free_level() -> void:
 	level_manager.free_level()

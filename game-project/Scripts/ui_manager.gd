@@ -38,9 +38,10 @@ func hide_settings() -> void:
 		settings.queue_free()
 		settings = null
 
-func show_main_menu() -> void:
+func show_main_menu(has_save: bool) -> void:
 	main_menu = preload("res://UI/main_menu.tscn").instantiate()
 	ui.add_child(main_menu)
+	main_menu.set_has_save(has_save)
 	
 func free_main_menu() -> void:
 	if (main_menu):

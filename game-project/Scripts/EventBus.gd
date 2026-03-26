@@ -1,5 +1,6 @@
 extends Node
 
+signal continue_requested()
 signal start_requested()
 
 signal level_load_requested(level: String, gate: String)
@@ -10,7 +11,7 @@ signal pause_menu_show_requested()
 signal pause_menu_hide_requested()
 signal settings_show_requested()
 signal settings_hide_requested()
-signal show_main_menu_requested()
+signal show_main_menu_requested(has_save: bool)
 signal free_main_menu_requested()
 
 # Minigame signals

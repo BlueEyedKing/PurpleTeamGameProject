@@ -42,7 +42,11 @@ func free_level() -> void:
 
 func load_player(gate: String = "") -> void:
 	var player = preload("res://Player/player.tscn").instantiate()
-	current_level.add_child(player)
+	var ysort = current_level.get_node_or_null("ObjectsParent")
+	if ysort:
+		ysort.add_child(player)
+	else:
+		current_level.add_child(player)
 	if gate != "":
 		var spawn = current_level.get_node_or_null(gate + "/SpawnPoint")
 		if spawn:

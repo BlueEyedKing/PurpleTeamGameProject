@@ -2,8 +2,8 @@ extends Node
 
 var sfx_player: AudioStreamPlayer
 
-@export var music_player: AudioStreamPlayer
-@export var ambiance_player: AudioStreamPlayer
+var music_player: AudioStreamPlayer
+var ambiance_player: AudioStreamPlayer
 
 const SFX_POOL_SIZE = 8
 var sfx_pool: Array[AudioStreamPlayer] = []
@@ -30,6 +30,15 @@ func _ready() -> void:
 		player.bus = "SFX"
 		add_child(player)
 		sfx_pool.append(player)
+	
+func apply_saved_volumes() -> void:
+	for bus in ["Master", "Music", "SFX", "Ambiance"]:
+		var saved = GameData.get_value("volume_" + bus.to_lower(), 0.5)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), linear_to_db(saved))
+	AudioServer.set_bus_mute(
+		AudioServer.get_bus_index("Master"),
+		GameData.get_value("mute_master", false)
+	)
 
 func play_music(stream: AudioStream, fade_in: bool = true) -> void:
 	if music_player.stream == stream:
