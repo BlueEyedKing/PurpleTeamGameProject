@@ -18,6 +18,8 @@ var canvas_modulate: CanvasModulate
 func _ready() -> void:
 	canvas_modulate = CanvasModulate.new()
 	add_child(canvas_modulate)
+	# Restore day from save data so DialogueManager reads the correct day key.
+	current_day = int(GameData.get_value("current_day", 1))
 	set_phase(Phase.MORNING)
 
 func set_phase(phase: Phase) -> void:
@@ -33,6 +35,11 @@ func set_phase(phase: Phase) -> void:
 
 func advance_day() -> void:
 	current_day += 1
+	GameData.set_value("current_day", current_day)
+	# Reset per-day work flags so the player must complete work again.
+	GameData.remove_flag("digging_complete")
+	GameData.remove_flag("cleaning_complete")
+	GameData.remove_flag("work_done")
 	print("Day %d begins" % current_day)
 	phase_changed.emit(current_phase, current_day)
 

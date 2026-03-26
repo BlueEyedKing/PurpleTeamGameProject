@@ -11,6 +11,7 @@ script = ExtResource("1_museum")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 texture = ExtResource("2_ukpmp")
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
@@ -19,3 +20,11 @@ offset_top = 911.0
 offset_right = 1106.0
 offset_bottom = 1061.0
 text = "[ Exit Museum ]"
+
+[node name="CamilaButton" type="Button" parent="CanvasLayer"]
+offset_left = 763.0
+offset_top = 317.0
+offset_right = 1163.0
+offset_bottom = 437.0
+focus_mode = 0
+text = "[ Talk to Camila ]"

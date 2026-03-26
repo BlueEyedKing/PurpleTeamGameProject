@@ -106,6 +106,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3pfi4")
 
 [node name="Camp1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_camp")
 
 [node name="Ground" type="TileMapLayer" parent="."]
@@ -120,11 +121,10 @@ position = Vector2(627, 1527)
 position = Vector2(1474, 1088)
 
 [node name="Boss" parent="." instance=ExtResource("8_w68rg")]
-position = Vector2(904, 896)
+position = Vector2(500, 1425)
 
 [node name="Inez" parent="." instance=ExtResource("9_mfwsu")]
-position = Vector2(1022, 827)
-scale = Vector2(1.62, 1.62)
+position = Vector2(582, 1359)
 
 [node name="CleaningStation" parent="." instance=ExtResource("11_e22rv")]
 position = Vector2(722, 343)
@@ -139,6 +139,9 @@ y_sort_enabled = true
 position = Vector2(572, 1728)
 destination_level = "main_city"
 destination_gate = "camp_1"
+
+[node name="SpawnPoint" parent="ObjectsParent/gate_main_city" index="2"]
+position = Vector2(0, -11)
 
 [node name="Tent" type="Node2D" parent="ObjectsParent"]
 
@@ -441,3 +444,5 @@ position = Vector2(2173, 167)
 
 [node name="TreeFlip24" parent="ObjectsParent" instance=ExtResource("15_rhb38")]
 position = Vector2(2565, 71)
+
+[editable path="ObjectsParent/gate_main_city"]

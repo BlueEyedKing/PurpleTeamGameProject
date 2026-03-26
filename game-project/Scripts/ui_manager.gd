@@ -6,6 +6,7 @@ extends Node
 var pause_menu
 var main_menu
 var time_hud
+var objective_hud
 var settings
 
 func _ready() -> void:
@@ -57,3 +58,13 @@ func hide_time_hud() -> void:
 	if time_hud:
 		time_hud.queue_free()
 		time_hud = null
+
+func show_objective_hud() -> void:
+	if not objective_hud:
+		objective_hud = preload("res://UI/objective_hud.tscn").instantiate()
+		ui.get_node("HUD").add_child(objective_hud)
+
+func hide_objective_hud() -> void:
+	if objective_hud:
+		objective_hud.queue_free()
+		objective_hud = null

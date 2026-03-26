@@ -1,20 +1,31 @@
-[gd_scene load_steps=2 format=4 uid="uid://cbarinteriora"]
+[gd_scene load_steps=3 format=3 uid="uid://cbarinteriora"]
 
-[ext_resource type="Script" path="res://Levels/bar.gd" id="1_bar"]
+[ext_resource type="Script" uid="uid://k272cxkfavj2" path="res://Levels/bar.gd" id="1_bar"]
+[ext_resource type="Texture2D" uid="uid://bg33fy76cfg0h" path="res://Resources/Sprites/Interiors/Inside_Bar.png" id="2_j5k8r"]
 
 [node name="Bar" type="Node2D"]
 script = ExtResource("1_bar")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Background" type="ColorRect" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color(0.1, 0.05, 0.05, 1)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_j5k8r")
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
-offset_left = 50.0
-offset_top = 450.0
-offset_right = 250.0
-offset_bottom = 600.0
+offset_left = 77.0
+offset_top = 878.0
+offset_right = 277.0
+offset_bottom = 1028.0
 text = "[ Exit Bar ]"
+
+[node name="FlorenceButton" type="Button" parent="CanvasLayer"]
+offset_left = 1390.0
+offset_top = 370.0
+offset_right = 1790.0
+offset_bottom = 490.0
+focus_mode = 0
+text = "[ Talk to the group ]"

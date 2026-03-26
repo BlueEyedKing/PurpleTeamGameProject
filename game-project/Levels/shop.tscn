@@ -11,6 +11,7 @@ script = ExtResource("1_shop")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 texture = ExtResource("2_axjb3")
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
@@ -19,3 +20,11 @@ offset_top = 912.0
 offset_right = 1097.0
 offset_bottom = 1062.0
 text = "[ Exit Shop ]"
+
+[node name="AidenButton" type="Button" parent="CanvasLayer"]
+offset_left = 358.0
+offset_top = 329.0
+offset_right = 758.0
+offset_bottom = 449.0
+focus_mode = 0
+text = "[ Talk to Aiden ]"

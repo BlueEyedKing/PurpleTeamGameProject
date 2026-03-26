@@ -13,7 +13,8 @@ func walk_to(target: Vector2) -> void:
 	while global_position.distance_to(target) > 4.0:
 		var direction = (target - global_position).normalized()
 		global_position += direction * walk_speed * get_process_delta_time()
-		await  get_tree().process_frame
+		animated_sprite_2d.flip_h = direction.x < 0
+		await get_tree().process_frame
 	global_position = target
 	animated_sprite_2d.play("idle")
 	interaction_area.set_process(true)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://gruuf0dilwf3"]
 
-[ext_resource type="Script" uid="uid://dbeuejpf357ti" path="res://NPCs/hobo.gd" id="1_keyfj"]
+[ext_resource type="Script" path="res://NPCs/hobo.gd" id="1_keyfj"]
 [ext_resource type="Texture2D" uid="uid://blnrgwqdrropm" path="res://Resources/Sprites/Characters/Hobo/Hobo_Front.png" id="1_u3sbv"]
 [ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="2_keyfj"]
 

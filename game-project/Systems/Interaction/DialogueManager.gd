@@ -187,6 +187,8 @@ func _show_choices(choices: Array) -> void:
 	for choice in choices:
 		var button: Button = Button.new()
 		button.text = choice.get("text", "???")
+		button.focus_mode = Control.FOCUS_NONE
+		button.custom_minimum_size = Vector2(0, 44)
 		var next_id = choice.get("next_id", null)
 		button.pressed.connect(func(): _on_choice_pressed(next_id))
 		choices_box.add_child(button)
@@ -232,5 +234,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			end_dialogue()
 		else:
 			_show_dialogue(next_id)
-	
+	else:
+		return  # Choices are visible — let the focused button handle ui_accept
+
 	get_viewport().set_input_as_handled()
