@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://b0mydy4ttdrps" path="res://NPCs/inez.tscn" id="9_mfwsu"]
 [ext_resource type="PackedScene" uid="uid://c4rf5e2em40cx" path="res://Resources/objects/tree.tscn" id="9_rhb38"]
 [ext_resource type="PackedScene" uid="uid://dksoak0vsr1t7" path="res://Resources/objects/rock.tscn" id="10_rhb38"]
-[ext_resource type="PackedScene" uid="uid://c54jk6i5psfr1" path="res://Minigames/CleaningStation/cleaning_station.tscn" id="11_e22rv"]
 [ext_resource type="PackedScene" uid="uid://dnr2wmi1wea5y" path="res://Resources/objects/rock_flip.tscn" id="11_u2b32"]
 [ext_resource type="Texture2D" uid="uid://dwphsdbvxd87k" path="res://Resources/Sprites/environment/Rocks.png" id="12_6jjk2"]
 [ext_resource type="PackedScene" uid="uid://7ji7ui1suig5" path="res://Resources/objects/tree_small_flip.tscn" id="13_0d2j8"]
 [ext_resource type="PackedScene" uid="uid://b51mdbpgi2yfb" path="res://Resources/objects/tree_small.tscn" id="14_rhb38"]
 [ext_resource type="PackedScene" uid="uid://d30fpjorsxqy5" path="res://Resources/objects/tree_flip.tscn" id="15_rhb38"]
+[ext_resource type="PackedScene" path="res://Levels/Buildings/tent_door.tscn" id="16_5b5gy"]
 [ext_resource type="PackedScene" uid="uid://qtespot0001" path="res://Minigames/QTE/qte_spot.tscn" id="16_fxper"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3pfi4"]
@@ -127,11 +127,18 @@ position = Vector2(500, 1425)
 [node name="Inez" parent="." instance=ExtResource("9_mfwsu")]
 position = Vector2(582, 1359)
 
-[node name="CleaningStation" parent="." instance=ExtResource("11_e22rv")]
-position = Vector2(722, 343)
-
 [node name="DigSpot" parent="." instance=ExtResource("7_dn5pt")]
 position = Vector2(1903, 950)
+
+[node name="DigSpot2" parent="." instance=ExtResource("7_dn5pt")]
+position = Vector2(2134, 1050)
+
+[node name="QteSpot" parent="." instance=ExtResource("16_fxper")]
+position = Vector2(1962, 1123)
+
+[node name="TentDoor" parent="." instance=ExtResource("16_5b5gy")]
+position = Vector2(520, 408)
+scale = Vector2(3.68, 3.68)
 
 [node name="ObjectsParent" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -442,11 +449,5 @@ position = Vector2(2173, 167)
 
 [node name="TreeFlip24" parent="ObjectsParent" instance=ExtResource("15_rhb38")]
 position = Vector2(2565, 71)
-
-[node name="DigSpot2" parent="." instance=ExtResource("7_dn5pt")]
-position = Vector2(2134, 1050)
-
-[node name="QteSpot" parent="." instance=ExtResource("16_fxper")]
-position = Vector2(1962, 1123)
 
 [editable path="ObjectsParent/gate_main_city"]

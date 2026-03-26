@@ -11,7 +11,6 @@ func Enter() -> void:
 	var ui_manager = manager.get_node("../UIManager")
 	if ui_manager:
 		ui_manager.show_time_hud()
-		ui_manager.show_objective_hud()
 	# Push MorningState on top; PlayingState stays as base of the play stack
 	manager.push_state(MorningState.new(manager))
 
@@ -20,7 +19,6 @@ func Exit() -> void:
 	var ui_manager = manager.get_node("../UIManager")
 	if ui_manager:
 		ui_manager.hide_time_hud()
-		ui_manager.hide_objective_hud()
 
 func Update(_delta: float) -> void:
 	pass
