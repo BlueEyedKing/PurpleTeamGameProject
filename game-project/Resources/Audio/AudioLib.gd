@@ -7,7 +7,7 @@ const MUSIC = {
 
 const AMBIANCE = {
 	"camp_1" = preload("res://Resources/Audio/Ambiance/GameProject2_DigSiteAmbience.mp3"),
-	
+	"house" = preload("res://Resources/Audio/Ambiance/HOMEfireplace.wav"),
 }
 
 const SFX = {

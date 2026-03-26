@@ -66,6 +66,8 @@ func stop_music(fade_duration: float = MUSIC_FADE_DURATION) -> void:
 	
 func play_ambiance(stream: AudioStream) -> void:
 	ambiance_player.stream = stream
+	if stream is AudioStreamMP3:
+		stream.loop = true
 	ambiance_player.play()
 
 func stop_ambiance() -> void:
