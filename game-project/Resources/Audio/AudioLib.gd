@@ -1,8 +1,8 @@
 extends Node
 
 const MUSIC = {
-	"camp_1" = preload("res://Resources/Audio/Songs/CozyGameDigSiteVersionMaybe.mp3"),
-	"main" = preload("res://Resources/Audio/Songs/CozyGameRoughSketch01.mp3"),
+	"main_city" = preload("res://Resources/Audio/Songs/CozyGameDigSiteVersionMaybe.mp3"),
+	"house" = preload("res://Resources/Audio/Songs/CozyGameRoughSketch01.mp3"),
 }
 
 const AMBIANCE = {

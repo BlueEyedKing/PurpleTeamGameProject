@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnr2wmi1wea5y"]
+
+[ext_resource type="Texture2D" uid="uid://cpsrrhab71w4b" path="res://Resources/Sprites/environment/Rock.png" id="1_n4n3o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3wo6"]
+size = Vector2(8, 6.125)
+
+[node name="RockFlip" type="StaticBody2D"]
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n4n3o")
+offset = Vector2(-0.25, -5.41)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -5)
+shape = SubResource("RectangleShape2D_a3wo6")

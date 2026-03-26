@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://7ji7ui1suig5"]
+
+[ext_resource type="Texture2D" uid="uid://nku6a4672tpo" path="res://Resources/Sprites/environment/Tree_2.png" id="1_pc62c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4yi2"]
+size = Vector2(6.8125, 8.3125)
+
+[node name="TreeSmallFlip" type="StaticBody2D"]
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pc62c")
+offset = Vector2(0, -30.8)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, -10.25)
+shape = SubResource("RectangleShape2D_k4yi2")
