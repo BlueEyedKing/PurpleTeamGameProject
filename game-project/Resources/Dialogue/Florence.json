@@ -1,0 +1,226 @@
+{
+	"day_1": {
+		"bar_group_intro": {
+			"id": "bar_group_intro",
+			"entry_point": true,
+			"conditions": {
+				"flags_absent": [
+					"met_time_travelers"
+				]
+			},
+			"on_finish": {
+				"set_flags": [
+					"met_time_travelers"
+				]
+			},
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "Three people are talking in hushed voices. They don't seem to realize that we're here.",
+			"next_id": "bar_group_line1"
+		},
+		"bar_group_line1": {
+			"speaker": "???",
+			"portrait": "FlorenceNeutral",
+			"text": "Because the only time you even think about it is when you come here to drink!",
+			"next_id": "bar_group_line2"
+		},
+		"bar_group_line2": {
+			"speaker": "???",
+			"portrait": "TheaNeutral",
+			"text": "Calm down, Oran. Florence and I miss him too, you know that. It's in the past now. We can't protect him anymore.",
+			"next_id": "bar_group_oran"
+		},
+		"bar_group_oran": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Oh, because Florence has always protected him before.",
+			"next_id": "bar_group_florence_shut"
+		},
+		"bar_group_florence_shut": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "Shut up, Oran.",
+			"next_id": "bar_group_oran2"
+		},
+		"bar_group_oran2": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "No! Just because you refuse to tell Thea anything–",
+			"next_id": "bar_group_inez"
+		},
+		"bar_group_inez": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "*clears throat*",
+			"next_id": "bar_group_choice"
+		},
+		"bar_group_choice": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "...",
+			"choices": [
+				{
+					"text": "...sorry to bother you.",
+					"next_id": "bar_group_florence_hello"
+				},
+				{
+					"text": "...",
+					"next_id": "bar_group_florence_hello"
+				}
+			]
+		},
+		"bar_group_florence_hello": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "...Hello. Don't worry about interrupting, we were just finishing up our conversation anyways. I don't think I've seen you around before. My name is Florence.",
+			"next_id": "bar_group_player_meet"
+		},
+		"bar_group_player_meet": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "...nice to meet you.",
+			"next_id": "bar_group_florence_pleasure"
+		},
+		"bar_group_florence_pleasure": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "Its a pleasure to meet you, too. I hope we have the chance to meet again in the future. Unfortunately, it's about time I head in for the night.",
+			"next_id": "bar_group_oran_leave"
+		},
+		"bar_group_oran_leave": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "You can't just leave!",
+			"next_id": "bar_group_thea"
+		},
+		"bar_group_thea": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Um.. sorry about that. I'm Thea, and that was Oran. We were just.. Um.. thinking. About an old friend of ours.",
+			"next_id": "bar_group_inez_end"
+		},
+		"bar_group_inez_end": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "Ah.. we probably shouldn't bother her anymore..",
+			"next_id": null
+		},
+		"florence_repeat": {
+			"id": "florence_repeat",
+			"entry_point": true,
+			"conditions": {
+				"flags_required": [
+					"met_time_travelers"
+				]
+			},
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Um.. it was nice to meet you earlier. Sorry again about all that.",
+			"next_id": null
+		}
+	},
+	"day_2": {
+		"bar_day2": {
+		"id": "bar_day2",
+		"entry_point": true,
+		"conditions": {},
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "Oh, hi! It's nice to see you again, [NAME].",
+		"next_id": "bar_day2_oran_silence"
+		},
+		"bar_day2_oran_silence": {
+		"speaker": "Oran",
+		"portrait": "OranNeutral",
+		"text": "...",
+		"next_id": "bar_day2_aiden_pause"
+		},
+		"bar_day2_aiden_pause": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "...",
+		"next_id": "bar_day2_met"
+		},
+		"bar_day2_met": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "Have you two met?",
+		"choices": [
+			{"text": "Yeah.",      "next_id": "bar_day2_oran_bar"},
+			{"text": "Kind of…?", "next_id": "bar_day2_oran_bar"}
+		]
+		},
+		"bar_day2_oran_bar": {
+		"speaker": "Oran",
+		"portrait": "OranNeutral",
+		"text": "I don't think seeing me from across the bar counts as meeting.",
+		"next_id": "bar_day2_player_silence"
+		},
+		"bar_day2_player_silence": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...",
+		"next_id": "bar_day2_aiden_intro"
+		},
+		"bar_day2_aiden_intro": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "...right. Well, this is Oran. He's a good friend of mine. And Oran, this is [NAME]. They're new in town.",
+		"next_id": "bar_day2_oran_clearly"
+		},
+		"bar_day2_oran_clearly": {
+		"speaker": "Oran",
+		"portrait": "OranNeutral",
+		"text": "...clearly.",
+		"next_id": "bar_day2_aiden_question"
+		},
+		"bar_day2_aiden_question": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "So what brings you to the bar today?",
+		"choices": [
+			{"text": "About Florence…", "next_id": "bar_day2_about_florence"},
+			{"text": "About Oran…",     "next_id": "bar_day2_about_oran"},
+			{"text": "Nothing.",        "next_id": null}
+		]
+		},
+		"bar_day2_about_florence": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "Oh, you've met them? They're a bit of an enigma.",
+		"next_id": "bar_day2_florence_info"
+		},
+		"bar_day2_florence_info": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "They just showed up one day, and they already knew the town like the back of their hand. I had never seen them before, though.",
+		"next_id": "bar_day2_florence_timing"
+		},
+		"bar_day2_florence_timing": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "Oh! And they got here around the same time Oran and Thea did, but I never see them talking to them.",
+		"next_id": "bar_day2_oran_irritable"
+		},
+		"bar_day2_oran_irritable": {
+		"speaker": "Oran",
+		"portrait": "OranNeutral",
+		"text": "You would be too if some stranger kept poking their nose in your business.",
+		"next_id": null
+		},
+		"bar_day2_about_oran": {
+		"speaker": "Oran",
+		"portrait": "OranNeutral",
+		"text": "Don't ask him about me. I'm right here!",
+		"next_id": "bar_day2_oran_aiden_response"
+		},
+		"bar_day2_oran_aiden_response": {
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "...that's one way of putting it. ...as you can see, Oran is a bit.. irritable.",
+		"next_id": null
+		}
+	}
+}

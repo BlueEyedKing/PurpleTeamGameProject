@@ -1,0 +1,148 @@
+{
+	"day_1": {
+		"camila_intro": {
+			"id": "camila_intro",
+			"entry_point": true,
+			"conditions": {
+				"flags_absent": [
+					"met_camila"
+				]
+			},
+			"on_finish": {
+				"set_flags": [
+					"met_camila"
+				]
+			},
+			"speaker": "???",
+			"portrait": "CamilaNeutral",
+			"text": "Inez, is that you?",
+			"next_id": "camila_intro_inez"
+		},
+		"camila_intro_inez": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "Camila! It's great to see you. I'm showing our newest archeologist around town.",
+			"next_id": "camila_intro_camila"
+		},
+		"camila_intro_camila": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "I heard your team was getting a new recruit. Its nice to meet you, I'm the museum director, Camila.",
+			"next_id": "camila_intro_player"
+		},
+		"camila_intro_player": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "Its nice to meet you, too.",
+			"next_id": "camila_intro_fossils"
+		},
+		"camila_intro_fossils": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Did you find anything the museum might be interested in today?",
+			"next_id": "camila_intro_wow"
+		},
+		"camila_intro_wow": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Wow, what a find! I work every night, so if you have anything to turn in, or you just want to chat, feel free to come talk to me.",
+			"next_id": null
+		},
+		"camila_repeat": {
+			"id": "camila_repeat",
+			"entry_point": true,
+			"conditions": {
+				"flags_required": [
+					"met_camila"
+				]
+			},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Do you have any questions?",
+			"choices": [
+				{
+					"text": "Why is the town called Amaranth Heights?",
+					"next_id": "camila_town_name"
+				},
+				{
+					"text": "I found a strange fossil…",
+					"next_id": "camila_strange_fossil"
+				},
+				{
+					"text": "None right now.",
+					"next_id": null
+				}
+			]
+		},
+		"camila_town_name": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Amaranths aren't native to this area. Allegedly, there was a patch of them growing out by your dig sites when the town was founded, but I'm not sure how true that is.",
+			"next_id": null
+		},
+		"camila_strange_fossil": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Do you have it with you? …Its an old bone of some kind, but it's not the kind of thing we would display here. Why don't you keep it? If you find more, maybe I can get you more information.",
+			"next_id": null
+		}
+	},
+	"day_2": {
+		"camila_day2_welcome": {
+		"id": "camila_day2_welcome",
+		"entry_point": true,
+		"conditions": {
+			"flags_absent": ["camila_day2_submitted"]
+		},
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Welcome to the Museum! What can I help you with today?",
+		"choices": [
+			{"text": "Here are today's fossils.", "next_id": "camila_day2_submit"},
+			{"text": "Nothing.",                  "next_id": null}
+		]
+		},
+		"camila_day2_submit": {
+		"id": "camila_day2_submit",
+		"on_finish": {
+			"set_flags": ["camila_day2_submitted"]
+		},
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Thanks for getting these over here. They look great!",
+		"next_id": null
+		},
+		"camila_day2_after": {
+		"id": "camila_day2_after",
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["camila_day2_submitted"]
+		},
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Welcome to the Museum! What can I help you with today?",
+		"choices": [
+			{"text": "I found a strange fossil…", "next_id": "camila_day2_fossil"},
+			{"text": "Nothing.",                  "next_id": null}
+		]
+		},
+		"camila_day2_fossil": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Again?",
+		"next_id": "camila_day2_fossil_2"
+		},
+		"camila_day2_fossil_2": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "...",
+		"next_id": "camila_day2_fossil_3"
+		},
+		"camila_day2_fossil_3": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Hm. If you find more, bring them all over to the museum. Maybe we can piece them together.",
+		"next_id": null
+		}
+	}
+}
