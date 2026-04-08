@@ -269,7 +269,10 @@
 		"speaker": "Boss",
 		"portrait": "BossNeutral",
 		"text": "...you seriously dug that up again? Look, [NAME], someone must have thrown that onto the site as a joke. Don't worry about it.",
-		"next_id": null
+		"next_id": null,
+		"on_finish": {
+			"set_flags": ["showed_boss"]
+		},
 		}
 	},
 	"day_3": {

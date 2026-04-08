@@ -102,6 +102,13 @@ func _show_dialogue(id: String) -> void:
 		
 	current_dialogue_id = id
 	var entry = dialogue_data[id]
+	
+	var on_finish = entry.get("on_finish", {})
+	for flag in on_finish.get("set_flags", []):
+		GameData.set_flag(flag)
+	for flag in on_finish.get("remove_flags", []):
+		GameData.remove_flag(flag)
+	
 	var style = entry.get("type", "spoken")
 	if style == "thought":
 		text_label.add_theme_color_override("font_color", Color(0.7,0.7,1.0))
@@ -156,8 +163,23 @@ func _on_typing_done() -> void:
 	var choices = entry.get("choices", [])
 	if choices.size() > 0:
 		_show_choices(choices)
-	else:
-		waiting_for_input = true
+		return
+	var branches = entry.get("branches", [])
+	if branches.size() > 0:
+		var resolved = _resolve_branch(branches)
+		if resolved == null:
+			end_dialogue()
+		else:
+			_show_dialogue(resolved)
+		return
+	waiting_for_input = true
+
+func _resolve_branch(branches: Array) -> Variant:
+	for branch in branches:
+		var conditions = branch.get("conditions", {})
+		if _conditions_met(conditions):
+			return branch.get("next_id", null)
+	return null
 
 func _skip_typing() -> void:
 	typing_timer.stop()
@@ -205,13 +227,6 @@ func _clear_choices() -> void:
 		child.queue_free()
 		
 func end_dialogue() -> void:
-	var entry = dialogue_data.get(entry_node_id, {})
-	var on_finish = entry.get("on_finish", {})
-	for flag in on_finish.get("set_flags", []):
-		GameData.set_flag(flag)
-	for flag in on_finish.get("remove_flags", []):
-		GameData.remove_flag(flag)
-	
 	InteractionManager.unlock(self)
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
@@ -227,13 +242,21 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_typing:
 		_skip_typing()
 	elif waiting_for_input:
-		var entry: Dictionary = dialogue_data[current_dialogue_id]
-		var next_id = entry.get("next_id", null)
 		waiting_for_input = false
-		if next_id == null:
-			end_dialogue()
+		var entry: Dictionary = dialogue_data[current_dialogue_id]
+		var branches = entry.get("branches", [])
+		if branches.size() > 0:
+			var resolved = _resolve_branch(branches)
+			if resolved == null:
+				end_dialogue()
+			else:
+				_show_dialogue(resolved)
 		else:
-			_show_dialogue(next_id)
+			var next_id = entry.get("next_id", null)
+			if next_id == null:
+				end_dialogue()
+			else:
+				_show_dialogue(next_id)
 	else:
 		return  # Choices are visible — let the focused button handle ui_accept
 

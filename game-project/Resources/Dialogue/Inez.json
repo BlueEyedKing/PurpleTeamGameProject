@@ -258,24 +258,63 @@
 		"text": "Oh! I'm sorry to hear that. Well, y'know what they say. Tomorrow is a new day!",
 		"next_id": null
 		},
+		
 		"inez_day2_fossil": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "Can I see? ... Ah.. that looks... That is odd. Did you show Boss?",
-		"next_id": "inez_day2_fossil_player"
+		"text": "Can I see?",
+		"next_id": "inez_day2_fossil_2"
 		},
-		"inez_day2_fossil_player": {
+		"inez_day2_fossil_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...",
+		"next_id": "inez_day2_fossil_3"
+		},
+		"inez_day2_fossil_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Ah.. that looks...",
+		"next_id": "inez_day2_fossil_4"
+		},
+		"inez_day2_fossil_4": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "That is odd. Did you show Boss?",
+		"branches": [
+			{
+				"conditions": {"flags_required": ["showed_boss"] },
+				"next_id": "inez_day2_fossil_showed_boss"
+			},
+			{
+			"next_id": "inez_day2_fossil_didnt_show_boss"
+			}
+		]
+		},
+		"inez_day2_fossil_showed_boss": {
 		"speaker": "Player",
 		"portrait": "PlayerNeutral",
 		"text": "Yeah. He thinks someone is playing a prank on us.",
-		"next_id": "inez_day2_fossil_inez"
+		"next_id": "inez_day2_fossil_showed_boss_2"
 		},
-		"inez_day2_fossil_inez": {
+		"inez_day2_fossil_showed_boss_2": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
 		"text": "I see.. Well.. If someone is playing a prank, you should find out who. Why don't you ask around town to see if anyone seems suspicious!",
 		"next_id": null
-		}
+		},
+		"inez_day2_fossil_didnt_show_boss": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...no",
+		"next_id": "inez_day2_fossil_didnt_show_boss_2"
+		},
+		"inez_day2_fossil_didnt_show_boss_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Oh, well he might have more insight for you! You should probably ask him about it.",
+		"next_id": null
+		},
 	},
 		"day_3": {
 		"inez_day3_greet": {

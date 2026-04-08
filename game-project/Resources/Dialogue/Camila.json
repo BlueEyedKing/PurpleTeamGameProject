@@ -65,7 +65,7 @@
 					"next_id": "camila_town_name"
 				},
 				{
-					"text": "I found a strange fossil…",
+					"text": "I found a strange fossil...",
 					"next_id": "camila_strange_fossil"
 				},
 				{
@@ -83,9 +83,27 @@
 		"camila_strange_fossil": {
 			"speaker": "Camila",
 			"portrait": "CamilaNeutral",
-			"text": "Do you have it with you? …Its an old bone of some kind, but it's not the kind of thing we would display here. Why don't you keep it? If you find more, maybe I can get you more information.",
-			"next_id": null
-		}
+			"text": "Do you have it with you?",
+			"next_id": "camila_strange_fossil_2"
+		},
+		"camila_strange_fossil": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "...",
+		"next_id": "camila_strange_fossil_2"
+		},
+		"camila_strange_fossil_2": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Its an old bone of some kind, but it's not the kind of thing we would display here.",
+		"next_id": "camila_strange_fossil_3"
+		},
+		"camila_strange_fossil_3": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Why don’t you keep it? If you find more, maybe I can get you more information.",
+		"next_id": null
+		},
 	},
 	"day_2": {
 		"camila_day2_welcome": {
@@ -122,7 +140,7 @@
 		"portrait": "CamilaNeutral",
 		"text": "Welcome to the Museum! What can I help you with today?",
 		"choices": [
-			{"text": "I found a strange fossil…", "next_id": "camila_day2_fossil"},
+			{"text": "I found a strange fossil...", "next_id": "camila_day2_fossil"},
 			{"text": "Nothing.",                  "next_id": null}
 		]
 		},
