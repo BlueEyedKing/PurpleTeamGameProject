@@ -1,18 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce0rgik1b5ywy"]
+[gd_scene load_steps=14 format=3 uid="uid://ce0rgik1b5ywy"]
 
 [ext_resource type="Script" uid="uid://dfcr40rqjexs" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bvoh368j3scg4" path="res://Player/Sprites/Main_Player_Front.png" id="2_vtle1"]
+[ext_resource type="Texture2D" uid="uid://d3k3lgblghobh" path="res://Player/Sprites/Main_Player_Front_walk1.png" id="3_apopc"]
 [ext_resource type="Texture2D" uid="uid://ym55op47cldw" path="res://Player/Sprites/Main_Player_left.png" id="3_od3ui"]
 [ext_resource type="Texture2D" uid="uid://cepvijrhyum3m" path="res://Player/Sprites/Main_Player_Walking_left.png" id="4_00tjw"]
+[ext_resource type="Texture2D" uid="uid://bkeun38vnwnuy" path="res://Player/Sprites/Main_Player_Front_walk2.png" id="4_5htga"]
 [ext_resource type="Texture2D" uid="uid://cjfvixw074m8e" path="res://Player/Sprites/Main_Player_right.png" id="5_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://obg1iciu06cm" path="res://Player/Sprites/Main_Player_Walking_right.png" id="6_apopc"]
-[ext_resource type="Texture2D" uid="uid://d4k07i2wg3qxa" path="res://Player/Sprites/Main_Player_Back.png" id="7_5htga"]
+[ext_resource type="Texture2D" uid="uid://cv4ttoy43favk" path="res://Player/Sprites/Main_Player_Back_walk.png" id="9_apopc"]
+[ext_resource type="Texture2D" uid="uid://btxc68ndur2c0" path="res://Player/Sprites/Main_Player_Back_Walking_1.png" id="10_p5o4e"]
+[ext_resource type="Texture2D" uid="uid://b7crdqhct2rpl" path="res://Player/Sprites/Main_Player_Back_Walking.png" id="11_gu6f8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_vtle1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_apopc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5htga")
 }],
 "loop": true,
 "name": &"down",
@@ -50,7 +60,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_5htga")
+"texture": ExtResource("9_apopc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p5o4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gu6f8")
 }],
 "loop": true,
 "name": &"up",
@@ -68,7 +84,8 @@ script = ExtResource("1_4ntmi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"right"
+animation = &"down"
+frame_progress = 0.9697727
 offset = Vector2(0, -11.06)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
