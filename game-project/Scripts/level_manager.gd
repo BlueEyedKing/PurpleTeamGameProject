@@ -40,6 +40,7 @@ func load_level(level: String, gate: String = "") -> void:
 		_:
 			push_error("LevelManager: Unknown level '%s'" % level)
 			return
+	GameData.set_value("current_level", level)
 	world.add_child(current_level)
 	if AudioLib.MUSIC.has(level):
 		AudioManager.play_music(AudioLib.MUSIC[level])

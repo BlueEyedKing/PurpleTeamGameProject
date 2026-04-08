@@ -2,8 +2,8 @@ extends CanvasLayer
 
 @onready var control: Control = $Control
 @onready var choices_box: VBoxContainer = $Control/ChoicesBox
-@onready var speaker_label: Label = $Control/NinePatchRect/MarginContainer/VBoxContainer/SpeakerLabel
-@onready var text_label: Label = $Control/NinePatchRect/MarginContainer/VBoxContainer/TextLabel
+@onready var speaker_label: Label = $Control/NinePatchRect/Control/VBoxContainer/SpeakerLabel
+@onready var text_label: Label = $Control/NinePatchRect/Control/VBoxContainer/TextLabel
 @onready var portrait: TextureRect = $Control/NinePatchRect/Portrait
 
 const NAME_INPUT_UI = preload("res://UI/name_input_ui.tscn")
@@ -89,8 +89,8 @@ func _conditions_met(conditions: Dictionary) -> bool:
 	for flag in conditions.get("flags_absent", []):
 		if GameData.has_flag(flag):
 			return false
-	var day = conditions.get("day", -1)
-	if day != -1 and GameData.get_value("current_day", 1) != day:
+	var level = conditions.get("level", "")
+	if level != "" and GameData.get_value("current_level", "") != level:
 		return false
 	return true
 
