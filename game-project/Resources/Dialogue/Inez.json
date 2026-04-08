@@ -37,6 +37,7 @@
 		"id": "day1_city_intro",
 		"entry_point": true,
 		"conditions": {
+			"level": "main_city",
 			"flags_required": ["work_done"],
 			"flags_absent": ["day1_town_intro_done"]
 		},
@@ -45,7 +46,7 @@
 		},
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "We didn't properly meet earlier…",
+		"text": "We didn't properly meet earlier...",
 		"next_id": "day1_city_intro_2"
 		},
 		"day1_city_intro_2": {
@@ -72,7 +73,7 @@
 		"text": "Oh, I know! What if I show you around town on the way to the museum?",
 		"choices": [
 			{"text": "Sure.", "next_id": "day1_city_intro_sure"},
-			{"text": "I don't know…", "next_id": "day1_city_intro_pushback"},
+			{"text": "I don't know...", "next_id": "day1_city_intro_pushback"},
 			{"text": "I'd rather not.", "next_id": "day1_city_intro_pushback"}
 		]
 		},
@@ -242,7 +243,7 @@
 		"choices": [
 			{"text": "It was good.",              "next_id": "inez_day2_good"},
 			{"text": "Absolutely awful.",         "next_id": "inez_day2_bad"},
-			{"text": "I found a strange fossil…", "next_id": "inez_day2_fossil"}
+			{"text": "I found a strange fossil...", "next_id": "inez_day2_fossil"}
 		]
 		},
 		"inez_day2_good": {
@@ -260,7 +261,7 @@
 		"inez_day2_fossil": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "Can I see? ... Ah.. that looks… That is odd. Did you show Boss?",
+		"text": "Can I see? ... Ah.. that looks... That is odd. Did you show Boss?",
 		"next_id": "inez_day2_fossil_player"
 		},
 		"inez_day2_fossil_player": {
@@ -275,5 +276,109 @@
 		"text": "I see.. Well.. If someone is playing a prank, you should find out who. Why don't you ask around town to see if anyone seems suspicious!",
 		"next_id": null
 		}
+	},
+		"day_3": {
+		"inez_day3_greet": {
+		"id": "inez_day3_greet",
+		"entry_point": true,
+		"conditions": {},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Hey! [NAME]!",
+		"choices": [
+			{"text": "Hi!",              "next_id": "inez_day3_chat"},
+			{"text": "Hey! You come here often?",         "next_id": "inez_day3_chat"},
+			{"text": "...", "next_id": "inez_day3_chat"}
+		]
+		},
+		"inez_day3_chat": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Hehe.",
+		"next_id": "inez_day3_chat_2"
+		},
+		"inez_day3_chat_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Have you figured out anything else since yesterday?",
+		"next_id": "inez_day3_chat_3"
+		},
+		"inez_day3_chat_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Have you figured out anything else since yesterday?",
+		"choices": [
+			{"text": "...I found another strange fossil.",              "next_id": "inez_day3_fossil"},
+			{"text": "Poppy told me to be careful on the dig site.",         "next_id": "inez_day3_poppy"},
+			{"text": "Not really...", "next_id": "inez_day3_worry"}
+		]
+		},
+		"inez_day3_fossil": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Another one?",
+		"next_id": "inez_day3_fossil_2"
+		},
+		"inez_day3_fossil_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Can I see?",
+		"next_id": "inez_day3_fossil_3"
+		},
+		"inez_day3_fossil_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...",
+		"next_id": "inez_day3_fossil_4"
+		},
+		"inez_day3_fossil_4": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "You.. you should talk to Camila. This is starting to get weird.",
+		"next_id": null
+		},
+		
+		"inez_day3_poppy": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Poppy told me not to eat mushrooms anymore because they control your mind. I wouldn’t pay too much attention to whatever he says.",
+		"next_id": null
+		},
+		
+		"inez_day3_worry": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "I see...",
+		"next_id": "inez_day3_worry_2"
+		},
+		"inez_day3_worry_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Look, I don’t want to downplay your worries or whatever but...",
+		"next_id": "inez_day3_worry_3"
+		},
+		"inez_day3_worry_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Have you considered that it is just a prank?",
+		"choices": [
+			{"text": "I guess..",              "next_id": "inez_day3_worry_choice_1"},
+			{"text": "No, I know something is wrong.",         "next_id": "inez_day3_worry_choice_2"}
+		]
+		},
+		
+		"inez_day3_worry_choice_1": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Its alright.. New places are difficult for everyone. Try taking your mind off of things.",
+		"next_id": null
+		},
+		
+		"inez_day3_worry_choice_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...Alright. If you’re serious, then you should probably ask around again. Surely someone knows something.",
+		"next_id": null
+		},
 	}
 }
