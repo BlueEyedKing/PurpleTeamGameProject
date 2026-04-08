@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c46j0y5d7wn0w"]
+[gd_scene load_steps=8 format=3 uid="uid://c46j0y5d7wn0w"]
 
 [ext_resource type="Script" uid="uid://rjdws3s48yfk" path="res://MiscObjects/travel_gate.gd" id="1_elwj1"]
 [ext_resource type="Texture2D" uid="uid://bb4gdjx53d8or" path="res://Resources/Sprites/shitGate.png" id="2_pw514"]
@@ -27,7 +27,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d0ww"]
 size = Vector2(274, 75)
 
-[node name="gate" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elwj1"]
+size = Vector2(276, 33)
+
+[node name="gate" type="StaticBody2D"]
 script = ExtResource("1_elwj1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -45,3 +48,7 @@ shape = SubResource("RectangleShape2D_0d0ww")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(0, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_elwj1")
