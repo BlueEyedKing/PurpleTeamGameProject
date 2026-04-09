@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var control: Control = $Control
 @onready var choices_box: VBoxContainer = $Control/ChoicesBox
 @onready var speaker_label: Label = $Control/NinePatchRect/Control/VBoxContainer/SpeakerLabel
-@onready var text_label: Label = $Control/NinePatchRect/Control/VBoxContainer/TextLabel
+@onready var text_label: RichTextLabel = $Control/NinePatchRect/Control/VBoxContainer/TextLabel
 @onready var portrait: TextureRect = $Control/NinePatchRect/Portrait
 
 const NAME_INPUT_UI = preload("res://UI/name_input_ui.tscn")
@@ -24,11 +24,11 @@ var typing_timer: Timer
 var is_typing: bool = false
 var waiting_for_input: bool = false
 
-var entry_node_id: String = ""
 
 signal dialog_finished()
 
 func _ready() -> void:
+	text_label.visible_characters_behavior = TextServer.VC_CHARS_AFTER_SHAPING
 	EventBus.name_input_done.connect(_confirm_name)
 	typing_timer = Timer.new()
 	typing_timer.one_shot = true
@@ -63,7 +63,6 @@ func load_dialogue(id: String) -> Dictionary:
 	return json.data
 
 func _start(data: Dictionary, start_id: String) -> void:
-	entry_node_id = start_id
 	InteractionManager.lock(self)
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
@@ -79,7 +78,7 @@ func _resolve_entry(data: Dictionary) -> String:
 			continue
 		if not _conditions_met(node.get("conditions", {})):
 			continue
-		return node.get("id","")
+		return id
 	return ""
 	 
 func _conditions_met(conditions: Dictionary) -> bool:
@@ -159,7 +158,14 @@ func _on_typing_done() -> void:
 			return
 		"inez_leaves":
 			EventBus.inez_leaves.emit()
-	
+		"play_suspense":
+			AudioManager.play_music(AudioLib.MUSIC["suspense"])
+			AudioManager.stop_ambiance()
+		"fossils_on_screen":
+			EventBus.present_fossils_requested.emit()
+		"hide_fossils":
+			EventBus.hide_fossils_requested.emit()
+			
 	var choices = entry.get("choices", [])
 	if choices.size() > 0:
 		_show_choices(choices)

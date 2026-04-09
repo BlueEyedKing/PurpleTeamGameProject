@@ -27,12 +27,12 @@ func _init_slider(slider: HSlider, bus: String, callback: Callable) -> void:
 	slider.min_value = 0.0
 	slider.max_value = 1.0
 	slider.step = 0.01
-	slider.value = GameData.get_value("volume_" + bus.to_lower(), 0.5)
+	slider.value = GameData.settings.get("volume_" + bus.to_lower(), 0.5)
 	slider.value_changed.connect(callback)
 	
 func _set_bus_volume(bus: String, linear: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), linear_to_db(linear))
-	GameData.set_value("volume_" + bus.to_lower(), linear)
+	GameData.settings["volume_" + bus.to_lower()] = linear
 	
 func _on_master_changed(value: float) -> void:
 	_set_bus_volume("Master", value)
@@ -47,7 +47,6 @@ func _on_sfx_changed(value: float) -> void:
 	_set_bus_volume("SFX", value)
 	
 func _on_mute_toggled(toggled_on: bool) -> void:
-	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), toggled_on)
-	GameData.set_value("mute_master", toggled_on)
+	GameData.settings["mute_master"] = toggled_on
 	

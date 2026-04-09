@@ -3,6 +3,10 @@ extends Node
 @onready var state_manager: Node = $"../StateManager"
 @onready var ui: CanvasLayer = $"../../UI"
 
+const HUMAN_REMAINS = preload("res://Resources/Sprites/Fossils/Human_Remains.png")
+
+var fossil_reveal
+
 var pause_menu
 var main_menu
 var time_hud
@@ -16,6 +20,10 @@ func _ready() -> void:
 	EventBus.settings_hide_requested.connect(hide_settings)
 	EventBus.show_main_menu_requested.connect(show_main_menu)
 	EventBus.free_main_menu_requested.connect(free_main_menu)
+	
+	EventBus.present_fossils_requested.connect(show_fossils)
+	EventBus.hide_fossils_requested.connect(hide_fossils)
+	
 func show_pause_menu() -> void:
 	pause_menu = preload("res://UI/pause_menu.tscn").instantiate()
 	pause_menu.save_and_quit_requested.connect(state_manager.save_and_quit)
@@ -68,3 +76,13 @@ func hide_objective_hud() -> void:
 	if objective_hud:
 		objective_hud.queue_free()
 		objective_hud = null
+
+func show_fossils() -> void:
+	if fossil_reveal:
+		return
+	fossil_reveal = preload("res://Resources/objects/human_fossils.tscn").instantiate()
+	ui.add_child(fossil_reveal)
+
+func hide_fossils() -> void:
+	EventBus.hide_fossils_requested.emit()
+	fossil_reveal = null

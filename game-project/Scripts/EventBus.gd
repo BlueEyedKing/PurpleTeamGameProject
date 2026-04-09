@@ -24,3 +24,5 @@ signal sleep_requested()
 #actions
 signal name_input_done(text: String)
 signal inez_leaves(target: Vector2)
+signal present_fossils_requested()
+signal hide_fossils_requested()

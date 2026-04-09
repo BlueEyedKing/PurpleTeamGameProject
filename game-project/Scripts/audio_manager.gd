@@ -34,12 +34,12 @@ func _ready() -> void:
 	
 func apply_saved_volumes() -> void:
 	for bus in ["Master", "Music", "SFX", "Ambiance"]:
-		var saved = GameData.get_value("volume_" + bus.to_lower(), 0.5)
+		var saved = GameData.settings.get("volume_" + bus.to_lower(), 0.5)
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), linear_to_db(saved))
-	AudioServer.set_bus_mute(
-		AudioServer.get_bus_index("Master"),
-		GameData.get_value("mute_master", false)
-	)
+		AudioServer.set_bus_mute(
+			AudioServer.get_bus_index("Master"),
+			GameData.settings.get("mute_master", false)
+			)
 
 func play_music(stream: AudioStream, fade_in: bool = true) -> void:
 	if music_player.stream == stream:
@@ -54,13 +54,13 @@ func play_music(stream: AudioStream, fade_in: bool = true) -> void:
 		music_tween = create_tween()
 		music_tween.tween_property(music_player, "volume_db", MAX_DB, FADE_DURATION)
 
-func stop_music(FADE_DURATION: float = FADE_DURATION) -> void:
+func stop_music(fade_duration: float = FADE_DURATION) -> void:
 	if not music_player.playing:
 		return
 	if music_tween:
 		music_tween.kill()
 	music_tween = create_tween()
-	music_tween.tween_property(music_player, "volume_db", MIN_DB, FADE_DURATION)
+	music_tween.tween_property(music_player, "volume_db", MIN_DB, fade_duration)
 	await music_tween.finished
 	music_player.stop()
 	music_player.volume_db = MAX_DB
