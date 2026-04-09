@@ -22,7 +22,6 @@ func _ready() -> void:
 	EventBus.free_main_menu_requested.connect(free_main_menu)
 	
 	EventBus.present_fossils_requested.connect(show_fossils)
-	EventBus.hide_fossils_requested.connect(hide_fossils)
 	
 func show_pause_menu() -> void:
 	pause_menu = preload("res://UI/pause_menu.tscn").instantiate()
@@ -82,7 +81,3 @@ func show_fossils() -> void:
 		return
 	fossil_reveal = preload("res://Resources/objects/human_fossils.tscn").instantiate()
 	ui.add_child(fossil_reveal)
-
-func hide_fossils() -> void:
-	EventBus.hide_fossils_requested.emit()
-	fossil_reveal = null
