@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://c7j1lrf61kik0"]
+[gd_scene load_steps=34 format=4 uid="uid://c7j1lrf61kik0"]
 
 [ext_resource type="Script" uid="uid://di4vc623mhvs0" path="res://Levels/main_city.gd" id="3_maincity"]
 [ext_resource type="Texture2D" uid="uid://cyhf50kb6ypm0" path="res://Resources/Tilesets/Tilesetnight.png" id="3_se7k6"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dfvsuiwvso21s" path="res://Resources/Sprites/Buildings/House.png" id="8_fdtyt"]
 [ext_resource type="Texture2D" uid="uid://ch7axfx81nvcv" path="res://Resources/Sprites/environment/Lamp_rotated.png" id="8_m2nui"]
 [ext_resource type="PackedScene" uid="uid://b0mydy4ttdrps" path="res://NPCs/inez.tscn" id="9_inez"]
+[ext_resource type="PackedScene" uid="uid://covaw3qv522fe" path="res://NPCs/Camila.tscn" id="14_r046q"]
+[ext_resource type="Script" uid="uid://3r7t71spnklq" path="res://NPCs/poppy.gd" id="14_tks1q"]
 [ext_resource type="PackedScene" uid="uid://bidgjnavol4dg" path="res://Levels/Buildings/bar_door.tscn" id="15_7fr10"]
 [ext_resource type="PackedScene" uid="uid://k248llk2r0gy" path="res://NPCs/poppy.tscn" id="15_vxoxm"]
 [ext_resource type="PackedScene" uid="uid://b2j4lo2lb6m1e" path="res://Levels/Buildings/shop_door.tscn" id="16_5hrqe"]
@@ -256,6 +258,11 @@ position = Vector2(1450, 1950)
 [node name="Poppy" parent="." instance=ExtResource("15_vxoxm")]
 position = Vector2(2143.0002, 1686)
 scale = Vector2(1.75, 1.75)
+script = ExtResource("14_tks1q")
+npc_id = ""
+
+[node name="Camila" parent="." instance=ExtResource("14_r046q")]
+position = Vector2(-867, 2342)
 
 [node name="InezPark" type="Marker2D" parent="."]
 position = Vector2(2235, 1698)
@@ -271,6 +278,15 @@ position = Vector2(1178, 47)
 
 [node name="InezFarewell" type="Marker2D" parent="."]
 position = Vector2(1567, 1933)
+
+[node name="Poppy_day3" type="Marker2D" parent="."]
+position = Vector2(925, 52)
+
+[node name="Camila_day3" type="Marker2D" parent="."]
+position = Vector2(989, 52)
+
+[node name="Camila_day1" type="Marker2D" parent="."]
+position = Vector2(1259, 1672)
 
 [node name="BarDoor" parent="." instance=ExtResource("15_7fr10")]
 position = Vector2(818, 725)
