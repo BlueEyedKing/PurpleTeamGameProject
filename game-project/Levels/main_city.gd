@@ -11,20 +11,24 @@ extends Node2D
 @onready var _pos_farewell: Marker2D = $InezFarewell
 
 @onready var _poppy = $Poppy
+@onready var camila: Node2D = $Camila
 
 
 var _inez_current_target: Vector2 = Vector2.INF
 
 func _ready() -> void:
-
+	EventBus.camila_leaves_requested.connect(transition_things)
 	_inez.walk_speed = 290.0
-
 
 	if GameData.has_flag("day1_town_intro_done") and not GameData.has_flag("day1_tour_complete"):
 		var saved: Vector2 = GameData.get_value("inez_pos", Vector2.INF)
 		if saved != Vector2.INF:
 			_inez.global_position = saved
 			_inez_current_target  = saved
+	
+	if GameData.has_flag("met_poppy_and_camila"):
+		camila.visible = false
+		camila.modulate.a = 0.0
 
 	tree_exiting.connect(_save_inez_pos)
 
@@ -58,7 +62,7 @@ func _update_tour_npcs() -> void:
 				_inez_current_target = next_pos
 				_walk_inez_to(next_pos)
 
-	_set_npc_active(_poppy, d.has_flag("day1_town_intro_done"))
+	_set_npc_active(_poppy, true)
 
 func _next_inez_waypoint() -> Vector2:
 	var d := GameData
@@ -86,3 +90,10 @@ func _set_npc_active(npc: Node, active: bool) -> void:
 	if ia:
 		ia.monitoring = active
 		ia.monitorable = active
+
+func transition_things():
+	_set_npc_active(camila, false)
+	var tween = create_tween()
+	tween.tween_property(camila, "modulate:a", 0.0, 0.8).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	await tween.finished
+	camila.visible = false

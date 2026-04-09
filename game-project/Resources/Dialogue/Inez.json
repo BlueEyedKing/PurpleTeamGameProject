@@ -325,12 +325,6 @@
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
 		"text": "Have you figured out anything else since yesterday?",
-		"next_id": "inez_day3_chat_3"
-		},
-		"inez_day3_chat_3": {
-		"speaker": "Inez",
-		"portrait": "CoworkerNeutral",
-		"text": "Have you figured out anything else since yesterday?",
 		"choices": [
 			{"text": "...I found another strange fossil.",              "next_id": "inez_day3_fossil"},
 			{"text": "Poppy told me to be careful on the dig site.",         "next_id": "inez_day3_poppy"},

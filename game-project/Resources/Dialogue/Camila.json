@@ -160,6 +160,17 @@
 		}
 	},
 	"day_3": {
+		"camila_day3_busy": {
+		"entry_point": true,
+		"conditions": {
+			"flags_absent": ["spoke_to_poppy_and_camila"]
+		},
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Hold on just a minute..",
+		"next_id": null
+		},
+		
 		"camila_day3_welcome_fossil": {
 		"entry_point": true,
 		"conditions": {

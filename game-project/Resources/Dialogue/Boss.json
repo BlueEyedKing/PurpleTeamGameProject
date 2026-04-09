@@ -219,6 +219,27 @@
 		}
 	},
 	"day_2": {
+		"day_2_boss_work_done": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete", "cleaning_complete", "digging_complete"],
+			"flags_absent": ["work_done"]
+		},
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "All done?",
+		"next_id": "day_2_boss_work_done2"
+		},
+		"day_2_boss_work_done2": {
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "Good work! Go home [NAME]",
+		"on_finish": {
+			"set_flags": ["work_done"]
+		},
+		"next_id": null
+		},
+		
 		"day_2_boss": {
 		"entry_point": true,
 		"conditions": {
@@ -265,10 +286,31 @@
 		"next_id": null,
 		"on_finish": {
 			"set_flags": ["showed_boss"]
+			},
 		},
-		}
 	},
 	"day_3": {
+		"day_3_boss_work_done": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete", "cleaning_complete", "digging_complete"],
+			"flags_absent": ["work_done"]
+		},
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "You done?",
+		"next_id": "day_3_boss_work_done2"
+		},
+		"day_3_boss_work_done2": {
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "Great, you can go home then",
+		"on_finish": {
+			"set_flags": ["work_done"]
+		},
+		"next_id": null
+		},
+		
 		"day_3_boss": {
 		"entry_point": true,
 		"conditions": {
@@ -325,6 +367,6 @@
 		"portrait": "BossNeutral",
 		"text": "That thing looks human. You can’t expect me to believe you really excavated it.",
 		"next_id": null
-		}
+		},
 	}
 }

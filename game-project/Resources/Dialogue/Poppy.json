@@ -315,6 +315,7 @@
 		"speaker": "Player",
 		"portrait": "PlayerNeutral",
 		"text": "...",
+		"action": "camila_leaves_to_museum",
 		"next_id": null,
 		"on_finish": {
 			"set_flags": ["spoke_to_poppy_and_camila"]

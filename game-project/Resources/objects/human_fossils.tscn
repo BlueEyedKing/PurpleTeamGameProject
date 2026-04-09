@@ -6,7 +6,7 @@
 [node name="HumanFossils" type="CanvasLayer"]
 script = ExtResource("1_e6p45")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="FossilImage" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_qeswv")

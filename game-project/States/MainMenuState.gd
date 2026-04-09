@@ -9,6 +9,7 @@ func Enter() -> void:
 	
 func Exit():
 	EventBus.free_main_menu_requested.emit()
+	EventBus.continue_requested.disconnect(_on_continue_requested)
 	EventBus.start_requested.disconnect(_on_start_requested)
 	
 func _on_continue_requested():

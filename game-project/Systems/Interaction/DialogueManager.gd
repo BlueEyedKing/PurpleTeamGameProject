@@ -182,6 +182,8 @@ func _on_typing_done() -> void:
 		"play_suspense":
 			AudioManager.play_music(AudioLib.MUSIC["suspense"])
 			AudioManager.stop_ambiance()
+		"camila_leaves_to_museum":
+			EventBus.camila_leaves_requested.emit()
 		"fossils_on_screen":
 			EventBus.present_fossils_requested.emit()
 		"hide_fossils":
@@ -235,7 +237,7 @@ func _confirm_name(pname: String) -> void:
 func _show_choices(choices: Array) -> void:
 	for choice in choices:
 		var button: Button = Button.new()
-		button.text = choice.get("text", "???")
+		button.text = _substitute_text(choice.get("text", "???"))
 		button.focus_mode = Control.FOCUS_NONE
 		button.custom_minimum_size = Vector2(0, 44)
 		var next_id = choice.get("next_id", null)

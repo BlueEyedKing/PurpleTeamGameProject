@@ -265,6 +265,9 @@ position = Vector2(-867, 2342)
 [node name="Inez_day1" type="Marker2D" parent="."]
 position = Vector2(1450, 1950)
 
+[node name="Inez_default" type="Marker2D" parent="."]
+position = Vector2(1450, 1950)
+
 [node name="InezPark" type="Marker2D" parent="."]
 position = Vector2(2235, 1698)
 
