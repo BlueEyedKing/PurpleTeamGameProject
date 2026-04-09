@@ -171,7 +171,7 @@
 		"choices": [
 			{
 				"text": "...What was Poppy talking about?",
-				"next_id": "camilla_poppy_explain"
+				"next_id": "camila_poppy_explain"
 			},
 			{
 				"text": "I found another strange fossil...",
@@ -183,14 +183,48 @@
 			}
 		]
 		},
+		"camila_day3_welcome_no_fossil": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["spoke_to_poppy_and_camila"],
+			"flags_absent": ["fossil_returned"]
+		},
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "...hello. Can I help you?",
+		"choices": [
+			{
+				"text": "Brought you today's fossils!",
+				"next_id": "camila_todays_fossils"
+			},
+			{
+				"text": "...What was Poppy talking about?",
+				"next_id": "camila_poppy_explain"
+			},
+			{
+				"text": "I found another strange fossil...",
+				"next_id": "camila_strange_fossil"
+			},
+			{
+				"text": "Nevermind",
+				"next_id": null
+			}
+		]
+		},
+		"camila_todays_fossils": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "These look great! Thank you.",
+		"next_id": "camila_poppy_explain2"
+		},
 		
-		"camilla_poppy_explain": {
+		"camila_poppy_explain": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
 		"text": "Ah... everything he says is nonsense.",
-		"next_id": "camilla_poppy_explain2"
+		"next_id": "camila_poppy_explain2"
 		},
-		"camilla_poppy_explain2": {
+		"camila_poppy_explain2": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
 		"text": "Since I remember, Poppy has been coming in here spouting some theory or another about this town. None of them have any real backing.",
@@ -236,10 +270,53 @@
 		"next_id": "camila_strange_fossil7"
 		},
 		"camila_strange_fossil7": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "..!",
+		"next_id": "camila_strange_fossil8"
+		},
+		"camila_strange_fossil8": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "This is...",
+		"next_id": "camila_strange_fossil9"
+		},
+		"camila_strange_fossil9": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
-		"text": "...",
-		"next_id": "camila_strange_fossil8"
+		"text": "It looks [shake][color=#BF0B2D]human[/color][/shake]",
+		"next_id": "camila_strange_fossil10"
+		},
+		"camila_strange_fossil10": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "How long ago was Amaranth Heights founded?",
+		"next_id": "camila_strange_fossil11"
+		},
+		"camila_strange_fossil11": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "..These look much older than its founding.",
+		"next_id": "camila_strange_fossil12"
+		},
+		"camila_strange_fossil12": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "I’ll.. I’ll have this dated.",
+		"next_id": "camila_strange_fossil13"
+		},
+		"camila_strange_fossil13": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "We need to see exactly when this is from. It could change everything we know about this town’s history...",
+		"next_id": "camila_strange_fossil14"
+		},
+		"camila_strange_fossil14": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "I should be done [color=#16C1DE]tomorrow[/color]. Come by then.",
+		"action": "hide_fossils",
+		"next_id": null
 		},
 	},
 }
