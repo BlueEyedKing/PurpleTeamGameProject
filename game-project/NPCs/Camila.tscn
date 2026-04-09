@@ -12,7 +12,7 @@ script = ExtResource("1_6kfc3")
 npc_id = "Camila"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.9, 1.9)
+scale = Vector2(3, 3)
 texture = ExtResource("1_m0vo5")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_6kfc3")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://k248llk2r0gy"]
 
-[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_bk43b"]
+[ext_resource type="Script" uid="uid://drvtlawblnwam" path="res://Scripts/NPC.gd" id="1_bk43b"]
 [ext_resource type="Texture2D" uid="uid://blnrgwqdrropm" path="res://Resources/Sprites/Characters/Hobo/Hobo_Front.png" id="2_tyisy"]
 [ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="3_uxd6c"]
 
@@ -8,6 +8,7 @@
 radius = 72.0
 
 [node name="Poppy" type="Node2D"]
+scale = Vector2(1.9, 1.9)
 script = ExtResource("1_bk43b")
 npc_id = "Poppy"
 

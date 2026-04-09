@@ -21,7 +21,7 @@ func _open_gate():
 	animated_sprite_2d.animation = "Open"
 	interaction_area.action_name = "Leave"
 	# TODO forced animation of player walking out of city while screen fading out for example
-	if (GameData.has_flag("cleaning_complete") && GameData.has_flag("digging_complete")):
+	if (GameData.has_flag("work_done")):
 		EventBus.level_load_requested.emit(destination_level, destination_gate)
 	else:
 		InteractionManager.lock(self)
