@@ -1,7 +1,6 @@
 {
 	"day_1": {
 		"inez_redirect_park": {
-		"id": "inez_redirect_park",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["_redirect_park"]
@@ -12,7 +11,6 @@
 		"next_id": null
 		},
 		"inez_redirect_shop": {
-		"id": "inez_redirect_shop",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["_redirect_shop"]
@@ -23,7 +21,6 @@
 		"next_id": null
 		},
 		"inez_redirect_bar": {
-		"id": "inez_redirect_bar",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["_redirect_bar"]
@@ -34,7 +31,6 @@
 		"next_id": null
 		},
 		"day1_city_intro": {
-		"id": "day1_city_intro",
 		"entry_point": true,
 		"conditions": {
 			"level": "main_city",
@@ -91,7 +87,6 @@
 		},
 
 		"inez_park": {
-		"id": "inez_park",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["day1_town_intro_done"],
@@ -107,7 +102,6 @@
 		},
 
 		"inez_shop": {
-		"id": "inez_shop",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["day1_visited_park", "met_poppy"],
@@ -123,7 +117,6 @@
 		},
 
 		"inez_bar": {
-		"id": "inez_bar",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["day1_visited_shop", "met_aiden"],
@@ -139,7 +132,6 @@
 		},
 
 		"inez_museum": {
-		"id": "inez_museum",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["day1_visited_bar", "met_time_travelers"],
@@ -161,7 +153,6 @@
 		},
 
 		"inez_farewell": {
-		"id": "inez_farewell",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["day1_visited_museum", "met_camila"],
@@ -183,7 +174,6 @@
 		},
 
 		"inez_tour_wait": {
-		"id": "inez_tour_wait",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["day1_town_intro_done"],
@@ -196,7 +186,6 @@
 		},
 
 		"day_1_generic_stranger": {
-		"id": "day_1_generic_stranger",
 		"entry_point": true,
 		"conditions": {
 			"flags_absent": ["met_boss", "work_done"]
@@ -208,7 +197,6 @@
 		},
 
 		"day_1_generic_camp": {
-		"id": "day_1_generic_camp",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss"],
@@ -221,7 +209,6 @@
 		},
 
 		"day_1_generic_work_done": {
-		"id": "day_1_generic_work_done",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss", "work_done"]
@@ -234,7 +221,6 @@
 	},
 	"day_2": {
 		"inez_day2_greet": {
-		"id": "inez_day2_greet",
 		"entry_point": true,
 		"conditions": {},
 		"speaker": "Inez",
@@ -318,7 +304,6 @@
 	},
 		"day_3": {
 		"inez_day3_greet": {
-		"id": "inez_day3_greet",
 		"entry_point": true,
 		"conditions": {},
 		"speaker": "Inez",

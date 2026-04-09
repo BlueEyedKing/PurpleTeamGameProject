@@ -1,7 +1,6 @@
 {
 	"day_1": {
 		"aiden_intro": {
-			"id": "aiden_intro",
 			"entry_point": true,
 			"conditions": {
 				"flags_absent": [
@@ -68,7 +67,6 @@
 			"next_id": null
 		},
 		"aiden_repeat": {
-			"id": "aiden_repeat",
 			"entry_point": true,
 			"conditions": {
 				"flags_required": [
@@ -108,7 +106,6 @@
 	},
 	"day_2": {
 		"aiden_day2_empty": {
-		"id": "aiden_day2_empty",
 		"entry_point": true,
 		"conditions": {},
 		"speaker": "Player",

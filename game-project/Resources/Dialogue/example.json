@@ -1,7 +1,6 @@
 {
 	"day_1": {
 		"day_1_intro": {
-		"id": "day_1_intro",
 		"entry_point": true,
 		"conditions": {
 			"day": 1,
@@ -38,7 +37,6 @@
 		
 		
 		"day_1_generic": {
-		"id": "day_1_generic",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_inez"]

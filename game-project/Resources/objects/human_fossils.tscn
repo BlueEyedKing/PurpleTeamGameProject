@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv12xkgoi8xip"]
+
+[ext_resource type="Script" uid="uid://b5ydx0ewb42to" path="res://Scripts/human_fossils.gd" id="1_e6p45"]
+[ext_resource type="Texture2D" uid="uid://bq6rkh3ncelyo" path="res://Resources/Sprites/Fossils/Human_Remains.png" id="2_qeswv"]
+
+[node name="HumanFossils" type="CanvasLayer"]
+script = ExtResource("1_e6p45")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_qeswv")

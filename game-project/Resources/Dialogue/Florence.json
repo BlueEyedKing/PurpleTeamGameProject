@@ -1,7 +1,6 @@
 {
 	"day_1": {
 		"bar_group_intro": {
-			"id": "bar_group_intro",
 			"entry_point": true,
 			"conditions": {
 				"flags_absent": [
@@ -108,7 +107,6 @@
 			"next_id": null
 		},
 		"florence_repeat": {
-			"id": "florence_repeat",
 			"entry_point": true,
 			"conditions": {
 				"flags_required": [
@@ -123,7 +121,6 @@
 	},
 	"day_2": {
 		"bar_day2": {
-		"id": "bar_day2",
 		"entry_point": true,
 		"conditions": {},
 		"speaker": "Aiden",

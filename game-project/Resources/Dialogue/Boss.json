@@ -1,7 +1,6 @@
 {
 	"day_1": {
 		"day_1_intro": {
-		"id": "day_1_intro",
 		"entry_point": true,
 		"conditions": {
 			"flags_absent": ["met_boss"]
@@ -30,7 +29,7 @@
 		},
 		"day_1_intro_3": {
 		"speaker": "Inez",
-		"text": "[NAME]..?",
+		"text": "[wave][color=#16C1DE][NAME]..?[/color][/wave]",
 		"portrait": "CoworkerNeutral",
 		"next_id": "day_1_intro_4"
 		},
@@ -85,7 +84,6 @@
 		},
 		
 		"day_1_tutorial": {
-		"id": "day_1_tutorial",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss"],
@@ -120,7 +118,6 @@
 		
 		
 		"day_1_generic_work": {
-		"id": "day_1_generic_work",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss", "tutorial_complete"],
@@ -133,7 +130,6 @@
 		},
 		
 		"day_1_generic_digging": {
-		"id": "day_1_generic_digging",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss", "tutorial_complete", "cleaning_complete"],
@@ -146,7 +142,6 @@
 		},
 		
 		"day_1_generic_cleaning": {
-		"id": "day_1_generic_cleaning",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss", "tutorial_complete", "digging_complete"],
@@ -160,7 +155,6 @@
 		
 		
 		"day_1_work_finish": {
-		"id": "day_1_work_finish",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss", "tutorial_complete", "digging_complete", "cleaning_complete"],
@@ -213,7 +207,6 @@
 		},
 		
 		"day_1_generic": {
-		"id": "day_1_generic",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["work_done"]
@@ -226,7 +219,6 @@
 	},
 	"day_2": {
 		"day_2_boss": {
-		"id": "day_2_boss",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss", "tutorial_complete"]
@@ -277,7 +269,6 @@
 	},
 	"day_3": {
 		"day_3_boss": {
-		"id": "day_3_boss",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["met_boss", "tutorial_complete"]

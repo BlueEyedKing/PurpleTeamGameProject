@@ -1,7 +1,6 @@
 {
 	"day_1": {
 		"poppy_intro": {
-			"id": "poppy_intro",
 			"entry_point": true,
 			"conditions": {
 				"flags_absent": [
@@ -70,7 +69,6 @@
 			"next_id": null
 		},
 		"poppy_repeat": {
-			"id": "poppy_repeat",
 			"entry_point": true,
 			"conditions": {
 				"flags_required": [
@@ -97,7 +95,6 @@
 	},
 	"day_2": {
 		"poppy_day2": {
-		"id": "poppy_day2",
 		"entry_point": true,
 		"conditions": {},
 		"speaker": "Poppy",
@@ -160,5 +157,217 @@
 		"text": "...that was strange.",
 		"next_id": null
 		}
+	},
+	"day_3": {
+		"poppy_camila": {
+		"entry_point": true,
+		"conditions": {"flags_absent": ["spoke_to_poppy_and_camila"]},
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "I’m telling you!",
+		"next_id": "poppy_camila2"
+		},
+		"poppy_camila2": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "They’re covering something up!",
+		"next_id": "poppy_camila3"
+		},
+		
+		"poppy_camila3": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "You’re causing a scene",
+		"next_id": "poppy_camila4"
+		},
+		"poppy_camila4": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Take your conspiracies somewhere else.",
+		"next_id": "poppy_camila5"
+		},
+		
+		"poppy_camila5": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "They’re not conspiracies, they’re the truth!",
+		"next_id": "poppy_camila6"
+		},
+		"poppy_camila6": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "I speak the truth! But no one believes-",
+		"next_id": "poppy_camila7"
+		},
+		"poppy_camila7": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "[NAME]!",
+		"next_id": "poppy_camila8"
+		},
+		
+		"poppy_camila8": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "..!",
+		"next_id": "poppy_camila9"
+		},
+		
+		"poppy_camila9": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You have to help me! You- you seek the truth just like I do, right?",
+		"choices": [
+				{
+					"text": "Yup! They call me [NAME] the truth finder.",
+					"next_id": "poppy_good"
+				},
+				{
+					"text": "um!",
+					"next_id": "poppy_losing_his_mind"
+				},
+								{
+					"text": "I don’t...",
+					"next_id": "poppy_losing_his_mind"
+				}
+			]
+		},
+		
+		"poppy_good": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "See Miss Museum Lady! The new archeologist believes me!",
+		"next_id": "poppy_camila_continue"
+		},
+		"poppy_losing_his_mind": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You have to! The end is nigh, you have to believe me if you want to survive!",
+		"next_id": "poppy_camila_continue"
+		},
+		
+		"poppy_camila_continue": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "I’m so sorry about this, [NAME].",
+		"next_id": "poppy_camila_continue2"
+		},
+		"poppy_camila_continue2": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "He likes to come in here spouting all this nonsense...",
+		"next_id": "poppy_camila_continue3"
+		},
+		"poppy_camila_continue3": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "I just wish he’d get the help he needed.",
+		"next_id": "poppy_camila_continue4"
+		},
+		
+		"poppy_camila_continue4": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "I don’t need help, I need answers!",
+		"next_id": "poppy_camila_continue5"
+		},
+		
+		"poppy_camila_continue5": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Poppy, you can’t seriously think this town is run by.. What was it you said.. [wave][color=#16C1DE]Time travelers?[/color][/wave]",
+		"next_id": "poppy_camila_continue6"
+		},
+		
+		"poppy_camila_continue6": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "They’re ruthless killers, the lot of them!",
+		"next_id": "poppy_camila_continue7"
+		},
+		"poppy_camila_continue7": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "All of them came from the future just to take control of us now! And they’re based right here in this town.",
+		"next_id": "poppy_camila_continue8"
+		},
+		
+		"poppy_camila_continue8": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Poppy.. You understand that sounds crazy, right?",
+		"next_id": "poppy_camila_continue9"
+		},
+		
+		"poppy_camila_continue9": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "It’s the truth! They changed the past, and now they want to change the present.",
+		"next_id": "poppy_camila_continue10"
+		},
+		"poppy_camila_continue10": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "All for their [color=#BF0B2D]evil[/color] schemes.",
+		"next_id": "poppy_camila_end"
+		},
+		"poppy_camila_end": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...",
+		"next_id": null,
+		"on_finish": {
+			"set_flags": ["spoke_to_poppy_and_camila"]
+			},
+		},
+		
+		
+		"poppy_chat": {
+		"entry_point": true,
+		"conditions": {"flags_required": ["spoke_to_poppy_and_camila"]},
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You have to wear a hat like mine. That’s- that’s the only way to protect your mind. Everyone knows that.",
+		"choices": [
+				{
+					"text": "Your hat...?",
+					"next_id": "poppy_hat"
+				},
+				{
+					"text": "What theory were you telling Camila?",
+					"next_id": "poppy_theory"
+				},
+								{
+					"text": "...",
+					"next_id": null
+				}
+			]
+		},
+		
+		"poppy_hat": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "It’s made of tin foil! It blocks all the radio waves that are trying to control me.",
+		"next_id": "poppy_hat2"
+		},
+		"poppy_hat2": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You should get one too.",
+		"next_id": null
+		},
+		
+		"poppy_theory": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "It’s not a theory! I only ever speak the truth.",
+		"next_id": "poppy_theory2"
+		},
+		"poppy_theory2": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "There are time travelers in our midst. They’ve killed before and they will kill again. We need to watch out.",
+		"next_id": null
+		},
 	}
 }

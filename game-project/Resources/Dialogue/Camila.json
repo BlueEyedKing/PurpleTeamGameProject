@@ -1,7 +1,6 @@
 {
 	"day_1": {
 		"camila_intro": {
-			"id": "camila_intro",
 			"entry_point": true,
 			"conditions": {
 				"flags_absent": [
@@ -49,7 +48,6 @@
 			"next_id": null
 		},
 		"camila_repeat": {
-			"id": "camila_repeat",
 			"entry_point": true,
 			"conditions": {
 				"flags_required": [
@@ -107,7 +105,6 @@
 	},
 	"day_2": {
 		"camila_day2_welcome": {
-		"id": "camila_day2_welcome",
 		"entry_point": true,
 		"conditions": {
 			"flags_absent": ["camila_day2_submitted"]
@@ -121,7 +118,6 @@
 		]
 		},
 		"camila_day2_submit": {
-		"id": "camila_day2_submit",
 		"on_finish": {
 			"set_flags": ["camila_day2_submitted"]
 		},
@@ -131,7 +127,6 @@
 		"next_id": null
 		},
 		"camila_day2_after": {
-		"id": "camila_day2_after",
 		"entry_point": true,
 		"conditions": {
 			"flags_required": ["camila_day2_submitted"]
@@ -162,5 +157,88 @@
 		"text": "Hm. If you find more, bring them all over to the museum. Maybe we can piece them together.",
 		"next_id": null
 		}
-	}
+	},
+	"day_3": {
+		"camila_day3_welcome_fossil": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["spoke_to_poppy_and_camila", "fossil_returned"]
+		},
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "...hello. Can I help you?",
+		"choices": [
+			{
+				"text": "...What was Poppy talking about?",
+				"next_id": "camilla_poppy_explain"
+			},
+			{
+				"text": "I found another strange fossil...",
+				"next_id": "camila_strange_fossil"
+			},
+			{
+				"text": "Nevermind",
+				"next_id": null
+			}
+		]
+		},
+		
+		"camilla_poppy_explain": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Ah... everything he says is nonsense.",
+		"next_id": "camilla_poppy_explain2"
+		},
+		"camilla_poppy_explain2": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Since I remember, Poppy has been coming in here spouting some theory or another about this town. None of them have any real backing.",
+		"next_id": null
+		},
+		
+		"camila_strange_fossil": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Oh! Can I see..?",
+		"next_id": "camila_strange_fossil2"
+		},
+		"camila_strange_fossil2": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "...",
+		"action": "play_suspense",
+		"next_id": "camila_strange_fossil3"
+		},
+		"camila_strange_fossil3": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Do you have the others?",
+		"next_id": "camila_strange_fossil4"
+		},
+		"camila_strange_fossil4": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "Here..",
+		"next_id": "camila_strange_fossil5"
+		},
+		"camila_strange_fossil5": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "...",
+		"next_id": "camila_strange_fossil6"
+		},
+		"camila_strange_fossil6": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Look.. when we put these together...",
+		"action": "fossils_on_screen",
+		"next_id": "camila_strange_fossil7"
+		},
+		"camila_strange_fossil7": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "...",
+		"next_id": "camila_strange_fossil8"
+		},
+	},
 }

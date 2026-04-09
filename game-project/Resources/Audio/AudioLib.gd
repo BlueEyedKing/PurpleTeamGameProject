@@ -3,10 +3,12 @@ extends Node
 const MUSIC = {
 	"main_city" = preload("res://Resources/Audio/Songs/CozyGameDigSiteVersionMaybe.mp3"),
 	"house" = preload("res://Resources/Audio/Songs/CozyGameRoughSketch01.mp3"),
+	"suspense" =preload("res://Resources/Audio/Songs/MYSTERIOUS.mp3")
 }
 
 const AMBIANCE = {
 	"camp_1" = preload("res://Resources/Audio/Ambiance/GameProject2_DigSiteAmbience.mp3"),
+	"camp_2" = preload("res://Resources/Audio/Ambiance/GameProject2_DesertAmbience.mp3"),
 	"house" = preload("res://Resources/Audio/Ambiance/HOMEfireplace.mp3"),
 }
 
