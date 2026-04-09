@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d35duey574n4j"
+path="res://.godot/imported/06-museum.wav-91373d45dcc056621260d36634004296.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/NPC voices/museum clerk/06-museum.wav"
+dest_files=["res://.godot/imported/06-museum.wav-91373d45dcc056621260d36634004296.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

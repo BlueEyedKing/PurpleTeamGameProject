@@ -10,7 +10,8 @@ const NAME_INPUT_UI = preload("res://UI/name_input_ui.tscn")
 const NORMAL_FONT = preload("res://Resources/superstar_memesbruh03.ttf")
 const THOUGHT_FONT = preload("res://Resources/Fonts/smalle.ttf")
 
-
+var voice_player: AudioStreamPlayer
+var current_voice: Array = []
 
 var name_input_instance
 
@@ -28,12 +29,18 @@ var waiting_for_input: bool = false
 signal dialog_finished()
 
 func _ready() -> void:
+	voice_player = AudioStreamPlayer.new()
+	voice_player.bus = "SFX"
+	add_child(voice_player)
+	
 	text_label.visible_characters_behavior = TextServer.VC_CHARS_AFTER_SHAPING
 	EventBus.name_input_done.connect(_confirm_name)
+	
 	typing_timer = Timer.new()
 	typing_timer.one_shot = true
 	typing_timer.timeout.connect(_on_typing_timer_timeout)
 	add_child(typing_timer)
+
 	hide()
 
 func start_for_npc(npc_id: String) -> void:
@@ -115,15 +122,18 @@ func _show_dialogue(id: String) -> void:
 	else:
 		text_label.add_theme_color_override("font_color", Color(0,0,0,1))
 		text_label.add_theme_font_override("font", NORMAL_FONT)
-
 	
 	var portrait_id = entry.get("portrait", "")
 	if portrait_id:
 		portrait.texture = load("res://Resources/Sprites/Portraits/" + portrait_id + ".png")
+		
 	var speaker = entry.get("speaker", "")
+	current_voice = AudioLib.VOICES.get(speaker, [])
+	
+	var display = entry.get("display", speaker)
 	if speaker == "Player":
 		speaker = GameData.get_value("player_name", "...")
-	speaker_label.text = speaker
+	speaker_label.text = display
 	current_text = entry.get("text", "...")
 	current_text = _substitute_text(entry.get("text", ""))
 	
@@ -140,15 +150,26 @@ func _substitute_text(text: String) -> String:
 	return text
 
 func _on_typing_timer_timeout() -> void:
-	var length: int = current_text.length()
-	
-	if text_label.visible_characters < length:
+	if text_label.visible_characters < current_text.length():
 		text_label.visible_characters += 1
+		_try_play_voice()
 		typing_timer.start(typing_speed)
 	else:
 		is_typing = false
 		_on_typing_done()
 
+func _try_play_voice() -> void:
+	if current_voice == null or current_voice.is_empty():
+		return
+	var c = current_text[text_label.visible_characters - 1]
+	if c == " " or c in [".", ",", "!", "?", "-", "…"]:
+		return
+	if voice_player.playing:
+		return
+	voice_player.stream = current_voice[randi() % current_voice.size()]
+	voice_player.pitch_scale = randf_range(0.9, 1.1)
+	voice_player.play()
+	
 func _on_typing_done() -> void:
 	var entry: Dictionary = dialogue_data[current_dialogue_id]
 	

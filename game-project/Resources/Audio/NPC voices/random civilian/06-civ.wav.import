@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://co7sgvok6tyo5"
+path="res://.godot/imported/06-civ.wav-b73fbeb905d59f3345bf7f64f6c51b05.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/NPC voices/random civilian/06-civ.wav"
+dest_files=["res://.godot/imported/06-civ.wav-b73fbeb905d59f3345bf7f64f6c51b05.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -12,7 +12,8 @@
 					"met_camila"
 				]
 			},
-			"speaker": "???",
+			"display": "???",
+			"speaker": "Camila",
 			"portrait": "CamilaNeutral",
 			"text": "Inez, is that you?",
 			"next_id": "camila_intro_inez"

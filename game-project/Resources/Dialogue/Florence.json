@@ -19,13 +19,15 @@
 			"next_id": "bar_group_line1"
 		},
 		"bar_group_line1": {
-			"speaker": "???",
+			"display": "???",
+			"speaker": "Florence",
 			"portrait": "FlorenceNeutral",
 			"text": "Because the only time you even think about it is when you come here to drink!",
 			"next_id": "bar_group_line2"
 		},
 		"bar_group_line2": {
-			"speaker": "???",
+			"display": "???",
+			"speaker": "Thea",
 			"portrait": "TheaNeutral",
 			"text": "Calm down, Oran. Florence and I miss him too, you know that. It's in the past now. We can't protect him anymore.",
 			"next_id": "bar_group_oran"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw2i7lybp342v"
+path="res://.godot/imported/08-hobo8.wav-829d59f43fcab4ffe28d445bb933b910.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/NPC voices/hobo/08-hobo8.wav"
+dest_files=["res://.godot/imported/08-hobo8.wav-829d59f43fcab4ffe28d445bb933b910.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

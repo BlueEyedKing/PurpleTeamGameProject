@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bq0xst1rspwls"
+path="res://.godot/imported/08-tt2.wav-58ffebc1cf2e48b6a6d2cbc8fad82fcd.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/NPC voices/Time traveler 2/08-tt2.wav"
+dest_files=["res://.godot/imported/08-tt2.wav-58ffebc1cf2e48b6a6d2cbc8fad82fcd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
