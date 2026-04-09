@@ -17,6 +17,7 @@ scale = Vector2(1.9, 1.9)
 texture = ExtResource("2_tyisy")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_uxd6c")]
+action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 32)

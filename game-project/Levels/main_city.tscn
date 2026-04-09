@@ -258,7 +258,6 @@ position = Vector2(1450, 1950)
 [node name="Poppy" parent="." instance=ExtResource("15_vxoxm")]
 position = Vector2(2143.0002, 1686)
 script = ExtResource("14_tks1q")
-npc_id = ""
 
 [node name="Camila" parent="." instance=ExtResource("14_r046q")]
 position = Vector2(-867, 2342)
@@ -280,6 +279,9 @@ position = Vector2(1178, 47)
 
 [node name="InezFarewell" type="Marker2D" parent="."]
 position = Vector2(1567, 1933)
+
+[node name="Poppy_default" type="Marker2D" parent="."]
+position = Vector2(2143, 1698)
 
 [node name="Poppy_day3" type="Marker2D" parent="."]
 position = Vector2(925, 52)
