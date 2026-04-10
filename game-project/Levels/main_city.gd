@@ -64,6 +64,7 @@ func _update_tour_npcs() -> void:
 
 	_set_npc_active(_poppy, true)
 
+
 func _next_inez_waypoint() -> Vector2:
 	var d := GameData
 
