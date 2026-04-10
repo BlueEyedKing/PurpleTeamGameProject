@@ -13,5 +13,5 @@ func Exit():
 	pass
 	
 func Update(_delta: float):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and not DialogueUi.visible:
 		manager.push_state(PauseState.new(manager))

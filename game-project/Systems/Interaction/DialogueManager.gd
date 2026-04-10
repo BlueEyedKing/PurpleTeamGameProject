@@ -12,7 +12,6 @@ const THOUGHT_FONT = preload("res://Resources/Fonts/smalle.ttf")
 
 var voice_player: AudioStreamPlayer
 var current_voice: Array = []
-
 var name_input_instance
 
 var dialogue_data: Dictionary = {}
@@ -69,6 +68,8 @@ func load_dialogue(id: String) -> Dictionary:
 		return {}
 	return json.data
 
+## Returns true if the NPC has at least one entry point whose conditions are
+## currently met for today's day key.  Safe to call from NPC._ready().
 func _start(data: Dictionary, start_id: String) -> void:
 	InteractionManager.lock(self)
 	var player = get_tree().get_first_node_in_group("player")
@@ -140,7 +141,7 @@ func _show_dialogue(id: String) -> void:
 	_clear_choices()
 	text_label.text = current_text
 	text_label.visible_characters = 0
-	
+
 	is_typing = true
 	waiting_for_input = false
 	typing_timer.start(typing_speed)
