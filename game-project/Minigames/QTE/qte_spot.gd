@@ -2,7 +2,8 @@ extends InteractionArea
 class_name QteSpot
 
 ## Self-contained QTE spot. Instance qte_spot.tscn and drag it into any level.
-## Launches the Q/F alternating QTE minigame when interacted with. One-time use.
+## Launches the Q/F alternating QTE minigame when interacted with.
+## Only disappears on a successful run (>= 66% hits).
 
 const QTE_SEQUENCE       = preload("res://Minigames/QTE/qte_sequence.tscn")
 const INSTRUCTION_SCREEN = preload("res://Minigames/Shared/instruction_screen.tscn")
@@ -27,25 +28,24 @@ const QTE_CONFIG = {
 	"dismiss_hint": "Press [E] to Begin"
 }
 
-var _used := false
+var _shown_instructions := false
 
 func _ready() -> void:
 	action_name = "Dig"
 	interact = _on_interact
 
 func _on_interact() -> void:
-	if _used:
-		return
-
 	InteractionManager.lock(self)
 	EventBus.minigame_started.emit()
 
-	# Instruction screen
-	var instr = INSTRUCTION_SCREEN.instantiate()
-	_get_ui_layer().add_child(instr)
-	instr.setup(QTE_CONFIG)
-	await instr.dismissed
-	instr.queue_free()
+	# Instruction screen — first attempt only
+	if not _shown_instructions:
+		var instr = INSTRUCTION_SCREEN.instantiate()
+		_get_ui_layer().add_child(instr)
+		instr.setup(QTE_CONFIG)
+		await instr.dismissed
+		instr.queue_free()
+		_shown_instructions = true
 
 	# Countdown
 	var cd = COUNTDOWN_SCREEN.instantiate()
@@ -67,15 +67,21 @@ func _on_interact() -> void:
 	await result.dismissed
 	result.queue_free()
 
-	_used = true
+	# Check success — matches result_screen threshold
+	var hits := results.count(true)
+	var pct  := int((float(hits) / float(results.size())) * 100.0) if results.size() > 0 else 0
 
+	InteractionManager.unlock(self)
+
+	if pct < 66:
+		return  # Failed — spot stays, player can retry
+
+	# Success — remove spot
 	var marker = get_node_or_null("Marker")
 	if marker:
 		marker.visible = false
-
-	EventBus.minigame_finished.emit()
 	GameData.set_flag("digging_complete")
-	InteractionManager.unlock(self)
+	EventBus.minigame_finished.emit()
 	queue_free()
 
 func _get_ui_layer() -> CanvasLayer:
