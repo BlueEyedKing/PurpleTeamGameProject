@@ -125,6 +125,9 @@
 		"bar_day2": {
 		"entry_point": true,
 		"conditions": {},
+		"on_finish": {
+			"set_flags": ["day2_visited_bar"]
+		},
 		"speaker": "Aiden",
 		"portrait": "AidenNeutral",
 		"text": "Oh, hi! It's nice to see you again, [NAME].",

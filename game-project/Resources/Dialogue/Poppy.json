@@ -97,6 +97,9 @@
 		"poppy_day2": {
 		"entry_point": true,
 		"conditions": {},
+		"on_finish": {
+			"set_flags": ["day2_talked_poppy"]
+		},
 		"speaker": "Poppy",
 		"portrait": "HoboNeutral",
 		"text": "Hey! Over here!",

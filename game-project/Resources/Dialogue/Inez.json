@@ -223,6 +223,9 @@
 		"inez_day2_greet": {
 		"entry_point": true,
 		"conditions": {},
+		"on_finish": {
+			"set_flags": ["day2_talked_inez"]
+		},
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
 		"text": "Hi there! How was work today?",
