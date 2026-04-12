@@ -1,0 +1,377 @@
+{
+	"day_1": {
+		"poppy_intro": {
+			"entry_point": true,
+			"conditions": {
+				"flags_absent": [
+					"met_poppy"
+				]
+			},
+			"on_finish": {
+				"set_flags": [
+					"met_poppy"
+				]
+			},
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "You should probably meet everyone in town, but–",
+			"choices": [
+				{
+					"text": "Hello",
+					"next_id": "poppy_intro_hello"
+				},
+				{
+					"text": "Is something wrong with him..?",
+					"next_id": "poppy_intro_hello"
+				}
+			]
+		},
+		"poppy_intro_hello": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "You're talking to me? Oh, um.. Wow.. people don't usually approach me.. um. I'm Poppy! It's nice to meet you..",
+			"next_id": "poppy_intro_player"
+		},
+		"poppy_intro_player": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "Its nice to meet you too.",
+			"next_id": "poppy_intro_secret"
+		},
+		"poppy_intro_secret": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "It is..? You seem nice, so I'm going to let you in on a little secret about this town.",
+			"next_id": "poppy_intro_secret_2"
+		},
+		"poppy_intro_secret_2": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Everything started here. The entire Earth spans around this spot, so choosing to come here was really smart on your part.",
+			"next_id": "poppy_intro_edge"
+		},
+		"poppy_intro_edge": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "If you go too far out, you might fall off the edge.",
+			"next_id": "poppy_intro_right"
+		},
+		"poppy_intro_right": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "Right…",
+			"next_id": "poppy_intro_rush"
+		},
+		"poppy_intro_rush": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "Sorry Poppy, we're kind of in a rush.",
+			"next_id": null
+		},
+		"poppy_repeat": {
+			"entry_point": true,
+			"conditions": {
+				"flags_required": [
+					"met_poppy"
+				]
+			},
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "The earth has to be flat, how else would we stay standing on it instead of floating out into space?",
+			"next_id": "poppy_repeat_huh"
+		},
+		"poppy_repeat_huh": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "...huh?",
+			"next_id": "poppy_repeat_truth"
+		},
+		"poppy_repeat_truth": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Most people here don't want to face the truth, but you're listening to me! I'll keep you up to date on everything I find out. There's something going on in this town.",
+			"next_id": null
+		}
+	},
+	"day_2": {
+		"poppy_day2": {
+		"entry_point": true,
+		"conditions": {},
+		"on_finish": {
+			"set_flags": ["day2_talked_poppy"]
+		},
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "Hey! Over here!",
+		"next_id": "poppy_day2_player"
+		},
+		"poppy_day2_player": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...",
+		"next_id": "poppy_day2_time"
+		},
+		"poppy_day2_time": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "Look, we don't have much time. I think they're on to me.",
+		"next_id": "poppy_day2_who"
+		},
+		"poppy_day2_who": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...who?",
+		"next_id": "poppy_day2_names"
+		},
+		"poppy_day2_names": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "If I say their names, they'll know.",
+		"next_id": "poppy_day2_silence"
+		},
+		"poppy_day2_silence": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...",
+		"next_id": "poppy_day2_dig"
+		},
+		"poppy_day2_dig": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "Pay attention to what you dig up.",
+		"next_id": "poppy_day2_react"
+		},
+		"poppy_day2_react": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...!",
+		"next_id": "poppy_day2_key"
+		},
+		"poppy_day2_key": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "Those dig sites have evil energy. They hold the key to this town.",
+		"next_id": "poppy_day2_end"
+		},
+		"poppy_day2_end": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"type": "thought",
+		"text": "...that was strange.",
+		"next_id": null
+		}
+	},
+	"day_3": {
+		"poppy_camila": {
+		"entry_point": true,
+		"conditions": {"flags_absent": ["spoke_to_poppy_and_camila"]},
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "I’m telling you!",
+		"next_id": "poppy_camila2"
+		},
+		"poppy_camila2": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "They’re covering something up!",
+		"next_id": "poppy_camila3"
+		},
+		
+		"poppy_camila3": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "You’re causing a scene",
+		"next_id": "poppy_camila4"
+		},
+		"poppy_camila4": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Take your conspiracies somewhere else.",
+		"next_id": "poppy_camila5"
+		},
+		
+		"poppy_camila5": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "They’re not conspiracies, they’re the truth!",
+		"next_id": "poppy_camila6"
+		},
+		"poppy_camila6": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "I speak the truth! But no one believes-",
+		"next_id": "poppy_camila7"
+		},
+		"poppy_camila7": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "[NAME]!",
+		"next_id": "poppy_camila8"
+		},
+		
+		"poppy_camila8": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "..!",
+		"next_id": "poppy_camila9"
+		},
+		
+		"poppy_camila9": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You have to help me! You- you seek the truth just like I do, right?",
+		"choices": [
+				{
+					"text": "Yup! They call me [NAME] the truth finder.",
+					"next_id": "poppy_good"
+				},
+				{
+					"text": "um!",
+					"next_id": "poppy_losing_his_mind"
+				},
+								{
+					"text": "I don’t...",
+					"next_id": "poppy_losing_his_mind"
+				}
+			]
+		},
+		
+		"poppy_good": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "See Miss Museum Lady! The new archeologist believes me!",
+		"next_id": "poppy_camila_continue"
+		},
+		"poppy_losing_his_mind": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You have to! The end is nigh, you have to believe me if you want to survive!",
+		"next_id": "poppy_camila_continue"
+		},
+		
+		"poppy_camila_continue": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "I’m so sorry about this, [NAME].",
+		"next_id": "poppy_camila_continue2"
+		},
+		"poppy_camila_continue2": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "He likes to come in here spouting all this nonsense...",
+		"next_id": "poppy_camila_continue3"
+		},
+		"poppy_camila_continue3": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "I just wish he’d get the help he needed.",
+		"next_id": "poppy_camila_continue4"
+		},
+		
+		"poppy_camila_continue4": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "I don’t need help, I need answers!",
+		"next_id": "poppy_camila_continue5"
+		},
+		
+		"poppy_camila_continue5": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Poppy, you can’t seriously think this town is run by.. What was it you said.. [wave][color=#16C1DE]Time travelers?[/color][/wave]",
+		"next_id": "poppy_camila_continue6"
+		},
+		
+		"poppy_camila_continue6": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "They’re ruthless killers, the lot of them!",
+		"next_id": "poppy_camila_continue7"
+		},
+		"poppy_camila_continue7": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "All of them came from the future just to take control of us now! And they’re based right here in this town.",
+		"next_id": "poppy_camila_continue8"
+		},
+		
+		"poppy_camila_continue8": {
+		"speaker": "Camila",
+		"portrait": "CamilaNeutral",
+		"text": "Poppy.. You understand that sounds crazy, right?",
+		"next_id": "poppy_camila_continue9"
+		},
+		
+		"poppy_camila_continue9": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "It’s the truth! They changed the past, and now they want to change the present.",
+		"next_id": "poppy_camila_continue10"
+		},
+		"poppy_camila_continue10": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "All for their [color=#BF0B2D]evil[/color] schemes.",
+		"next_id": "poppy_camila_end"
+		},
+		"poppy_camila_end": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...",
+		"action": "camila_leaves_to_museum",
+		"next_id": null,
+		"on_finish": {
+			"set_flags": ["spoke_to_poppy_and_camila"]
+			},
+		},
+		
+		
+		"poppy_chat": {
+		"entry_point": true,
+		"conditions": {"flags_required": ["spoke_to_poppy_and_camila"]},
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You have to wear a hat like mine. That’s- that’s the only way to protect your mind. Everyone knows that.",
+		"choices": [
+				{
+					"text": "Your hat...?",
+					"next_id": "poppy_hat"
+				},
+				{
+					"text": "What theory were you telling Camila?",
+					"next_id": "poppy_theory"
+				},
+								{
+					"text": "...",
+					"next_id": null
+				}
+			]
+		},
+		
+		"poppy_hat": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "It’s made of tin foil! It blocks all the radio waves that are trying to control me.",
+		"next_id": "poppy_hat2"
+		},
+		"poppy_hat2": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "You should get one too.",
+		"next_id": null
+		},
+		
+		"poppy_theory": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "It’s not a theory! I only ever speak the truth.",
+		"next_id": "poppy_theory2"
+		},
+		"poppy_theory2": {
+		"speaker": "Poppy",
+		"portrait": "HoboNeutral",
+		"text": "There are time travelers in our midst. They’ve killed before and they will kill again. We need to watch out.",
+		"next_id": null
+		},
+	}
+}

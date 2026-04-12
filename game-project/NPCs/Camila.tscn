@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://covaw3qv522fe"]
+
+[ext_resource type="Script" uid="uid://btt5cmleleatq" path="res://NPCs/camila.gd" id="1_6kfc3"]
+[ext_resource type="Texture2D" uid="uid://nt3ha67b1np1" path="res://Resources/Sprites/Characters/MuseumWorker/Museum_Worker_Front.png" id="1_m0vo5"]
+[ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="2_6kfc3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yib5"]
+radius = 68.26419
+
+[node name="Camila" type="Node2D"]
+script = ExtResource("1_6kfc3")
+npc_id = "Camila"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_m0vo5")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_6kfc3")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 32)
+shape = SubResource("CircleShape2D_2yib5")

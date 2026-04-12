@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dshopinterior"]
+
+[ext_resource type="Script" uid="uid://dbm0yd7sgijuo" path="res://Levels/shop.gd" id="1_shop"]
+[ext_resource type="Texture2D" uid="uid://dabejh53x41ej" path="res://Resources/Sprites/Interiors/Inside_Shop.png" id="2_axjb3"]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_shop")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("2_axjb3")
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+offset_left = 887.0
+offset_top = 912.0
+offset_right = 1097.0
+offset_bottom = 1062.0
+text = "[ Exit Shop ]"
+
+[node name="AidenButton" type="Button" parent="CanvasLayer"]
+offset_left = 358.0
+offset_top = 329.0
+offset_right = 758.0
+offset_bottom = 449.0
+focus_mode = 0
+text = "[ Talk to Aiden ]"

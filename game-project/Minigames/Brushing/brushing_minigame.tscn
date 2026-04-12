@@ -1,0 +1,160 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Minigames/Brushing/brushing_minigame.gd" id="1_brush"]
+[ext_resource type="Shader" path="res://Minigames/Brushing/dirt_overlay.gdshader" id="2_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dirt"]
+resource_local_to_scene = true
+shader = ExtResource("2_shader")
+shader_parameter/dirt_color_light = Color(0.55, 0.42, 0.25, 1.0)
+shader_parameter/dirt_color_dark = Color(0.35, 0.22, 0.12, 1.0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.12, 0.1, 0.08, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.45, 0.25, 1.0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fossil_frame"]
+bg_color = Color(0.08, 0.06, 0.04, 1.0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5, 0.38, 0.2, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[node name="BrushingMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_brush")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -300.0
+offset_right = 280.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="MainPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.75, 0.45, 1.0)
+theme_override_font_sizes/font_size = 28
+text = "~ Brush the Fossil ~"
+horizontal_alignment = 1
+
+[node name="FossilFrame" type="PanelContainer" parent="MainPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fossil_frame")
+
+[node name="FossilContainer" type="Control" parent="MainPanel/VBox/FossilFrame"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 350)
+
+[node name="FossilSprite" type="TextureRect" parent="MainPanel/VBox/FossilFrame/FossilContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="DirtOverlay" type="ColorRect" parent="MainPanel/VBox/FossilFrame/FossilContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_dirt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 1)
+
+[node name="BottomRow" type="HBoxContainer" parent="MainPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ProgressLabel" type="Label" parent="MainPanel/VBox/BottomRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.7, 1.0)
+theme_override_font_sizes/font_size = 18
+text = "0%"
+
+[node name="ProgressBar" type="ProgressBar" parent="MainPanel/VBox/BottomRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
+[node name="TimeLabel" type="Label" parent="MainPanel/VBox/BottomRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.7, 1.0)
+theme_override_font_sizes/font_size = 18
+text = "Time: 30"
+
+[node name="InstructionLabel" type="Label" parent="MainPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.65, 0.5, 0.8)
+theme_override_font_sizes/font_size = 14
+text = "Hold left mouse button and drag to brush away dirt"
+horizontal_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="MainPanel/VBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Fossil Cleaned!"
+horizontal_alignment = 1

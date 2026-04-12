@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnuan8vhyy81g"]
+
+[ext_resource type="Script" uid="uid://qo7mlwjqllb4" path="res://Systems/Interaction/DialogueManager.gd" id="1_6e3n1"]
+[ext_resource type="FontFile" uid="uid://cpxri4imtt1vp" path="res://Resources/superstar_memesbruh03.ttf" id="2_rm4vl"]
+[ext_resource type="Texture2D" uid="uid://bidmdlaotmfru" path="res://Resources/ui/UiBetter.png" id="2_vl2if"]
+[ext_resource type="Texture2D" uid="uid://q2imhdfp3cw1" path="res://Resources/Sprites/icon.svg" id="3_6e3n1"]
+
+[node name="DialogueUI" type="CanvasLayer"]
+script = ExtResource("1_6e3n1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ChoicesBox" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.996
+anchor_right = 1.0
+anchor_bottom = 0.996
+offset_left = 160.0
+offset_top = -819.67993
+offset_right = -126.0
+offset_bottom = -519.67993
+grow_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.99600005
+anchor_right = 0.5
+anchor_bottom = 0.99600005
+offset_left = -960.0
+offset_top = -398.68005
+offset_right = 960.0
+offset_bottom = 4.3199463
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vl2if")
+region_rect = Rect2(0, 0, 480, 101)
+metadata/_edit_use_anchors_ = true
+
+
+[node name="Portrait" type="TextureRect" parent="Control/NinePatchRect"]
+layout_mode = 1
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 348.0
+offset_bottom = 348.0
+texture = ExtResource("3_6e3n1")
+
+[node name="Control" type="Control" parent="Control/NinePatchRect"]
+layout_mode = 1
+anchor_left = 0.21200001
+anchor_top = 0.13900001
+anchor_right = 0.96900004
+anchor_bottom = 0.864
+offset_left = 0.95996094
+offset_top = -0.01700592
+offset_right = 3.5198975
+offset_bottom = -1.1920166
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect/Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 1442.0
+offset_bottom = 279.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="SpeakerLabel" type="Label" parent="Control/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5672439, 0.7287492, 0.44681525, 1)
+theme_override_fonts/font = ExtResource("2_rm4vl")
+theme_override_font_sizes/font_size = 28
+text = "Test Speaker"
+
+[node name="TextLabel" type="RichTextLabel" parent="Control/NinePatchRect/Control/VBoxContainer"]
+custom_minimum_size = Vector2(400, 180)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_rm4vl")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Test Text"
+autowrap_mode = 2

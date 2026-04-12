@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf0347phjxbyb"]
+
+[ext_resource type="Script" uid="uid://b0wqxgc6wciw2" path="res://Levels/tent.gd" id="1_tent"]
+[ext_resource type="Texture2D" uid="uid://wb1unakrdj58" path="res://Resources/Sprites/Interiors/Desk.png" id="2_apoyk"]
+
+[node name="Tent" type="Node2D"]
+script = ExtResource("1_tent")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_apoyk")
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+offset_left = 820.0
+offset_top = 920.0
+offset_right = 1100.0
+offset_bottom = 1060.0
+text = "[ Exit Tent ]"
+
+[node name="CleanButton" type="Button" parent="CanvasLayer"]
+offset_left = 177.0
+offset_top = 923.0
+offset_right = 577.0
+offset_bottom = 1043.0
+focus_mode = 0
+text = "[ Clean Fossil ]"

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv12xkgoi8xip"]
+
+[ext_resource type="Script" uid="uid://b5ydx0ewb42to" path="res://Scripts/human_fossils.gd" id="1_e6p45"]
+[ext_resource type="Texture2D" uid="uid://b6lih1krnqpar" path="res://Resources/Sprites/Fossils/skull.png" id="2_hj2ru"]
+[ext_resource type="Texture2D" uid="uid://dsjfiuepqvkk4" path="res://Resources/Sprites/Fossils/hand.png" id="3_hbio2"]
+[ext_resource type="Texture2D" uid="uid://pyco1y0ummu8" path="res://Resources/Sprites/Fossils/ribcage.png" id="4_8kb8a"]
+
+[node name="HumanFossils" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_e6p45")
+
+[node name="skull" type="TextureRect" parent="."]
+offset_left = 857.0
+offset_top = 221.0
+offset_right = 897.0
+offset_bottom = 261.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_hj2ru")
+
+[node name="hand" type="TextureRect" parent="."]
+offset_left = 786.0
+offset_top = 353.0
+offset_right = 826.0
+offset_bottom = 393.0
+rotation = -1.5707964
+texture = ExtResource("3_hbio2")
+
+[node name="ribcage" type="TextureRect" parent="."]
+offset_left = 857.0
+offset_top = 313.0
+offset_right = 897.0
+offset_bottom = 353.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_8kb8a")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://u43vtdln5rjk"]
+
+[ext_resource type="Script" uid="uid://2xk4g1vjn66a" path="res://Scripts/name_input.gd" id="1_7p04k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7p04k")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.52124
+offset_top = -51.5
+offset_right = 200.52124
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2

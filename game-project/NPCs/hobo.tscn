@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://gruuf0dilwf3"]
+
+[ext_resource type="Script" path="res://NPCs/hobo.gd" id="1_keyfj"]
+[ext_resource type="Texture2D" uid="uid://blnrgwqdrropm" path="res://Resources/Sprites/Characters/Hobo/Hobo_Front.png" id="1_u3sbv"]
+[ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="2_keyfj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vekfb"]
+radius = 72.44998
+
+[node name="Hobo" type="Node2D"]
+script = ExtResource("1_keyfj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_u3sbv")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_keyfj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 32)
+shape = SubResource("CircleShape2D_vekfb")

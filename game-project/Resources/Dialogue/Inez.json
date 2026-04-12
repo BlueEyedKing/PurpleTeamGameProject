@@ -1,0 +1,405 @@
+{
+	"day_1": {
+		"inez_redirect_park": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["_redirect_park"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "We should visit the park first!",
+		"next_id": null
+		},
+		"inez_redirect_shop": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["_redirect_shop"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "We should visit the shop first!",
+		"next_id": null
+		},
+		"inez_redirect_bar": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["_redirect_bar"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "We should visit the bar first!",
+		"next_id": null
+		},
+		"day1_city_intro": {
+		"entry_point": true,
+		"conditions": {
+			"level": "main_city",
+			"flags_required": ["work_done"],
+			"flags_absent": ["day1_town_intro_done"]
+		},
+		"on_finish": {
+			"set_flags": ["day1_town_intro_done"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "We didn't properly meet earlier...",
+		"next_id": "day1_city_intro_2"
+		},
+		"day1_city_intro_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "I'm Inez. I've been living in Amaranth Heights for years, and I've worked as an archeologist for even longer!",
+		"next_id": "day1_city_intro_3"
+		},
+		"day1_city_intro_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "The last thing we have to do for the day is turn our fossils into the museum.",
+		"next_id": "day1_city_intro_4"
+		},
+		"day1_city_intro_4": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "But our workday ends early enough that we have plenty of free time to explore in the evenings.",
+		"next_id": "day1_city_intro_5"
+		},
+		"day1_city_intro_5": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Oh, I know! What if I show you around town on the way to the museum?",
+		"choices": [
+			{"text": "Sure.", "next_id": "day1_city_intro_sure"},
+			{"text": "I don't know...", "next_id": "day1_city_intro_pushback"},
+			{"text": "I'd rather not.", "next_id": "day1_city_intro_pushback"}
+		]
+		},
+		"day1_city_intro_sure": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Just follow me!",
+		"next_id": null
+		},
+		"day1_city_intro_pushback": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Oh come on, it'll be fun! We'll go to the museum eventually, there's no rush. Just follow me!",
+		"next_id": null
+		},
+
+		"inez_park": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["day1_town_intro_done"],
+			"flags_absent": ["day1_visited_park"]
+		},
+		"on_finish": {
+			"set_flags": ["day1_visited_park"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "This is the park! It's a little small, but Amaranth Heights is surrounded by beautiful sights, so we're never lacking in nature.",
+		"next_id": null
+		},
+
+		"inez_shop": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["day1_visited_park", "met_poppy"],
+			"flags_absent": ["day1_visited_shop"]
+		},
+		"on_finish": {
+			"set_flags": ["day1_visited_shop"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Welcome to the shop! This is a one-stop-shop for all of your needs. Food, clothes, toiletries.. You name it, they probably sell it here.",
+		"next_id": null
+		},
+
+		"inez_bar": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["day1_visited_shop", "met_aiden"],
+			"flags_absent": ["day1_visited_bar"]
+		},
+		"on_finish": {
+			"set_flags": ["day1_visited_bar"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Amaranth Heights is pretty quiet, but the bar is always lively! No matter when you come here, there is always someone to converse with.",
+		"next_id": null
+		},
+
+		"inez_museum": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["day1_visited_bar", "met_time_travelers"],
+			"flags_absent": ["day1_visited_museum"]
+		},
+		"on_finish": {
+			"set_flags": ["day1_visited_museum"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "And here is our museum! It's probably the coolest thing in town.",
+		"next_id": "inez_museum_2"
+		},
+		"inez_museum_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Since they are helping fund Amaranth Archeology, we come here every day to turn in any fossils we find.",
+		"next_id": null
+		},
+
+		"inez_farewell": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["day1_visited_museum", "met_camila"],
+			"flags_absent": ["day1_tour_complete"]
+		},
+		"on_finish": {
+			"set_flags": ["day1_tour_complete"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Wow, what a night. Thanks for running all over town with me! Amaranth Heights is a small town, so it doesn't take long to see everything.",
+		"next_id": "inez_farewell_2"
+		},
+		"inez_farewell_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "You look tired, we should probably both head home. If you ever have any questions about what to do in your freetime, come find me! I'll be around. Good night!",
+		"next_id": null
+		},
+
+		"inez_tour_wait": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["day1_town_intro_done"],
+			"flags_absent": ["day1_tour_complete"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Take your time! Come find me when you're ready to move on.",
+		"next_id": null
+		},
+
+		"day_1_generic_stranger": {
+		"entry_point": true,
+		"conditions": {
+			"flags_absent": ["met_boss", "work_done"]
+		},
+		"speaker": "Inez",
+		"text": "...",
+		"portrait": "CoworkerNeutral",
+		"next_id": null
+		},
+
+		"day_1_generic_camp": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss"],
+			"flags_absent": ["work_done"]
+		},
+		"speaker": "Inez",
+		"text": "Go chat with the Boss [NAME]",
+		"portrait": "CoworkerNeutral",
+		"next_id": null
+		},
+
+		"day_1_generic_work_done": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "work_done"]
+		},
+		"speaker": "Inez",
+		"text": "What are you still doing here?",
+		"portrait": "CoworkerNeutral",
+		"next_id": null
+		}
+	},
+	"day_2": {
+		"inez_day2_greet": {
+		"entry_point": true,
+		"conditions": {},
+		"on_finish": {
+			"set_flags": ["day2_talked_inez"]
+		},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Hi there! How was work today?",
+		"choices": [
+			{"text": "It was good.",              "next_id": "inez_day2_good"},
+			{"text": "Absolutely awful.",         "next_id": "inez_day2_bad"},
+			{"text": "I found a strange fossil...", "next_id": "inez_day2_fossil"}
+		]
+		},
+		"inez_day2_good": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "That's wonderful! I hope you're settling in well here. If you need anything, please just ask me.",
+		"next_id": null
+		},
+		"inez_day2_bad": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Oh! I'm sorry to hear that. Well, y'know what they say. Tomorrow is a new day!",
+		"next_id": null
+		},
+		
+		"inez_day2_fossil": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Can I see?",
+		"next_id": "inez_day2_fossil_2"
+		},
+		"inez_day2_fossil_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...",
+		"next_id": "inez_day2_fossil_3"
+		},
+		"inez_day2_fossil_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Ah.. that looks...",
+		"next_id": "inez_day2_fossil_4"
+		},
+		"inez_day2_fossil_4": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "That is odd. Did you show Boss?",
+		"branches": [
+			{
+				"conditions": {"flags_required": ["showed_boss"] },
+				"next_id": "inez_day2_fossil_showed_boss"
+			},
+			{
+			"next_id": "inez_day2_fossil_didnt_show_boss"
+			}
+		]
+		},
+		"inez_day2_fossil_showed_boss": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "Yeah. He thinks someone is playing a prank on us.",
+		"next_id": "inez_day2_fossil_showed_boss_2"
+		},
+		"inez_day2_fossil_showed_boss_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "I see.. Well.. If someone is playing a prank, you should find out who. Why don't you ask around town to see if anyone seems suspicious!",
+		"next_id": null
+		},
+		"inez_day2_fossil_didnt_show_boss": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...no",
+		"next_id": "inez_day2_fossil_didnt_show_boss_2"
+		},
+		"inez_day2_fossil_didnt_show_boss_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Oh, well he might have more insight for you! You should probably ask him about it.",
+		"next_id": null
+		},
+	},
+		"day_3": {
+		"inez_day3_greet": {
+		"entry_point": true,
+		"conditions": {},
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Hey! [NAME]!",
+		"choices": [
+			{"text": "Hi!",              "next_id": "inez_day3_chat"},
+			{"text": "Hey! You come here often?",         "next_id": "inez_day3_chat"},
+			{"text": "...", "next_id": "inez_day3_chat"}
+		]
+		},
+		"inez_day3_chat": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Hehe.",
+		"next_id": "inez_day3_chat_2"
+		},
+		"inez_day3_chat_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Have you figured out anything else since yesterday?",
+		"choices": [
+			{"text": "...I found another strange fossil.",              "next_id": "inez_day3_fossil"},
+			{"text": "Poppy told me to be careful on the dig site.",         "next_id": "inez_day3_poppy"},
+			{"text": "Not really...", "next_id": "inez_day3_worry"}
+		]
+		},
+		"inez_day3_fossil": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Another one?",
+		"next_id": "inez_day3_fossil_2"
+		},
+		"inez_day3_fossil_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Can I see?",
+		"next_id": "inez_day3_fossil_3"
+		},
+		"inez_day3_fossil_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...",
+		"next_id": "inez_day3_fossil_4"
+		},
+		"inez_day3_fossil_4": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "You.. you should talk to Camila. This is starting to get weird.",
+		"next_id": null
+		},
+		
+		"inez_day3_poppy": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Poppy told me not to eat mushrooms anymore because they control your mind. I wouldn’t pay too much attention to whatever he says.",
+		"next_id": null
+		},
+		
+		"inez_day3_worry": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "I see...",
+		"next_id": "inez_day3_worry_2"
+		},
+		"inez_day3_worry_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Look, I don’t want to downplay your worries or whatever but...",
+		"next_id": "inez_day3_worry_3"
+		},
+		"inez_day3_worry_3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Have you considered that it is just a prank?",
+		"choices": [
+			{"text": "I guess..",              "next_id": "inez_day3_worry_choice_1"},
+			{"text": "No, I know something is wrong.",         "next_id": "inez_day3_worry_choice_2"}
+		]
+		},
+		
+		"inez_day3_worry_choice_1": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Its alright.. New places are difficult for everyone. Try taking your mind off of things.",
+		"next_id": null
+		},
+		
+		"inez_day3_worry_choice_2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...Alright. If you’re serious, then you should probably ask around again. Surely someone knows something.",
+		"next_id": null
+		},
+	}
+}

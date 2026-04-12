@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dheay38bngdo4"]
+
+[ext_resource type="Texture2D" uid="uid://c0hhe0nhci805" path="res://Resources/Sprites/Interiors/Inside_Home.png" id="2_y8vwm"]
+[ext_resource type="Script" uid="uid://bqiuqj8ktc1yc" path="res://Levels/house.gd" id="3_house"]
+
+[node name="House" type="Node2D"]
+script = ExtResource("3_house")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_y8vwm")
+
+[node name="DoorButton" type="Button" parent="CanvasLayer"]
+offset_left = 1633.0
+offset_top = 795.0
+offset_right = 1858.0
+offset_bottom = 1057.0
+text = "[ Door — Leave ]"
+
+[node name="BedButton" type="Button" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 410.0
+offset_right = 229.0
+offset_bottom = 688.0
+text = "[ Bed — Sleep ]"

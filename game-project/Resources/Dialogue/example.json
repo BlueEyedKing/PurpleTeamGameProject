@@ -1,0 +1,50 @@
+{
+	"day_1": {
+		"day_1_intro": {
+		"entry_point": true,
+		"conditions": {
+			"day": 1,
+			"flags_absent": ["met_inez"]
+		},
+		"on_finish": {
+			"set_flags": ["met_inez"]
+		},
+		"speaker": "Boss",
+		"text": "...You, there! Careful where you step, this is an archeological site.",
+		"type": "spoken",
+		"portrait": "BossMad",
+		"next_id": "day_1_intro_2"
+		},
+		"day_1_intro_2": {
+		"speaker": "Inez",
+		"text": "Oh, hi! It's not often that people wander out to the digsite.",
+		"portrait": "CoworkerNeutral",
+		"next_id": "day_1_intro_2-extra"
+		},
+		"day_1_intro_2-extra": {
+		"speaker": "Inez",
+		"text": "My name is Inez, and you are..?",
+		"portrait": "CoworkerNeutral",
+		"action": "name_input",
+		"next_id": "day_1_intro_3"
+		},
+		"day_1_intro_3": {
+		"speaker": "Inez",
+		"text": "[NAME]..?",
+		"portrait": "CoworkerNeutral",
+		"next_id": null
+		},
+		
+		
+		"day_1_generic": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_inez"]
+		},
+		"speaker": "Boss",
+		"text": "Let's get to work",
+		"portrait": "BossNeutral",
+		"next_id": null
+		}
+	}
+}

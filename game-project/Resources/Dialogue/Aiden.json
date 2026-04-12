@@ -1,0 +1,118 @@
+{
+	"day_1": {
+		"aiden_intro": {
+			"entry_point": true,
+			"conditions": {
+				"flags_absent": [
+					"met_aiden"
+				]
+			},
+			"on_finish": {
+				"set_flags": [
+					"met_aiden"
+				]
+			},
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "I don't think he hears us…",
+			"next_id": "aiden_intro_inez"
+		},
+		"aiden_intro_inez": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "Hello?",
+			"next_id": "aiden_intro_oh"
+		},
+		"aiden_intro_oh": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Oh, hi. Can I help you?",
+			"next_id": "aiden_intro_showing"
+		},
+		"aiden_intro_showing": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "We're not shopping today, I'm just showing my friend around since they just arrived here.",
+			"next_id": "aiden_intro_moved"
+		},
+		"aiden_intro_moved": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "I didn't know someone new had moved into town. It's nice to meet you, my name is Aiden.",
+			"next_id": "aiden_intro_player"
+		},
+		"aiden_intro_player": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "It's nice to meet you.",
+			"next_id": "aiden_intro_help"
+		},
+		"aiden_intro_help": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "If you want help getting to know anyone here, I'm happy to help. Amaranth Heights is a small town, and I grew up here, so I know pretty much everyone.",
+			"next_id": "aiden_intro_thanks"
+		},
+		"aiden_intro_thanks": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "Thanks!",
+			"next_id": "aiden_intro_back"
+		},
+		"aiden_intro_back": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Well, I should get back to work. See you around.",
+			"next_id": null
+		},
+		"aiden_repeat": {
+			"entry_point": true,
+			"conditions": {
+				"flags_required": [
+					"met_aiden"
+				]
+			},
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Is there anything in particular you're looking for, or are you just browsing?",
+			"choices": [
+				{
+					"text": "About Inez…",
+					"next_id": "aiden_about_inez"
+				},
+				{
+					"text": "About you…",
+					"next_id": "aiden_about_self"
+				},
+				{
+					"text": "Just browsing.",
+					"next_id": null
+				}
+			]
+		},
+		"aiden_about_inez": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Inez moved to town when I was just starting high school. She's friendly, but we haven't had the chance to speak much. She spends a lot of time near town's exit.",
+			"next_id": null
+		},
+		"aiden_about_self": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "There's not much to say. I go to university in the next town over and work here to cover the expenses. Hm… If you want to find me and I'm not working, I might be at the bar. I drink with my friend Oran pretty regularly.",
+			"next_id": null
+		}
+	},
+	"day_2": {
+		"aiden_day2_empty": {
+		"entry_point": true,
+		"conditions": {},
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"type": "thought",
+		"text": "It looks like no one is here.",
+		"next_id": null
+		}
+	}
+}
