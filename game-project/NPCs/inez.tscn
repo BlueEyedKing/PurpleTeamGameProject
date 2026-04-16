@@ -44,7 +44,7 @@ animation = &"idle"
 path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_postprocessing = 1
-debug_enabled = true
+debug_enabled = false
 
 [node name="InteractionArea" parent="." instance=ExtResource("5_wyrk3")]
 action_name = "talk"

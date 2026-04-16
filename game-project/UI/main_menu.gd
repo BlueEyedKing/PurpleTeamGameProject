@@ -12,11 +12,11 @@ func _ready() -> void:
 func _on_continue_pressed() -> void:
 	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
 	EventBus.continue_requested.emit()
-	
+
 func _on_start_pressed() -> void:
 	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
 	EventBus.start_requested.emit()
-	
+
 func _on_settings_button_pressed() -> void:
 	AudioManager.play_sfx(AudioLib.SFX["MenuClick"])
 	EventBus.settings_requested.emit()
