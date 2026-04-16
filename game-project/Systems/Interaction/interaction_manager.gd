@@ -31,6 +31,7 @@ func unregister_area(area: InteractionArea):
 		active_areas.remove_at(index)
 
 func _process(delta):
+	active_areas = active_areas.filter(func(a): return is_instance_valid(a))
 	if active_areas.size() > 0 && can_interact && _get_player():
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name
@@ -51,6 +52,7 @@ func _sort_by_distance_to_player(area1, area2):
 
 
 func _unhandled_input(event):
+	active_areas = active_areas.filter(func(a): return is_instance_valid(a))
 	if event.is_action_pressed("interact") && can_interact:
 		if active_areas.size() > 0:
 			prompt_panel.hide()

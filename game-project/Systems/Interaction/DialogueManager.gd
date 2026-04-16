@@ -118,11 +118,11 @@ func _show_dialogue(id: String) -> void:
 	
 	var style = entry.get("type", "spoken")
 	if style == "thought":
-		text_label.add_theme_color_override("font_color", Color(0.7,0.7,1.0))
-		text_label.add_theme_font_override("font", THOUGHT_FONT)
+		text_label.add_theme_color_override("default_color", Color(0.7, 0.7, 1.0))
+		text_label.add_theme_font_override("normal_font", THOUGHT_FONT)
 	else:
-		text_label.add_theme_color_override("font_color", Color(0,0,0,1))
-		text_label.add_theme_font_override("font", NORMAL_FONT)
+		text_label.add_theme_color_override("default_color", Color(0, 0, 0, 1))
+		text_label.add_theme_font_override("normal_font", NORMAL_FONT)
 	
 	var portrait_id = entry.get("portrait", "")
 	if portrait_id:
@@ -191,6 +191,8 @@ func _on_typing_done() -> void:
 			EventBus.hide_fossils_requested.emit()
 		"startled":
 			EventBus.npc_startled.emit(entry.get("speaker", ""))
+		"fade_to_black":
+			EventBus.fade_to_black_requested.emit()
 			
 	var choices = entry.get("choices", [])
 	if choices.size() > 0:

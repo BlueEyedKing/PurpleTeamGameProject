@@ -285,8 +285,8 @@
 		"next_id": null,
 		"on_finish": {
 			"set_flags": ["showed_boss"]
-			},
-		},
+			}
+		}
 	},
 	"day_3": {
 		"day_3_boss_work_done": {
@@ -366,9 +366,9 @@
 		"portrait": "BossNeutral",
 		"text": "That thing looks human. You can’t expect me to believe you really excavated it.",
 		"next_id": null
-		},
+		}
 	},
-		"day_4": {
+	"day_4": {
 		"day_4_boss_work_done": {
 		"entry_point": true,
 		"conditions": {
@@ -428,6 +428,46 @@
 		"portrait": "BossNeutral",
 		"text": "...",
 		"next_id": null
+		}
+	},
+	"day_5": {
+		"day_5_boss_work_done": {
+			"entry_point": true,
+			"conditions": {
+				"flags_required": ["met_boss", "tutorial_complete", "cleaning_complete", "digging_complete"],
+				"flags_absent": ["work_done"]
+			},
+			"on_finish": {"set_flags": ["work_done"]},
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "Work is done for today.",
+			"next_id": null
 		},
+		"day_5_boss": {
+			"entry_point": true,
+			"conditions": {"flags_required": ["met_boss", "tutorial_complete"]},
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "Boss is giving me a strange look. …Maybe I shouldn't bother him.",
+			"choices": [
+				{"text": "How do I excavate?", "next_id": "day_5_boss_excavate"},
+				{"text": "How do I clean the fossils I find?", "next_id": "day_5_boss_clean"},
+				{"text": "Leave", "next_id": null}
+			]
+		},
+		"day_5_boss_excavate": {
+			"speaker": "Boss",
+			"portrait": "BossNeutral",
+			"text": "Look for the dark patches of dirt and interact with them to dig up whatever is under the ground.",
+			"next_id": null
+		},
+		"day_5_boss_clean": {
+			"speaker": "Boss",
+			"portrait": "BossNeutral",
+			"text": "Bring your fossils into the tent to clean them.",
+			"next_id": null
+		}
 	}
 }

@@ -441,6 +441,9 @@ position = Vector2(989, 52)
 [node name="Thea_day3" type="Marker2D" parent="."]
 position = Vector2(2443, 1508)
 
+[node name="Thea_day4" type="Marker2D" parent="."]
+position = Vector2(2300, 1650)
+
 [node name="BarDoor" parent="." instance=ExtResource("15_7fr10")]
 position = Vector2(818, 725)
 scale = Vector2(2.765, 2.765)

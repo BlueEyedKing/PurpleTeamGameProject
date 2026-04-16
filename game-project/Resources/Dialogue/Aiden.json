@@ -256,6 +256,92 @@
 			"portrait": "AidenNeutral",
 			"text": "If you have any questions about the town, she’s the person to ask.",
 			"next_id": null
-			},
+			}
+		},
+	"day_5": {
+		"aiden_day5": {
+			"entry_point": true,
+			"conditions": {},
+			"on_finish": {"set_flags": ["met_aiden_day5"]},
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Oh, [NAME]!",
+			"next_id": "aiden_day5_2"
+		},
+		"aiden_day5_2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "I've been meaning to talk to you.",
+			"choices": [
+				{"text": "You were looking for me?", "next_id": "aiden_day5_nothing_serious"},
+				{"text": "What about?", "next_id": "aiden_day5_nothing_serious"}
+			]
+		},
+		"aiden_day5_nothing_serious": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "It's nothing serious!",
+			"next_id": "aiden_day5_heard"
+		},
+		"aiden_day5_heard": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "It's just… [color=#16C1DE]Have you heard?[/color]",
+			"next_id": "aiden_day5_murder"
+		},
+		"aiden_day5_murder": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "People are saying someone was killed at the old archeology field!",
+			"next_id": "aiden_day5_player_silent"
+		},
+		"aiden_day5_player_silent": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "...",
+			"next_id": "aiden_day5_body"
+		},
+		"aiden_day5_body": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Yeah, apparently they found a body out there. Just the remains though.",
+			"next_id": "aiden_day5_spooky"
+		},
+		"aiden_day5_spooky": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Spooky, right!",
+			"next_id": "aiden_day5_question"
+		},
+		"aiden_day5_question": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Don't you work there? Do you know anything?",
+			"choices": [
+				{"text": "...All we've found are some old bones.", "next_id": "aiden_day5_hmm"},
+				{"text": "...nothing.", "next_id": "aiden_day5_rumors"}
+			]
+		},
+		"aiden_day5_hmm": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "..",
+			"next_id": null
+		},
+		"aiden_day5_rumors": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Ah, oh well. Rumors fly, I guess.",
+			"next_id": null
+		},
+		"aiden_day5_repeat": {
+			"entry_point": true,
+			"indicator": false,
+			"conditions": {"flags_required": ["met_aiden_day5"]},
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Wild stuff, huh?",
+			"next_id": null
 		}
+	}
 }

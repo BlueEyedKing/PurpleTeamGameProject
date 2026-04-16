@@ -24,6 +24,8 @@ var _shown_instructions := false
 func _ready() -> void:
 	action_name = "Dig"
 	interact = _on_interact
+	if GameData.has_flag("digging_complete"):
+		queue_free()
 
 func _on_interact() -> void:
 	InteractionManager.lock(self)

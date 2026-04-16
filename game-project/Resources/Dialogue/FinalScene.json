@@ -1,0 +1,41 @@
+{
+    "day_5": {
+        "final_player_thought": {
+            "entry_point": true,
+            "conditions": {},
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "type": "thought",
+            "text": "There's a few people missing…",
+            "next_id": "final_thought2"
+        },
+        "final_thought2": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "type": "thought",
+            "text": "…they're the ones I was looking for, too.",
+            "next_id": "final_thought3"
+        },
+        "final_thought3": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "type": "thought",
+            "text": "Wait… over there?",
+            "next_id": "final_thought4"
+        },
+        "final_thought4": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "type": "thought",
+            "text": "That's Florence, Oran, and Thea..?",
+            "next_id": "final_thought5"
+        },
+        "final_thought5": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "type": "thought",
+            "text": "What are they doing, heading towards… The archeology site?",
+            "next_id": null
+        }
+    }
+}

@@ -122,9 +122,163 @@
 		}
 	},
 	"day_2": {
+		"florence_day2_city": {
+		"entry_point": true,
+		"conditions": {
+			"level": "main_city",
+			"flags_required": ["met_time_travelers"]
+		},
+		"on_finish": {
+			"set_flags": ["met_florence_day2"]
+		},
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...You're talking to me?",
+		"next_id": "florence_day2_city2"
+		},
+		"florence_day2_city2": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "Hello there. My name is Florence. It's my pleasure to meet you.",
+		"choices": [
+			{"text": "We've already met.", "next_id": "florence_day2_dont_remember"},
+			{"text": "...It's nice to meet you too.", "next_id": "florence_day2_strange_look"}
+		]
+		},
+		"florence_day2_dont_remember": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "..we have? My apologies, but I'm afraid I don't remember…",
+		"next_id": "florence_day2_dont_remember2"
+		},
+		"florence_day2_dont_remember2": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "I don't think I've seen you around town before, I-",
+		"next_id": "florence_day2_ah"
+		},
+		"florence_day2_ah": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...",
+		"next_id": "florence_day2_bar_recall"
+		},
+		"florence_day2_bar_recall": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "Ah… you were at the bar last night?",
+		"next_id": "florence_day2_player_confirm"
+		},
+		"florence_day2_strange_look": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "Forgive me for saying so, but you're giving me quite a strange look. Do I have something on my face..?",
+		"next_id": "florence_day2_strange_look2"
+		},
+		"florence_day2_strange_look2": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...",
+		"next_id": "florence_day2_met_before"
+		},
+		"florence_day2_met_before": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "Or.. have we actually met before?",
+		"next_id": "florence_day2_player_confirm"
+		},
+		"florence_day2_player_confirm": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...yeah, I saw you at the bar last night.",
+		"next_id": "florence_day2_i_see"
+		},
+		"florence_day2_i_see": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...",
+		"next_id": "florence_day2_i_see2"
+		},
+		"florence_day2_i_see2": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "I see.",
+		"next_id": "florence_day2_apology"
+		},
+		"florence_day2_apology": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "I am truly sorry for not properly introducing myself then. I.. was a little out of it.",
+		"choices": [
+			{"text": "No worries, it happens to the best of us.", "next_id": "florence_day2_argument"},
+			{"text": "...right.", "next_id": "florence_day2_argument"}
+		]
+		},
+		"florence_day2_argument": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...that seemed like a pretty bad argument. Did you make up with your friends?",
+		"next_id": "florence_day2_friends"
+		},
+		"florence_day2_friends": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...friends?",
+		"next_id": "florence_day2_friends2"
+		},
+		"florence_day2_friends2": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "Oh, you mean…",
+		"next_id": "florence_day2_acquaintances"
+		},
+		"florence_day2_acquaintances": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "I apologize for any confusion. Those two aren't my friends. We are simply old acquaintances.",
+		"next_id": "florence_day2_i_see3"
+		},
+		"florence_day2_i_see3": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "...I see.",
+		"next_id": "florence_day2_right"
+		},
+		"florence_day2_right": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...right.",
+		"next_id": "florence_day2_busy"
+		},
+		"florence_day2_busy": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "Well, if you'll excuse me, I actually am quite busy.",
+		"next_id": "florence_day2_pleasure"
+		},
+		"florence_day2_pleasure": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "It was a pleasure meeting you.",
+		"next_id": null
+		},
+		"florence_day2_city_repeat": {
+		"entry_point": true,
+		"indicator": false,
+		"conditions": {
+			"level": "main_city",
+			"flags_required": ["met_florence_day2"]
+		},
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...",
+		"next_id": null
+		},
 		"bar_day2": {
 		"entry_point": true,
-		"conditions": {},
+		"conditions": {
+			"level": "bar"
+		},
 		"on_finish": {
 			"set_flags": ["day2_visited_bar"]
 		},
@@ -252,7 +406,7 @@
 		"bar_day3_3": {
 		"speaker": "Florence",
 		"portrait": "FlorenceNeutral",
-		"text": "[color=#16C1DE]...I’m sorry Rupin.[/color]",
+		"text": "[color=#16C1DE]...I'm sorry Rupin.[/color]",
 		"next_id": "bar_day3_player_thoughts"
 		},
 		"bar_day3_player_thoughts": {
@@ -262,20 +416,131 @@
 		"text": "...How much have they had to drink?",
 		"next_id": null
 		},
-		
-		"bar_day3": {
-		"entry_point": true,
+		"bar_day3_repeat": {
+			"entry_point": true,
+			"indicator": false,
 			"conditions": {
-				"flags_required": [
-					"met_florence_day3"
-				]
-				},
+				"flags_required": ["met_florence_day3"]
 			},
-		"speaker": "Florence",
-		"portrait": "FlorenceNeutral",
-		"type": "thought",
-		"text": "They’re too drunk to notice me...",
-		"next_id": null
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "They're too drunk to notice me...",
+			"next_id": null
+		}
+	},
+	"day_4": {
+		"bar_day4": {
+			"entry_point": true,
+			"conditions": {"flags_absent": ["met_aiden_day4_bar"]},
+			"on_finish": {"set_flags": ["met_aiden_day4_bar"]},
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Hello again [NAME]!",
+			"next_id": "bar_day4_2"
 		},
-		
+		"bar_day4_2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "I hope everything is going well.",
+			"next_id": "bar_day4_3"
+		},
+		"bar_day4_3": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Do you need anything?",
+			"choices": [
+				{"text": "About Thea…", "next_id": "bar_day4_thea"},
+				{"text": "About Rupin…", "next_id": "bar_day4_rupin"},
+				{"text": "About Poppy…", "next_id": "bar_day4_poppy"},
+				{"text": "Nothing.", "next_id": null}
+			]
+		},
+		"bar_day4_thea": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Thea?",
+			"next_id": "bar_day4_thea2"
+		},
+		"bar_day4_thea2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "She arrived out of the blue one day just like Florence and Oran…",
+			"next_id": "bar_day4_thea3"
+		},
+		"bar_day4_thea3": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Now that I think about it, she got here about the same time as them, too.",
+			"next_id": "bar_day4_thea4"
+		},
+		"bar_day4_thea4": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "She spends a lot of time on her own.. She's a bit spacey.",
+			"next_id": null
+		},
+		"bar_day4_rupin": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "...who?",
+			"next_id": "bar_day4_rupin2"
+		},
+		"bar_day4_rupin2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "I know everyone who comes through this town, but…",
+			"next_id": "bar_day4_rupin3"
+		},
+		"bar_day4_rupin3": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "I've never even heard of someone called Rupin before.",
+			"next_id": null
+		},
+		"bar_day4_poppy": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "...You want to know about Poppy?",
+			"next_id": "bar_day4_poppy2"
+		},
+		"bar_day4_poppy2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "He's a strange one, that's for sure.",
+			"next_id": "bar_day4_poppy3"
+		},
+		"bar_day4_poppy3": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Honestly, I can't tell if he actually believes all the nonsense he says or if he's doing it for a joke at this point. Some of what he says is just too ridiculous for anyone to believe, even him.",
+			"next_id": null
+		},
+		"bar_day4_repeat": {
+			"entry_point": true,
+			"indicator": false,
+			"conditions": {"flags_required": ["met_aiden_day4_bar"]},
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Do you need anything else?",
+			"choices": [
+				{"text": "About Thea…", "next_id": "bar_day4_thea"},
+				{"text": "About Rupin…", "next_id": "bar_day4_rupin"},
+				{"text": "About Poppy…", "next_id": "bar_day4_poppy"},
+				{"text": "Nothing.", "next_id": null}
+			]
+		}
+	},
+	"day_5": {
+		"bar_day5": {
+			"entry_point": true,
+			"conditions": {},
+			"indicator": false,
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "...that's strange. No one is here.",
+			"next_id": null
+		}
+	}
 }

@@ -1,5 +1,6 @@
 extends Node2D
 
+const TOWN_HUD = preload("res://UI/town_hud.tscn")
 
 @onready var _inez: Node = $Inez
 
@@ -25,12 +26,18 @@ func _ready() -> void:
 		if saved != Vector2.INF:
 			_inez.global_position = saved
 			_inez_current_target  = saved
-	
-	if GameData.has_flag("met_poppy_and_camila"):
-		camila.visible = false
+
+	# Hide Camila after she leaves on Day 1 (goes into museum) or Day 3 (after Poppy scene)
+	if GameData.has_flag("met_poppy_and_camila") or GameData.has_flag("spoke_to_poppy_and_camila"):
+		_set_npc_active(camila, false)
 		camila.modulate.a = 0.0
 
 	tree_exiting.connect(_save_inez_pos)
+
+	# Mount the evening objectives HUD (freed automatically when the level unloads)
+	var hud = TOWN_HUD.instantiate()
+	get_tree().root.get_node("Main/UI/HUD").add_child(hud)
+	tree_exiting.connect(hud.queue_free)
 
 	DialogueUi.dialog_finished.connect(_update_tour_npcs)
 	_update_tour_npcs()
@@ -62,7 +69,12 @@ func _update_tour_npcs() -> void:
 				_inez_current_target = next_pos
 				_walk_inez_to(next_pos)
 
-	_set_npc_active(_poppy, true)
+	var poppy_visible: bool = current_day != 5
+	_set_npc_active(_poppy, poppy_visible)
+
+	# Day 3 — fade Camila out once the Poppy/Camila dialogue has fully closed
+	if current_day == 3 and GameData.has_flag("spoke_to_poppy_and_camila") and camila.visible:
+		transition_things()
 
 
 func _next_inez_waypoint() -> Vector2:

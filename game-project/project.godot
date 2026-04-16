@@ -26,6 +26,7 @@ GameData="*res://Scripts/GameData.gd"
 DialogueUi="*res://UI/dialogue_ui.tscn"
 InfoBubble="*res://Scripts/infoBubble.gd"
 AudioLib="*res://Resources/Audio/AudioLib.gd"
+DebugPanel="*res://Debug/debug_panel.gd"
 
 [display]
 

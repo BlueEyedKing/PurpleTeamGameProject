@@ -23,6 +23,14 @@ func get_input() -> void:
 func _physics_process(delta: float) -> void:
 	get_input()
 	move_and_slide()
+	_clamp_to_map()
+
+func _clamp_to_map() -> void:
+	var camera: Camera2D = get_node_or_null("Camera2D")
+	if not camera:
+		return
+	global_position.x = clamp(global_position.x, camera.limit_left, camera.limit_right)
+	global_position.y = clamp(global_position.y, camera.limit_top, camera.limit_bottom)
 
 func update_animation(direction) -> void:
 	if not animated_sprite_2d:

@@ -318,11 +318,10 @@
 		"speaker": "Player",
 		"portrait": "PlayerNeutral",
 		"text": "...",
-		"action": "camila_leaves_to_museum",
 		"next_id": null,
 		"on_finish": {
 			"set_flags": ["spoke_to_poppy_and_camila"]
-			},
+			}
 		},
 		
 		
@@ -372,6 +371,178 @@
 		"portrait": "HoboNeutral",
 		"text": "There are time travelers in our midst. They’ve killed before and they will kill again. We need to watch out.",
 		"next_id": null
+		}
+	},
+	"day_4": {
+		"poppy_day4": {
+			"entry_point": true,
+			"conditions": {"flags_absent": ["met_poppy_day4"]},
+			"on_finish": {"set_flags": ["met_poppy_day4"]},
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "..Hey! Pssst!",
+			"next_id": "poppy_day4_woman"
 		},
+		"poppy_day4_woman": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Do you see that woman over there..?",
+			"next_id": "poppy_day4_thea_name"
+		},
+		"poppy_day4_thea_name": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "...Thea?",
+			"next_id": "poppy_day4_remember"
+		},
+		"poppy_day4_remember": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Do you remember what I said yesterday?",
+			"choices": [
+				{"text": "Not really.", "next_id": "poppy_day4_obviously"},
+				{"text": "Absolutely. I could never forget information from you.", "next_id": "poppy_day4_truthseeker"},
+				{"text": "...about the time travelers?", "next_id": "poppy_day4_yes"}
+			]
+		},
+		"poppy_day4_obviously": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "...",
+			"next_id": "poppy_day4_obviously2"
+		},
+		"poppy_day4_obviously2": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "About the time travelers! Obviously.",
+			"next_id": "poppy_day4_suspicious"
+		},
+		"poppy_day4_truthseeker": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "..!",
+			"next_id": "poppy_day4_truthseeker2"
+		},
+		"poppy_day4_truthseeker2": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "I expect nothing less from another truthseeker!",
+			"next_id": "poppy_day4_suspicious"
+		},
+		"poppy_day4_yes": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Yes! Exactly!",
+			"next_id": "poppy_day4_suspicious"
+		},
+		"poppy_day4_suspicious": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "She’s suspicious, isn’t she?",
+			"next_id": "poppy_day4_huh"
+		},
+		"poppy_day4_huh": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "...huh?",
+			"next_id": "poppy_day4_sky"
+		},
+		"poppy_day4_sky": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Just look at her… always staring at the sky…",
+			"next_id": "poppy_day4_hiding"
+		},
+		"poppy_day4_hiding": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "She’s clearly hiding something.",
+			"choices": [
+				{"text": "You’re right!", "next_id": "poppy_day4_radio"},
+				{"text": "...I think she just misses her friend.", "next_id": "poppy_day4_excuse"},
+				{"text": "She views you as a friend.", "next_id": "poppy_day4_friend"}
+			]
+		},
+		"poppy_day4_radio": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "She’s probably communicating with those above through the radio waves…",
+			"next_id": "poppy_day4_hat"
+		},
+		"poppy_day4_hat": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "You might notice she isn’t wearing a hat.",
+			"next_id": "poppy_day4_go"
+		},
+		"poppy_day4_go": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "You must speak with her! I can’t, lest she realize I’m onto her.",
+			"next_id": "poppy_day4_go2"
+		},
+		"poppy_day4_go2": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Go fourth!",
+			"next_id": null
+		},
+		"poppy_day4_excuse": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "That’s what they all say.",
+			"next_id": "poppy_day4_excuse2"
+		},
+		"poppy_day4_excuse2": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Nothing but an excuse for her suspicious behavior.",
+			"next_id": "poppy_day4_go"
+		},
+		"poppy_day4_friend": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "...",
+			"next_id": "poppy_day4_friend2"
+		},
+		"poppy_day4_friend2": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "...huh?",
+			"next_id": "poppy_day4_friend3"
+		},
+		"poppy_day4_friend3": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "... That can’t be true.",
+			"next_id": "poppy_day4_friend4"
+		},
+		"poppy_day4_friend4": {
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Surely she keeps talking to me because she realizes I’m onto the truth and she has to report to her superiors. Not…",
+			"next_id": null
+		},
+		"poppy_day4_repeat": {
+			"entry_point": true,
+			"indicator": false,
+			"conditions": {"flags_required": ["met_poppy_day4"]},
+			"speaker": "Poppy",
+			"portrait": "HoboNeutral",
+			"text": "Watch out for that woman...",
+			"next_id": null
+		}
+	},
+	"day_5": {
+		"poppy_day5": {
+			"entry_point": true,
+			"conditions": {},
+			"indicator": false,
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "...Poppy isn't here today.",
+			"next_id": null
+		}
 	}
 }

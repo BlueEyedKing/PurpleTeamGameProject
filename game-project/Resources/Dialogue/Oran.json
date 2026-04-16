@@ -1,0 +1,64 @@
+{
+    "day_4": {
+        "oran_day4": {
+            "entry_point": true,
+            "conditions": {"flags_absent": ["met_oran_day4"]},
+            "on_finish": {"set_flags": ["met_oran_day4"]},
+            "speaker": "Oran",
+            "portrait": "OranNeutral",
+            "text": "...",
+            "next_id": "oran_day4_hello"
+        },
+        "oran_day4_hello": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "text": "...hello?",
+            "next_id": "oran_day4_hi"
+        },
+        "oran_day4_hi": {
+            "speaker": "Oran",
+            "portrait": "OranNeutral",
+            "text": "Hi. Do you need something?",
+            "choices": [
+                {"text": "You're wearing a uniform...Isn't it your job to talk to me?", "next_id": "oran_day4_fine"},
+                {"text": "...no.", "next_id": "oran_day4_good"}
+            ]
+        },
+        "oran_day4_fine": {
+            "speaker": "Oran",
+            "portrait": "OranNeutral",
+            "text": "...",
+            "next_id": "oran_day4_fine2"
+        },
+        "oran_day4_fine2": {
+            "speaker": "Oran",
+            "portrait": "OranNeutral",
+            "text": "...fine, can I help you?",
+            "choices": [
+                {"text": "Tell me about yourself.", "next_id": "oran_day4_self"},
+                {"text": "Nope!", "next_id": null}
+            ]
+        },
+        "oran_day4_good": {
+            "speaker": "Oran",
+            "portrait": "OranNeutral",
+            "text": "Good. Now let me do my job in peace.",
+            "next_id": null
+        },
+        "oran_day4_self": {
+            "speaker": "Oran",
+            "portrait": "OranNeutral",
+            "text": "...",
+            "next_id": null
+        },
+        "oran_day4_repeat": {
+            "entry_point": true,
+            "indicator": false,
+            "conditions": {"flags_required": ["met_oran_day4"]},
+            "speaker": "Oran",
+            "portrait": "OranNeutral",
+            "text": "...",
+            "next_id": null
+        }
+    }
+}

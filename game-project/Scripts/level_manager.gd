@@ -9,10 +9,12 @@ const MAIN_CITY = preload("res://Levels/main_city.tscn")
 const MUSEUM    = preload("res://Levels/museum.tscn")
 const BAR       = preload("res://Levels/bar.tscn")
 const SHOP      = preload("res://Levels/shop.tscn")
-const TENT      = preload("res://Levels/tent.tscn")
+const TENT        = preload("res://Levels/tent.tscn")
+const CREDITS     = preload("res://Levels/credits.tscn")
+const FINAL_SCENE = preload("res://Levels/final_scene.tscn")
 
 ## Levels that use first-person click UI — no player CharacterBody2D is loaded.
-const INTERIOR_LEVELS: Array[String] = ["house", "museum", "bar", "shop", "tent"]
+const INTERIOR_LEVELS: Array[String] = ["house", "museum", "bar", "shop", "tent", "credits", "final_scene"]
 
 @onready var world: Node2D = $"../../World"
 
@@ -37,6 +39,10 @@ func load_level(level: String, gate: String = "") -> void:
 			current_level = SHOP.instantiate()
 		"tent":
 			current_level = TENT.instantiate()
+		"credits":
+			current_level = CREDITS.instantiate()
+		"final_scene":
+			current_level = FINAL_SCENE.instantiate()
 		_:
 			push_error("LevelManager: Unknown level '%s'" % level)
 			return

@@ -7,7 +7,10 @@ extends Node2D
 
 func _ready() -> void:
 	exit_button.pressed.connect(_on_exit_pressed)
-	aiden_button.pressed.connect(_on_talk_pressed.bind(aiden_button, "Aiden"))
+	var current_day: int = GameData.get_value("current_day", 1)
+	var shop_npc: String = "Oran" if current_day == 4 else "Aiden"
+	aiden_button.text = "Talk to " + shop_npc
+	aiden_button.pressed.connect(_on_talk_pressed.bind(aiden_button, shop_npc))
 	DialogueUi.dialog_finished.connect(func(): aiden_button.visible = true)
 
 func _on_talk_pressed(button: Button, npc_id: String) -> void:

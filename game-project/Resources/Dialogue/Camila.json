@@ -85,12 +85,6 @@
 			"text": "Do you have it with you?",
 			"next_id": "camila_strange_fossil_2"
 		},
-		"camila_strange_fossil": {
-		"speaker": "Camila",
-		"portrait": "CamilaNeutral",
-		"text": "...",
-		"next_id": "camila_strange_fossil_2"
-		},
 		"camila_strange_fossil_2": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
@@ -100,9 +94,9 @@
 		"camila_strange_fossil_3": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
-		"text": "Why don’t you keep it? If you find more, maybe I can get you more information.",
+		"text": "Why don't you keep it? If you find more, maybe I can get you more information.",
 		"next_id": null
-		},
+		}
 	},
 	"day_2": {
 		"camila_day2_welcome": {
@@ -170,7 +164,7 @@
 		"text": "Hold on just a minute..",
 		"next_id": null
 		},
-		
+
 		"camila_day3_welcome_fossil": {
 		"entry_point": true,
 		"conditions": {
@@ -228,7 +222,7 @@
 		"text": "These look great! Thank you.",
 		"next_id": "camila_poppy_explain2"
 		},
-		
+
 		"camila_poppy_explain": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
@@ -241,7 +235,7 @@
 		"text": "Since I remember, Poppy has been coming in here spouting some theory or another about this town. None of them have any real backing.",
 		"next_id": null
 		},
-		
+
 		"camila_strange_fossil": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
@@ -313,13 +307,13 @@
 		"camila_strange_fossil12": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
-		"text": "I’ll.. I’ll have this dated.",
+		"text": "I'll.. I'll have this dated.",
 		"next_id": "camila_strange_fossil13"
 		},
 		"camila_strange_fossil13": {
 		"speaker": "Camila",
 		"portrait": "CamilaNeutral",
-		"text": "We need to see exactly when this is from. It could change everything we know about this town’s history...",
+		"text": "We need to see exactly when this is from. It could change everything we know about this town's history...",
 		"next_id": "camila_strange_fossil14"
 		},
 		"camila_strange_fossil14": {
@@ -328,6 +322,227 @@
 		"text": "I should be done [color=#16C1DE]tomorrow[/color]. Come by then.",
 		"action": "hide_fossils",
 		"next_id": null
-		},
+		}
 	},
+	"day_4": {
+		"camila_day4_welcome": {
+			"entry_point": true,
+			"conditions": {"flags_absent": ["camila_day4_submitted"]},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Welcome to the Museum! What can I help you with today?",
+			"choices": [
+				{"text": "Here are today's fossils.", "next_id": "camila_day4_submit"},
+				{"text": "...I found something else.", "next_id": "camila_day4_radio"},
+				{"text": "Nothing.", "next_id": null}
+			]
+		},
+		"camila_day4_submit": {
+			"on_finish": {"set_flags": ["camila_day4_submitted"]},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "These look great! Thank you.",
+			"next_id": null
+		},
+		"camila_day4_radio": {
+			"on_finish": {"set_flags": ["camila_day4_showed_radio"]},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Let me see.",
+			"next_id": "camila_day4_radio2"
+		},
+		"camila_day4_radio2": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "...",
+			"next_id": "camila_day4_radio3"
+		},
+		"camila_day4_radio3": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "This…",
+			"next_id": "camila_day4_radio4"
+		},
+		"camila_day4_radio4": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "This doesn't make any sense…",
+			"next_id": "camila_day4_radio5"
+		},
+		"camila_day4_radio5": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "How is there a radio in this fossil?",
+			"next_id": "camila_day4_human"
+		},
+		"camila_day4_human": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "They are part of a human, but…",
+			"next_id": "camila_day4_strange"
+		},
+		"camila_day4_strange": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "It's strange. The fossils all date back a similar amount of time to all the other fossils we've found.",
+			"choices": [
+				{"text": "...", "next_id": "camila_day4_timetravel"},
+				{"text": "The dinosaur times!?", "next_id": "camila_day4_dinosaur"}
+			]
+		},
+		"camila_day4_timetravel": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "This.. it looks like it dates back to the same time as the other fossils..",
+			"next_id": "camila_day4_timetravel2"
+		},
+		"camila_day4_timetravel2": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "The only way this would be possible is if somehow someone went back in time…",
+			"next_id": "camila_day4_timetravel3"
+		},
+		"camila_day4_timetravel3": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "But that's crazy!… I'll test this so we can see how old this is tonight.",
+			"next_id": "camila_day4_tomorrow"
+		},
+		"camila_day4_tomorrow": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Come back tomorrow.",
+			"next_id": null
+		},
+		"camila_day4_dinosaur": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "...I don't understand either.",
+			"next_id": "camila_day4_dinosaur2"
+		},
+		"camila_day4_dinosaur2": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "...How is this possible?",
+			"next_id": null
+		},
+		"camila_day4_after": {
+			"entry_point": true,
+			"indicator": false,
+			"conditions": {"flags_required": ["camila_day4_submitted"]},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Welcome to the Museum! What can I help you with today?",
+			"choices": [
+				{"text": "What did you find out about the fossils?", "next_id": "camila_day4_results"},
+				{"text": "Nothing.", "next_id": null}
+			]
+		},
+		"camila_day4_results": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "They are part of a human, but…",
+			"next_id": "camila_day4_results2"
+		},
+		"camila_day4_results2": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "It's strange. The fossils all date back a similar amount of time to all the other fossils we've found.",
+			"next_id": "camila_day4_results3"
+		},
+		"camila_day4_results3": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "...I don't understand either. ...How is this possible?",
+			"next_id": null
+		}
+	},
+	"day_5": {
+		"camila_day5_welcome": {
+			"entry_point": true,
+			"conditions": {"flags_absent": ["camila_day5_submitted"]},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Welcome to the Museum! What can I help you with today?",
+			"choices": [
+				{"text": "Here are today's fossils.", "next_id": "camila_day5_submit"},
+				{"text": "Nothing.", "next_id": null}
+			]
+		},
+		"camila_day5_submit": {
+			"on_finish": {"set_flags": ["camila_day5_submitted"]},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "These look great! Thank you!",
+			"next_id": "camila_day5_empty"
+		},
+		"camila_day5_empty": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "...",
+			"next_id": "camila_day5_alone"
+		},
+		"camila_day5_alone": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "It doesn't look like anyone else is around.",
+			"next_id": "camila_day5_device_info"
+		},
+		"camila_day5_device_info": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Here's what I found out about the device:",
+			"next_id": "camila_day5_dating"
+		},
+		"camila_day5_dating": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "It does seem to date back to the same time the human remains were found.",
+			"next_id": "camila_day5_confused"
+		},
+		"camila_day5_confused": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "I don't understand at all…",
+			"next_id": "camila_day5_impossible"
+		},
+		"camila_day5_impossible": {
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "None of this should be possible.",
+			"choices": [
+				{"text": "Thank you for all your help, Camila.", "next_id": "camila_day5_thanks"},
+				{"text": "..It isn't possible. Unless..", "next_id": "camila_day5_unless"}
+			]
+		},
+		"camila_day5_thanks": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "I've got to go find someone..",
+			"next_id": "camila_day5_goodbye"
+		},
+		"camila_day5_unless": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "I've got to go find someone..",
+			"next_id": "camila_day5_goodbye"
+		},
+		"camila_day5_goodbye": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "See you later, Camila.",
+			"next_id": null
+		},
+		"camila_day5_after": {
+			"entry_point": true,
+			"indicator": false,
+			"conditions": {"flags_required": ["camila_day5_submitted"]},
+			"speaker": "Camila",
+			"portrait": "CamilaNeutral",
+			"text": "Welcome to the Museum! What can I help you with today?",
+			"choices": [
+				{"text": "Nothing.", "next_id": null}
+			]
+		}
+	}
 }

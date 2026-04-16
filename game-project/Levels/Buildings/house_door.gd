@@ -33,6 +33,16 @@ func _on_interact() -> void:
 		GameData.has_flag("camila_day2_submitted")
 	):
 		lines = LINES_PEOPLE
+	elif day == 5 and not GameData.has_flag("work_done"):
+		lines = LINES_WORK
+	elif day == 5 and not GameData.has_flag("final_scene_done") \
+		and GameData.has_flag("met_aiden_day5") \
+		and GameData.has_flag("camila_day5_submitted"):
+		# Player has done everything — fade to black then roll the finale
+		await _trigger_final_scene()
+		return
+	elif day == 5 and not GameData.has_flag("final_scene_done"):
+		lines = LINES_PEOPLE
 	elif day >= 3 and not GameData.has_flag("work_done"):
 		lines = LINES_WORK
 
@@ -50,3 +60,20 @@ func _on_interact() -> void:
 		return
 
 	EventBus.level_load_requested.emit("house", "")
+
+
+func _trigger_final_scene() -> void:
+	# Fade to black
+	var transition = preload("res://MiscObjects/transition_screen.tscn").instantiate()
+	get_tree().root.add_child(transition)
+	transition.transition()
+	await transition.on_transition_finished
+
+	# Start dialogue while fading back in
+	DialogueUi.start_for_npc("FinalScene")
+	await transition.animation_player.animation_finished
+	transition.queue_free()
+
+	# Wait for the city thoughts to finish then transition to the dig site
+	await DialogueUi.dialog_finished
+	EventBus.level_load_requested.emit("final_scene", "")

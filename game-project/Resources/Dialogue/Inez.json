@@ -247,7 +247,7 @@
 		"text": "Oh! I'm sorry to hear that. Well, y'know what they say. Tomorrow is a new day!",
 		"next_id": null
 		},
-		
+
 		"inez_day2_fossil": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
@@ -303,9 +303,9 @@
 		"portrait": "CoworkerNeutral",
 		"text": "Oh, well he might have more insight for you! You should probably ask him about it.",
 		"next_id": null
-		},
+		}
 	},
-		"day_3": {
+	"day_3": {
 		"inez_day3_greet": {
 		"entry_point": true,
 		"conditions": {},
@@ -358,14 +358,14 @@
 		"text": "You.. you should talk to Camila. This is starting to get weird.",
 		"next_id": null
 		},
-		
+
 		"inez_day3_poppy": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "Poppy told me not to eat mushrooms anymore because they control your mind. I wouldn’t pay too much attention to whatever he says.",
+		"text": "Poppy told me not to eat mushrooms anymore because they control your mind. I wouldn't pay too much attention to whatever he says.",
 		"next_id": null
 		},
-		
+
 		"inez_day3_worry": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
@@ -375,7 +375,7 @@
 		"inez_day3_worry_2": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "Look, I don’t want to downplay your worries or whatever but...",
+		"text": "Look, I don't want to downplay your worries or whatever but...",
 		"next_id": "inez_day3_worry_3"
 		},
 		"inez_day3_worry_3": {
@@ -387,22 +387,22 @@
 			{"text": "No, I know something is wrong.",         "next_id": "inez_day3_worry_choice_2"}
 		]
 		},
-		
+
 		"inez_day3_worry_choice_1": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
 		"text": "Its alright.. New places are difficult for everyone. Try taking your mind off of things.",
 		"next_id": null
 		},
-		
+
 		"inez_day3_worry_choice_2": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "...Alright. If you’re serious, then you should probably ask around again. Surely someone knows something.",
+		"text": "...Alright. If you're serious, then you should probably ask around again. Surely someone knows something.",
 		"next_id": null
-		},
+		}
 	},
-		"day_4": {
+	"day_4": {
 		"inez_day4_chat": {
 		"entry_point": true,
 		"conditions": {},
@@ -416,12 +416,20 @@
 			{"text": "Not really...", "next_id": null}
 		]
 		},
+		"inez_poppy_chat": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...You really humor him, don’t you?",
+		"next_id": "inez_day_4_main"
+		
+		},
 		"inez_day_4_fossil": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
 		"text": "Something else?",
 		"next_id": "inez_day_4_fossil2"
 		},
+		
 		"inez_day_4_fossil2": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
@@ -434,7 +442,7 @@
 		"text": "...",
 		"next_id": "inez_day_4_main"
 		},
-		
+
 		"inez_rupin": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
@@ -444,26 +452,26 @@
 		"inez_rupin2": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "I’ve never heard of that name before..",
+		"text": "I've never heard of that name before..",
 		"next_id": "inez_rupin3"
 		},
 		"inez_rupin3": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "They’re probably someone they knew before coming here.",
+		"text": "They're probably someone they knew before coming here.",
 		"next_id": "inez_rupin4"
 		},
-		"inez_rupin3": {
+		"inez_rupin4": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "Though… I didn’t know they had a shared past...",
+		"text": "Though… I didn't know they had a shared past...",
 		"next_id": "inez_day_4_main"
 		},
-		
+
 		"inez_day_4_main": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "...honestly, I didn’t really believe that you had found anything, but...",
+		"text": "...honestly, I didn't really believe that you had found anything, but...",
 		"next_id": "inez_day_4_main2"
 		},
 		"inez_day_4_main2": {
@@ -475,8 +483,40 @@
 		"inez_day_4_main3": {
 		"speaker": "Inez",
 		"portrait": "CoworkerNeutral",
-		"text": "I’ll help you figure out what’s happening. I promise.",
+		"text": "I'll help you figure out what's happening. I promise.",
 		"next_id": null
+		}
+	},
+	"day_5": {
+		"inez_day5": {
+			"entry_point": true,
+			"conditions": {},
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "Hi [NAME]! Have you discovered anything?",
+			"choices": [
+				{"text": "The fossils I dug up are human remains.", "next_id": "inez_day5_remains"},
+				{"text": "I found a.. Device? Of some kind..", "next_id": "inez_day5_device"},
+				{"text": "Nothing else.", "next_id": null}
+			]
 		},
+		"inez_day5_remains": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "..Yeah, I heard from Camila.",
+			"next_id": "inez_day5_remains2"
+		},
+		"inez_day5_remains2": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "It.. not to sound like Poppy, but it might be connected to some of the other things you've been hearing..?",
+			"next_id": null
+		},
+		"inez_day5_device": {
+			"speaker": "Inez",
+			"portrait": "CoworkerNeutral",
+			"text": "...Have you brought it to Camila?",
+			"next_id": null
+		}
 	}
 }

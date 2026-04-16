@@ -39,6 +39,11 @@ func _on_sleep_requested() -> void:
 	manager.get_tree().root.add_child(transition)
 	transition.transition()
 	await transition.on_transition_finished
+	if GameData.get_value("current_day", 1) == 5:
+		manager.level_manager.load_level("credits")
+		await transition.animation_player.animation_finished
+		transition.queue_free()
+		return
 	TimeManager.advance_day()
 	manager.pop_state()
 	manager.push_state(MorningState.new(manager))

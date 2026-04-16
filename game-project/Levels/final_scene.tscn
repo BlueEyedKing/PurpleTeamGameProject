@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhp8hycwcvqg1"]
+
+[ext_resource type="Script" uid="uid://14dbcab580sm" path="res://Levels/final_scene.gd" id="1_finalscene"]
+[ext_resource type="Texture2D" uid="uid://iqhb40ltw7dn" path="res://Resources/Sprites/Characters/TimeTraveller1/Time_Traveler_Front_1.png" id="2_florence"]
+[ext_resource type="Texture2D" uid="uid://4nk1fe5j1e7d" path="res://Resources/Sprites/Characters/TimeTraveller2/Time_Traveler_Front.png" id="3_oran"]
+[ext_resource type="Texture2D" uid="uid://b75w6p2t42pp3" path="res://Resources/Sprites/Characters/TimeTraveller3/Time_Traveler_Front.png" id="4_thea"]
+[ext_resource type="Texture2D" uid="uid://bvoh368j3scg4" path="res://Player/Sprites/Main_Player_Front.png" id="5_player"]
+
+[node name="FinalScene" type="Node2D"]
+script = ExtResource("1_finalscene")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.18, 0.13, 0.07, 1)
+
+[node name="PitOverlay" type="ColorRect" parent="CanvasLayer"]
+offset_left = 160.0
+offset_top = 80.0
+offset_right = 1760.0
+offset_bottom = 560.0
+mouse_filter = 2
+color = Color(0.12, 0.09, 0.04, 0.85)
+
+[node name="LocationLabel" type="Label" parent="CanvasLayer"]
+offset_top = 36.0
+offset_right = 1920.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.65, 0.58, 0.42, 0.75)
+theme_override_font_sizes/font_size = 20
+text = "— Archaeology Site —"
+horizontal_alignment = 1
+
+[node name="FlorenceSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(424, 216.00003)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("2_florence")
+
+[node name="OranSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(624.00006, 256.0001)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("3_oran")
+
+[node name="TheaSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(840, 272.00003)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("4_thea")
+
+[node name="PlayerSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1384, 288.00003)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("5_player")
+
+[node name="FadeOverlay" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0)
+mouse_filter = 2

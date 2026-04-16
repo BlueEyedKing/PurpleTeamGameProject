@@ -1,0 +1,403 @@
+{
+	"day_5": {
+		"final_digsite_thea": {
+			"entry_point": true,
+			"conditions": {},
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Wait up!",
+			"next_id": "final_digsite_thea2"
+		},
+		"final_digsite_thea2": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Guys, where are you going? Why are you coming back here?",
+			"next_id": "final_digsite_oran"
+		},
+		"final_digsite_oran": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Leave us alone, Thea.",
+			"next_id": "final_digsite_thea3"
+		},
+		"final_digsite_thea3": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "No! You guys never spend time together!",
+			"next_id": "final_digsite_thea4"
+		},
+		"final_digsite_thea4": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "What happened? Why are you-",
+			"next_id": "final_digsite_florence"
+		},
+		"final_digsite_florence": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "They found Rupin's remains out here.",
+			"next_id": "final_digsite_thea_silent"
+		},
+		"final_digsite_thea_silent": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "...",
+			"next_id": "final_digsite_oran_silent"
+		},
+		"final_digsite_oran_silent": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "...",
+			"next_id": "final_digsite_player_react"
+		},
+		"final_digsite_player_react": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "!!!",
+			"next_id": "final_digsite_florence2"
+		},
+		"final_digsite_florence2": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "I think it was that new archeologist… the others know not to mess with these things.",
+			"next_id": "final_digsite_florence3"
+		},
+		"final_digsite_florence3": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "We were just.. Coming to see if there was anything else out here.",
+			"next_id": "final_digsite_oran2"
+		},
+		"final_digsite_oran2": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Y-yeah! So we don't blow our cover. We just didn't want to bother you with it.",
+			"next_id": "final_digsite_thea5"
+		},
+		"final_digsite_thea5": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "...",
+			"next_id": "final_digsite_thea6"
+		},
+		"final_digsite_thea6": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "I want to help. This affects me, too. You guys aren't the only ones whose lives are at stake.",
+			"next_id": "final_digsite_thea7"
+		},
+		"final_digsite_thea7": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "If it gets out where we came from… when we came from..",
+			"next_id": "final_digsite_oran_shush"
+		},
+		"final_digsite_oran_shush": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Shh- Shut up, Thea!",
+			"next_id": "final_player_cough"
+		},
+		"final_player_cough": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "*clears throat*",
+			"next_id": "final_thea_startled"
+		},
+		"final_thea_startled": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "!!!",
+			"next_id": "final_oran_startled"
+		},
+		"final_oran_startled": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "!!!",
+			"next_id": "final_florence_cover"
+		},
+		"final_florence_cover": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "...Ha ha. You're always joking about the strangest things, Thea…",
+			"next_id": "final_florence_cover2"
+		},
+		"final_florence_cover2": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "My apologies, [NAME]. I hope we haven't disturbed your work.",
+			"choices": [
+				{"text": "You guys are time travelers?", "next_id": "final_oran_knows"},
+				{"text": "...sorry to bother you. I'm just gonna.. go…", "next_id": "final_oran_knows"}
+			]
+		},
+		"final_oran_knows": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Okay, well they clearly know.",
+			"next_id": "final_florence_oran"
+		},
+		"final_florence_oran": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "Oran…",
+			"next_id": "final_thea_admit"
+		},
+		"final_thea_admit": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "...Yeah, we are.",
+			"next_id": "final_florence_thea"
+		},
+		"final_florence_thea": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "Thea!",
+			"next_id": "final_thea_secret"
+		},
+		"final_thea_secret": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "It's kind of a secret though, so you can't tell anyone, 'kay?",
+			"choices": [
+				{"text": "...okay.", "next_id": "final_player_why"},
+				{"text": "Poppy knows…", "next_id": "final_player_why"}
+			]
+		},
+		"final_player_why": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "So.. why are you here?",
+			"next_id": "final_thea_why"
+		},
+		"final_thea_why": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Ah.. I think we're making sure there's nothing here that could trace us back to the fossils..?",
+			"next_id": "final_oran_why"
+		},
+		"final_oran_why": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "..yeah. Yeah that's what we were doing.",
+			"next_id": "final_florence_researchers"
+		},
+		"final_florence_researchers": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "We're just researchers.",
+			"next_id": "final_florence_accident"
+		},
+		"final_florence_accident": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "Our friend died in an accident when we were observing Mesozoic era species and we left to prevent further casualties. Simple as that.",
+			"next_id": "final_oran_simple"
+		},
+		"final_oran_simple": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "..simple, yeah.",
+			"next_id": "final_thea_secret2"
+		},
+		"final_thea_secret2": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Its not something we can tell people.",
+			"next_id": "final_thea_crazy"
+		},
+		"final_thea_crazy": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Everyone would think we're crazy..",
+			"choices": [
+				{"text": "That makes sense.. But..", "next_id": "final_player_rupin"},
+				{"text": "Not to intrude but..", "next_id": "final_player_rupin"}
+			]
+		},
+		"final_player_rupin": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "Florence just said Rupin died in an accident, but…",
+			"next_id": "final_thea_rupin_react"
+		},
+		"final_thea_rupin_react": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "!!!",
+			"next_id": "final_thea_how"
+		},
+		"final_thea_how": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Wh- You know how Rupin died?",
+			"next_id": "final_florence_silent"
+		},
+		"final_florence_silent": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "...",
+			"next_id": "final_oran_silent2"
+		},
+		"final_oran_silent2": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "...",
+			"next_id": "final_thea_time"
+		},
+		"final_thea_time": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "You said we didn't have the time to wait for him!",
+			"next_id": "final_oran_thea"
+		},
+		"final_oran_thea": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "..Thea…",
+			"next_id": "final_thea_gone"
+		},
+		"final_thea_gone": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Was… was he already gone?",
+			"next_id": "final_florence_silent2"
+		},
+		"final_florence_silent2": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "...",
+			"next_id": "final_oran_sorry"
+		},
+		"final_oran_sorry": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "I'm sorry, we.. Yeah he died earlier.",
+			"next_id": "final_thea_why2"
+		},
+		"final_thea_why2": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Why didn't you tell me?",
+			"next_id": "final_oran_wanted"
+		},
+		"final_oran_wanted": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "We- I wanted to! Its..",
+			"next_id": "final_thea_florence"
+		},
+		"final_thea_florence": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Florence?",
+			"next_id": "final_florence_silent3"
+		},
+		"final_florence_silent3": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "...",
+			"next_id": "final_oran_accuse"
+		},
+		"final_oran_accuse": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Yeah, how did Rupin die, Florence?",
+			"next_id": "final_oran_accuse2"
+		},
+		"final_oran_accuse2": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Enlighten us.",
+			"next_id": "final_florence_dont"
+		},
+		"final_florence_dont": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "Don't start, Oran.",
+			"next_id": "final_oran_why2"
+		},
+		"final_oran_why2": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Why not?",
+			"next_id": "final_oran_killed"
+		},
+		"final_oran_killed": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "You scared to let poor Thea know you killed her boyfriend?",
+			"next_id": "final_player_react2"
+		},
+		"final_player_react2": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "!!!",
+			"next_id": "final_thea_what"
+		},
+		"final_thea_what": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "What!?",
+			"next_id": "final_florence_silent4"
+		},
+		"final_florence_silent4": {
+			"speaker": "Florence",
+			"portrait": "FlorenceNeutral",
+			"text": "...",
+			"next_id": "final_florence_runs"
+		},
+		"final_florence_runs": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "Florence runs back towards the city.",
+			"next_id": "final_thea_florence2"
+		},
+		"final_thea_florence2": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Florence!?",
+			"next_id": "final_oran_mystery"
+		},
+		"final_oran_mystery": {
+			"speaker": "Oran",
+			"portrait": "OranNeutral",
+			"text": "Did you have fun with your little mystery?",
+			"action": "fade_to_black",
+			"next_id": "final_epilogue"
+		},
+		"final_epilogue": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "I tried to follow them as they left, but they were too fast.",
+			"next_id": "final_epilogue2"
+		},
+		"final_epilogue2": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "I never saw any of them again after that.",
+			"next_id": "final_epilogue3"
+		},
+		"final_epilogue3": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "But. Sometimes… I find old trinkets and notes in the dig sites that have been deemed finished.",
+			"next_id": "final_epilogue4"
+		},
+		"final_epilogue4": {
+			"on_finish": {
+				"set_flags": ["final_scene_done"]
+			},
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "I think they're still out there. Somewhere. Some time.",
+			"next_id": null
+		}
+	}
+}

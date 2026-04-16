@@ -6,20 +6,19 @@ extends NPC
 
 func _ready() -> void:
 	super()
+	nav_agent.path_desired_distance = 4.0
+	nav_agent.target_desired_distance = 8.0
 
 func walk_to(target: Vector2) -> void:
 	interaction_area.set_deferred("monitoring", false)
 	InteractionManager.unregister_area(interaction_area)
-
-	nav_agent.target_position = target
 	animated_sprite_2d.play("walk")
-
-	# Wait one physics frame so the nav agent can compute the path
+	nav_agent.target_position = target
 	await get_tree().physics_frame
 
 	while not nav_agent.is_navigation_finished():
-		var next_pos: Vector2 = nav_agent.get_next_path_position()
-		var direction: Vector2 = (next_pos - global_position).normalized()
+		var next: Vector2 = nav_agent.get_next_path_position()
+		var direction := (next - global_position).normalized()
 		global_position += direction * walk_speed * get_physics_process_delta_time()
 		animated_sprite_2d.flip_h = direction.x < 0
 		await get_tree().physics_frame

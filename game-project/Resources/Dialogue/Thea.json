@@ -1,127 +1,191 @@
 {
-	"day_3": {
-		"Thea_park": {
-			"entry_point": true,
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "...",
-			"next_id": "Thea_park2"
-		},
-		"Thea_park2": {
-			"speaker": "Player",
-			"portrait": "PlayerNeutral",
-			"text": "Hello?",
-			"next_id": "Thea_park2"
-		},
-		"Thea_park2": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "...",
-			"next_id": "Thea_park3"
-		},
-		"Thea_park3": {
-			"speaker": "Player",
-			"portrait": "PlayerNeutral",
-			"text": "...Helloooo?",
-			"next_id": "Thea_park4"
-		},
-		"Thea_park4": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "..oh!",
-			"action": "startled",
-			"next_id": "Thea_park5"
-		},
-		"Thea_park5": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "Sorry, I was lost in thought.",
-			"next_id": "Thea_park6"
-		},
-		"Thea_park6": {
-			"speaker": "Player",
-			"portrait": "PlayerNeutral",
-			"text": "It’s alright.",
-			"next_id": "Thea_park7"
-		},
-		"Thea_park7": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "...",
-			"choices": [
-				{
-					"text": "What are you thinking about?",
-					"next_id": "Thea_park8"
-				},
-				{
-					"text": "You look sad…",
-					"next_id": "Thea_park8"
-				},
-			]
-		},
-		"Thea_park8": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "Ah! Sorry, I didn’t mean to worry you…",
-			"next_id": "Thea_park9"
-		},
-		"Thea_park9": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "Its just.. Looking at the stars always reminds me of [color=#16C1DE]him[/color].",
-			"choices": [
-				{
-					"text": "...",
-					"next_id": "Thea_park10"
-				},
-				{
-					"text": "Him?",
-					"next_id": "Thea_park10"
-				},
-			]
-		},
-		"Thea_park10": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "...[color=#16C1DE]Rupin[/color] always liked the stars.",
-			"next_id": "Thea_park11"
-		},
-		"Thea_park11": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "Everyone looks up and sees the same stars, no matter how much [color=#16C1DE]time has passed.[/color]",
-			"next_id": "Thea_park12"
-		},
-		"Thea_park12": {
-			"speaker": "Player",
-			"portrait": "PlayerNeutral",
-			"type": "thought",
-			"text": "Oh, that’s deeper than I wanted to go.",
-			"next_id": "Thea_park13"
-		},
-		"Thea_park13": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "He liked to sit right here… I wish we didn’t [color=#16C1DE]leave him behind.[/color]",
-			"next_id": "Thea_park14"
-		},
-		"Thea_park14": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "Ah! ..sorry, look at me, rambling on.",
-			"next_id": "Thea_park15"
-		},
-		"Thea_park15": {
-			"speaker": "Player",
-			"portrait": "PlayerNeutral",
-			"text": "...It’s alright.",
-			"next_id": "Thea_park16"
-		},
-		"Thea_park16": {
-			"speaker": "Thea",
-			"portrait": "TheaNeutral",
-			"text": "It.. it was nice talking to you.",
-			"next_id": null
-		},
-	}
+    "day_3": {
+        "thea_day3": {
+            "entry_point": true,
+            "conditions": {"flags_absent": ["met_thea_day3"]},
+            "on_finish": {"set_flags": ["met_thea_day3"]},
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "...",
+            "next_id": "thea_day3_player1"
+        },
+        "thea_day3_player1": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "text": "Hello?",
+            "next_id": "thea_day3_2"
+        },
+        "thea_day3_2": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "...",
+            "next_id": "thea_day3_player2"
+        },
+        "thea_day3_player2": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "text": "...Helloooo?",
+            "next_id": "thea_day3_oh"
+        },
+        "thea_day3_oh": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "..oh!",
+            "next_id": "thea_day3_sorry"
+        },
+        "thea_day3_sorry": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Sorry, I was lost in thought.",
+            "next_id": "thea_day3_player3"
+        },
+        "thea_day3_player3": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "text": "It's alright.",
+            "next_id": "thea_day3_pause"
+        },
+        "thea_day3_pause": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "...",
+            "choices": [
+                {"text": "What are you thinking about?", "next_id": "thea_day3_stars"},
+                {"text": "You look sad…", "next_id": "thea_day3_stars"}
+            ]
+        },
+        "thea_day3_stars": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Ah! Sorry, I didn't mean to worry you…",
+            "next_id": "thea_day3_stars2"
+        },
+        "thea_day3_stars2": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Its just.. Looking at the stars always reminds me of him.",
+            "choices": [
+                {"text": "...", "next_id": "thea_day3_rupin"},
+                {"text": "Him?", "next_id": "thea_day3_rupin"}
+            ]
+        },
+        "thea_day3_rupin": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "...Rupin always liked the stars.",
+            "next_id": "thea_day3_time"
+        },
+        "thea_day3_time": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Everyone looks up and sees the same stars, no matter how much time has passed.",
+            "next_id": "thea_day3_player_thought"
+        },
+        "thea_day3_player_thought": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "type": "thought",
+            "text": "Oh, that's deeper than I wanted to go.",
+            "next_id": "thea_day3_sit"
+        },
+        "thea_day3_sit": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "He liked to sit right here…",
+            "next_id": "thea_day3_ramble"
+        },
+        "thea_day3_ramble": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Ah! ..sorry, look at me, rambling on.",
+            "next_id": "thea_day3_alright"
+        },
+        "thea_day3_alright": {
+            "speaker": "Player",
+            "portrait": "PlayerNeutral",
+            "text": "...It's alright.",
+            "next_id": "thea_day3_end"
+        },
+        "thea_day3_end": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "It.. it was nice talking to you.",
+            "next_id": null
+        },
+        "thea_day3_repeat": {
+            "entry_point": true,
+            "indicator": false,
+            "conditions": {"flags_required": ["met_thea_day3"]},
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "...",
+            "next_id": null
+        }
+    },
+    "day_4": {
+        "thea_day4": {
+            "entry_point": true,
+            "conditions": {"flags_absent": ["met_thea_day4"]},
+            "on_finish": {"set_flags": ["met_thea_day4"]},
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Um.. hi!",
+            "choices": [
+                {"text": "Hello.", "next_id": "thea_day4_sorry"},
+                {"text": "How are you doing?", "next_id": "thea_day4_alright"},
+                {"text": "...do you and Poppy, um, know each other?", "next_id": "thea_day4_poppy"}
+            ]
+        },
+        "thea_day4_sorry": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Hi…",
+            "next_id": "thea_day4_sorry2"
+        },
+        "thea_day4_sorry2": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Um… sorry about yesterday.. Sometimes I get too caught up in my feelings and I forget that others might not be comfortable hearing that..",
+            "next_id": null
+        },
+        "thea_day4_alright": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "..!",
+            "next_id": "thea_day4_alright2"
+        },
+        "thea_day4_alright2": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "I'm alright, thanks for asking.",
+            "next_id": "thea_day4_sorry2"
+        },
+        "thea_day4_poppy": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Poppy? He's a good friend of mine.",
+            "next_id": "thea_day4_poppy2"
+        },
+        "thea_day4_poppy2": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "Most people consider him strange, and he does say some pretty funny things, but he is very kind.",
+            "next_id": "thea_day4_poppy3"
+        },
+        "thea_day4_poppy3": {
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "He keeps me company when all I have is the stars.",
+            "next_id": null
+        },
+        "thea_day4_repeat": {
+            "entry_point": true,
+            "indicator": false,
+            "conditions": {"flags_required": ["met_thea_day4"]},
+            "speaker": "Thea",
+            "portrait": "TheaNeutral",
+            "text": "...",
+            "next_id": null
+        }
+    }
 }
