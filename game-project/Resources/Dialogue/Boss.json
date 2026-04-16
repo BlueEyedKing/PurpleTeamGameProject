@@ -10,7 +10,6 @@
 		},
 		"speaker": "Boss",
 		"text": "...You, there! Careful where you step, this is an archeological site.",
-		"type": "spoken",
 		"portrait": "BossNeutral",
 		"next_id": "day_1_intro_2"
 		},
@@ -73,7 +72,7 @@
 		},
 		"day_1_intro_10": {
 		"speaker": "Boss",
-		"text": "Its nothing too complicated, I’m sure you’ll get it in no time.",
+		"text": "It's nothing too complicated, I’m sure you’ll get it in no time.",
 		"portrait": "BossNeutral",
 		"next_id": "day_1_intro_11"
 		},
@@ -366,6 +365,68 @@
 		"speaker": "Boss",
 		"portrait": "BossNeutral",
 		"text": "That thing looks human. You can’t expect me to believe you really excavated it.",
+		"next_id": null
+		},
+	},
+		"day_4": {
+		"day_4_boss_work_done": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete", "cleaning_complete", "digging_complete"],
+			"flags_absent": ["work_done"]
+		},
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "Done?",
+		"next_id": "day_4_boss_work_done2"
+		},
+		"day_4_boss_work_done2": {
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "You. Home. Now.",
+		"on_finish": {
+			"set_flags": ["work_done"]
+		},
+		"next_id": null
+		},
+		
+		"day_4_boss": {
+		"entry_point": true,
+		"conditions": {
+			"flags_required": ["met_boss", "tutorial_complete"]
+		},
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "[NAME]!",
+		"next_id": "day_4_boss_help"
+		},
+		"day_4_boss_help": {
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "Can I help you with anything?",
+		"choices": [
+			{"text": "How do I excavate?",                "next_id": "day_4_boss_excavate"},
+			{"text": "How do I clean the fossils I find?","next_id": "day_4_boss_clean"},
+			{"text": "I found… something.",         "next_id": "day_4_boss_fossil"},
+			{"text": "No, nothing.",                      "next_id": null}
+		]
+		},
+		"day_4_boss_excavate": {
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "Look for the dark patches of dirt and interact with them to dig up whatever is under the ground.",
+		"next_id": null
+		},
+		"day_4_boss_clean": {
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "Bring your fossils into the tent to clean them.",
+		"next_id": null
+		},
+		"day_4_boss_fossil": {
+		"speaker": "Boss",
+		"portrait": "BossNeutral",
+		"text": "...",
 		"next_id": null
 		},
 	}

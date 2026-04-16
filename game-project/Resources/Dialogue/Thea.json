@@ -1,0 +1,127 @@
+{
+	"day_3": {
+		"Thea_park": {
+			"entry_point": true,
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "...",
+			"next_id": "Thea_park2"
+		},
+		"Thea_park2": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "Hello?",
+			"next_id": "Thea_park2"
+		},
+		"Thea_park2": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "...",
+			"next_id": "Thea_park3"
+		},
+		"Thea_park3": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "...Helloooo?",
+			"next_id": "Thea_park4"
+		},
+		"Thea_park4": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "..oh!",
+			"action": "startled",
+			"next_id": "Thea_park5"
+		},
+		"Thea_park5": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Sorry, I was lost in thought.",
+			"next_id": "Thea_park6"
+		},
+		"Thea_park6": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "It’s alright.",
+			"next_id": "Thea_park7"
+		},
+		"Thea_park7": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "...",
+			"choices": [
+				{
+					"text": "What are you thinking about?",
+					"next_id": "Thea_park8"
+				},
+				{
+					"text": "You look sad…",
+					"next_id": "Thea_park8"
+				},
+			]
+		},
+		"Thea_park8": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Ah! Sorry, I didn’t mean to worry you…",
+			"next_id": "Thea_park9"
+		},
+		"Thea_park9": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Its just.. Looking at the stars always reminds me of [color=#16C1DE]him[/color].",
+			"choices": [
+				{
+					"text": "...",
+					"next_id": "Thea_park10"
+				},
+				{
+					"text": "Him?",
+					"next_id": "Thea_park10"
+				},
+			]
+		},
+		"Thea_park10": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "...[color=#16C1DE]Rupin[/color] always liked the stars.",
+			"next_id": "Thea_park11"
+		},
+		"Thea_park11": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Everyone looks up and sees the same stars, no matter how much [color=#16C1DE]time has passed.[/color]",
+			"next_id": "Thea_park12"
+		},
+		"Thea_park12": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"type": "thought",
+			"text": "Oh, that’s deeper than I wanted to go.",
+			"next_id": "Thea_park13"
+		},
+		"Thea_park13": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "He liked to sit right here… I wish we didn’t [color=#16C1DE]leave him behind.[/color]",
+			"next_id": "Thea_park14"
+		},
+		"Thea_park14": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "Ah! ..sorry, look at me, rambling on.",
+			"next_id": "Thea_park15"
+		},
+		"Thea_park15": {
+			"speaker": "Player",
+			"portrait": "PlayerNeutral",
+			"text": "...It’s alright.",
+			"next_id": "Thea_park16"
+		},
+		"Thea_park16": {
+			"speaker": "Thea",
+			"portrait": "TheaNeutral",
+			"text": "It.. it was nice talking to you.",
+			"next_id": null
+		},
+	}
+}

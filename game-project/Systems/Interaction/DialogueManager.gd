@@ -189,6 +189,8 @@ func _on_typing_done() -> void:
 			EventBus.present_fossils_requested.emit()
 		"hide_fossils":
 			EventBus.hide_fossils_requested.emit()
+		"startled":
+			EventBus.npc_startled.emit(entry.get("speaker", ""))
 			
 	var choices = entry.get("choices", [])
 	if choices.size() > 0:

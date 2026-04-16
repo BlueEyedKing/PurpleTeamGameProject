@@ -224,5 +224,58 @@
 		"text": "...that's one way of putting it. ...as you can see, Oran is a bit.. irritable.",
 		"next_id": null
 		}
-	}
+	},
+	"day_3": {
+		"bar_day3": {
+		"entry_point": true,
+			"conditions": {
+				"flags_absent": [
+					"met_florence_day3"
+				]
+			},
+			"on_finish": {
+				"set_flags": [
+					"met_florence_day3"
+				]
+			},
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "What…. What are we without…",
+		"next_id": "bar_day3_2"
+		},
+		"bar_day3_2": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "...",
+		"next_id": "bar_day3_3"
+		},
+		"bar_day3_3": {
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"text": "[color=#16C1DE]...I’m sorry Rupin.[/color]",
+		"next_id": "bar_day3_player_thoughts"
+		},
+		"bar_day3_player_thoughts": {
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"type": "thought",
+		"text": "...How much have they had to drink?",
+		"next_id": null
+		},
+		
+		"bar_day3": {
+		"entry_point": true,
+			"conditions": {
+				"flags_required": [
+					"met_florence_day3"
+				]
+				},
+			},
+		"speaker": "Florence",
+		"portrait": "FlorenceNeutral",
+		"type": "thought",
+		"text": "They’re too drunk to notice me...",
+		"next_id": null
+		},
+		
 }

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://lhoictwxv54l"]
+
+[ext_resource type="Script" uid="uid://c816y6ms7qfo8" path="res://NPCs/thea.gd" id="1_dsnkr"]
+[ext_resource type="Texture2D" uid="uid://b75w6p2t42pp3" path="res://Resources/Sprites/Characters/TimeTraveller3/Time_Traveler_Front.png" id="2_dsnkr"]
+[ext_resource type="PackedScene" uid="uid://blafrjv46qgh2" path="res://Systems/Interaction/interaction area/interaction_area.tscn" id="3_j261i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_poppy"]
+radius = 72.0
+
+[node name="Thea" type="Node2D"]
+scale = Vector2(1.9, 1.9)
+script = ExtResource("1_dsnkr")
+npc_id = "Thea"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("2_dsnkr")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_j261i")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 32)
+shape = SubResource("CircleShape2D_poppy")

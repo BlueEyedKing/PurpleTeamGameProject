@@ -46,7 +46,6 @@ texture = ExtResource("2_vl2if")
 region_rect = Rect2(0, 0, 480, 101)
 metadata/_edit_use_anchors_ = true
 
-
 [node name="Portrait" type="TextureRect" parent="Control/NinePatchRect"]
 layout_mode = 1
 offset_left = 56.0

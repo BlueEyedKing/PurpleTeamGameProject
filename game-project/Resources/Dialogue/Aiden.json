@@ -114,5 +114,148 @@
 		"text": "It looks like no one is here.",
 		"next_id": null
 		}
-	}
+	},
+	"day_3": {
+		"aiden_day3": {
+		"entry_point": true,
+		"conditions": {"flags_absent": [
+					"met_aiden_day3"
+				]},
+		"on_finish": {
+			"set_flags": [
+				"met_aiden_day3"
+			]},
+		"speaker": "Aiden",
+		"portrait": "AidenNeutral",
+		"text": "Welcome to The Shop, can I help you with...",
+		"next_id": "aiden_day3_2"
+		},
+		"aiden_day3_2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Oh, hi [NAME]. What’s up?",
+			"choices": [
+				{
+					"text": "Nothing much.",
+					"next_id": "aiden_nothing"
+				},
+				{
+					"text": "I’m investigating some strange things I found at the dig site.",
+					"next_id": "aiden_investigating"
+				},
+				{
+					"text": "The sky.",
+					"next_id": "aiden_sky"
+				}
+			]
+		},
+				
+		"aiden_nothing": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Yeah, there’s not a lot going on here, either.",
+			"next_id": "aiden_help"
+			},
+		"aiden_investigating": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Ah.. isn’t everything you find out there ‘strange’?",
+			"next_id": "aiden_investigating2"
+			},
+		"aiden_investigating2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "All that archeology and history stuff flies over my head.",
+			"next_id": "aiden_help"
+			},
+		"aiden_sky": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Ha ha. Very funny.",
+			"next_id": "aiden_help"
+			},
+		"aiden_help": {
+			"entry_point": true,
+			"conditions": {"flags_required": [
+					"met_aiden_day3"
+				]},
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "So.. can I help you with anything?",
+			"choices": [
+				{
+					"text": "About Oran",
+					"next_id": "aiden_oran"
+				},
+				{
+					"text": "About Florence",
+					"next_id": "aiden_florence"
+				},
+				{
+					"text": "About Camila...",
+					"next_id": "aiden_camila"
+				},
+				{
+					"text": "Nothing.",
+					"next_id": null
+				}
+			]
+			},
+		"aiden_oran": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "You want to know more about Oran?",
+			"next_id": "aiden_oran2"
+			},
+		"aiden_oran2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Hm.. I guess there isn’t much I could say when he was sitting right there...",
+			"next_id": "aiden_oran3"
+			},
+		"aiden_oran3": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Oh! Oran actually arrived in town about [color=#16C1DE]the same time as Florence.[/color]",
+			"next_id": "aiden_oran4"
+			},
+		"aiden_oran4": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "They seemed closer when they first got here… I wonder what happened.",
+			"next_id": null
+			},
+			
+		"aiden_florence": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Florence? You want to know more about them?",
+			"next_id": "aiden_florence2"
+			},
+		"aiden_florence2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "Uh.. I honestly don’t know much about them, they’re kind of elusive.",
+			"next_id": "aiden_florence3"
+			},
+		"aiden_florence3": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "They’re.. Almost scarily polite though.",
+			"next_id": null
+			},
+			
+		"aiden_camila": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "She’s smart; she knows practically everything there is to know about Amaranth Heights.",
+			"next_id": "aiden_camila2"
+			},
+		"aiden_camila2": {
+			"speaker": "Aiden",
+			"portrait": "AidenNeutral",
+			"text": "If you have any questions about the town, she’s the person to ask.",
+			"next_id": null
+			},
+		}
 }

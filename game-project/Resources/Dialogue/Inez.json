@@ -401,5 +401,82 @@
 		"text": "...Alright. If you’re serious, then you should probably ask around again. Surely someone knows something.",
 		"next_id": null
 		},
+	},
+		"day_4": {
+		"inez_day4_chat": {
+		"entry_point": true,
+		"conditions": {},
+		"speaker": "Player",
+		"portrait": "PlayerNeutral",
+		"text": "..",
+		"choices": [
+			{"text": "...I found.. Something. On the dig site.", "next_id": "inez_day_4_fossil"},
+			{"text": "Thea and Florence keep mentioning someone named Rupin.",         "next_id": "inez_rupin"},
+			{"text": "Poppy said some strange things again...", "next_id": "inez_poppy_chat"},
+			{"text": "Not really...", "next_id": null}
+		]
+		},
+		"inez_day_4_fossil": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Something else?",
+		"next_id": "inez_day_4_fossil2"
+		},
+		"inez_day_4_fossil2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Let me see..",
+		"next_id": "inez_day_4_fossil3"
+		},
+		"inez_day_4_fossil3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...",
+		"next_id": "inez_day_4_main"
+		},
+		
+		"inez_rupin": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...Rupin?",
+		"next_id": "inez_rupin2"
+		},
+		"inez_rupin2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "I’ve never heard of that name before..",
+		"next_id": "inez_rupin3"
+		},
+		"inez_rupin3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "They’re probably someone they knew before coming here.",
+		"next_id": "inez_rupin4"
+		},
+		"inez_rupin3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "Though… I didn’t know they had a shared past...",
+		"next_id": "inez_day_4_main"
+		},
+		
+		"inez_day_4_main": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "...honestly, I didn’t really believe that you had found anything, but...",
+		"next_id": "inez_day_4_main2"
+		},
+		"inez_day_4_main2": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "If this is a prank, it's sure taking a lot of dedication.",
+		"next_id": "inez_day_4_main3"
+		},
+		"inez_day_4_main3": {
+		"speaker": "Inez",
+		"portrait": "CoworkerNeutral",
+		"text": "I’ll help you figure out what’s happening. I promise.",
+		"next_id": null
+		},
 	}
 }
