@@ -95,6 +95,18 @@ const VOICES = {
 		preload("res://Resources/Audio/NPC voices/Time traveler 3/04-tt3.wav"),
 		preload("res://Resources/Audio/NPC voices/Time traveler 3/05-tt3.wav"),
 	],
+	"Aiden": [ #shop clerk (same as default voice)
+		preload("res://Resources/Audio/NPC voices/random civilian/01-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/02-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/03-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/04-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/05-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/06-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/07-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/08-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/09-civ.wav"),
+		preload("res://Resources/Audio/NPC voices/random civilian/10-civ.wav"),
+	],
 	"Default": [ #random civilian folder
 		preload("res://Resources/Audio/NPC voices/random civilian/01-civ.wav"),
 		preload("res://Resources/Audio/NPC voices/random civilian/02-civ.wav"),
