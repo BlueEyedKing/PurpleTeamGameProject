@@ -20,12 +20,11 @@ func _ready() -> void:
 	EventBus.settings_hide_requested.connect(hide_settings)
 	EventBus.show_main_menu_requested.connect(show_main_menu)
 	EventBus.free_main_menu_requested.connect(free_main_menu)
-	
+
 	EventBus.present_fossils_requested.connect(show_fossils)
-	
+
 func show_pause_menu() -> void:
 	pause_menu = preload("res://UI/pause_menu.tscn").instantiate()
-	pause_menu.save_and_quit_requested.connect(state_manager.save_and_quit)
 	pause_menu.continue_requested.connect(state_manager.pop_state)
 	ui.add_child(pause_menu)
 
@@ -33,6 +32,7 @@ func hide_pause_menu() -> void:
 	if pause_menu:
 		pause_menu.queue_free()
 		pause_menu = null
+
 
 func show_settings() -> void:
 	settings = preload("res://UI/settings.tscn").instantiate()
@@ -46,11 +46,10 @@ func hide_settings() -> void:
 		settings.queue_free()
 		settings = null
 
-func show_main_menu(has_save: bool) -> void:
+func show_main_menu(_has_save: bool = false) -> void:
 	main_menu = preload("res://UI/main_menu.tscn").instantiate()
 	ui.add_child(main_menu)
-	main_menu.set_has_save(has_save)
-	
+
 func free_main_menu() -> void:
 	if (main_menu):
 		main_menu.queue_free()

@@ -1,6 +1,5 @@
 extends Node
 
-signal continue_requested()
 signal start_requested()
 
 signal level_load_requested(level: String, gate: String)
